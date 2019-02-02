@@ -12,25 +12,32 @@ export class CalendarPage implements OnInit {
 		currentDate: new Date()
 	}
 
+  eventSource = null
+  startTime = null;
+  endTime = null;
   constructor(
   ) { }
 
   ngOnInit() {
   }
   
-  onCurrentDateChanged(){
+  onCurrentDateChanged(event){
 
   }
   
-  onEventSelected(){
+  onEventSelected(event){
 
   }
   
-  onViewTitleChanged(){
+  onViewTitleChanged(event){
 
   }
 
-  onTimeSelected(){
+  onTimeSelected(event){
+
+  }
+
+  reloadSource(startTime, endTime){
 
   }
 }
