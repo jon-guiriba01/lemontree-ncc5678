@@ -1,0 +1,37 @@
+<ion-content padding style="padding-top: 30px;">
+	<ion-tabs>
+	  <ion-tab-bar slot="top">
+	    <ion-button  (click)="switchTab('marketing')">
+	      <ion-label>Marketing</ion-label>
+	    </ion-button>
+
+	    <ion-button (click)="switchTab('registration')">
+	      <ion-label>Registration</ion-label>
+	    </ion-button>
+
+	    <ion-button (click)="switchTab('operation')">
+	      <ion-label>Operation</ion-label>
+	    </ion-button>
+
+	    <ion-button (click)="switchTab('finance')">
+	      <ion-label>Finance</ion-label>
+	    </ion-button>
+
+	    <ion-button (click)="switchTab('events')">
+	      <ion-label>Events</ion-label>
+	    </ion-button>
+	  </ion-tab-bar>
+	</ion-tabs>
+
+	<div class="main-container">
+		<div id="do">
+			<ion-label>Do</ion-label>
+		</div>
+		<div id="doing">
+			<ion-label>Doing</ion-label>
+		</div>
+		<div id="done">
+			<ion-label>Done</ion-label>
+		</div>
+	</div>
+</ion-content>

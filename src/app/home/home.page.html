@@ -1,12 +1,43 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+    	<app-toolbar></app-toolbar> 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+<ion-content padding id="main">
+
+	<ion-tabs>
+	  <ion-tab-bar slot="top">
+	    <ion-tab-button tab="calendar">
+	      <ion-icon name="calendar"></ion-icon>
+	      <ion-label>Calendar</ion-label>
+	      <ion-badge>6</ion-badge>
+	    </ion-tab-button>
+
+	    <ion-tab-button tab="task">
+	      <ion-icon name="build"></ion-icon>
+	      <ion-label>Tasks</ion-label>
+	    </ion-tab-button>
+
+	    <ion-tab-button tab="file-cabinet">
+	      <ion-icon name="filing"></ion-icon>
+	      <ion-label>File Cabinet</ion-label>
+	    </ion-tab-button>
+	  </ion-tab-bar>
+	</ion-tabs>
 </ion-content>
+
+<ion-menu side="start" menuId="main" content-id="main">
+  <ion-content>
+  	<ion-avatar class="settings-avatar">
+		  <img src="../assets/hayley.png"/>
+		</ion-avatar>
+    <ion-list>
+      <ion-item style="z-index: 9999;" (click)="navTo('/settings')">Settings</ion-item>
+      <ion-item style="z-index: 9999;" (click)="navTo('/profile')">Profile</ion-item>
+      <ion-item style="z-index: 9999;" (click)="logout()">Logout</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
