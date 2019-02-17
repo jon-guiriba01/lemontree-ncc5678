@@ -1,4 +1,4 @@
-<ion-content padding style="padding-top: 30px;">
+<ion-content padding style="padding-top: 30px;" forceOverscroll="false">
 	<ion-tabs>
 	  <ion-tab-bar slot="top">
 	    <ion-button  (click)="switchTab('marketing')">
@@ -24,14 +24,95 @@
 	</ion-tabs>
 
 	<div class="main-container">
-		<div id="do">
-			<ion-label>Do</ion-label>
-		</div>
-		<div id="doing">
-			<ion-label>Doing</ion-label>
-		</div>
-		<div id="done">
-			<ion-label>Done</ion-label>
-		</div>
+
+	<ion-grid>
+	  <ion-row no-padding class="matrix">
+	    <ion-col class='task-container' size="12">
+	      <ion-item class="task-header">Do</ion-item>
+	      <ion-list 
+	      dragula="drag-tasks" 
+	      [(dragulaModel)]="taskService.todo" 
+	      (dragulaModelChange)="onChangeDrag($event, 'todo')"
+	      lines="none">
+        	<div *ngFor="let task of taskService.todo">
+		        <ion-item 
+		        [color]="primary" 
+		        expand="block" 
+		        text-wrap 
+		        class='task-card'
+		        *ngIf='task.group==department'
+		        (click)='onClickTask($event, task)'
+		        >
+		          	{{ task.name }}
+		        </ion-item>
+        	</div>
+	      </ion-list>
+	    </ion-col>
+	
+	    <ion-col class='task-container'  size="12">
+
+	      <ion-item class="task-header">Doing</ion-item>
+
+	      <ion-list 
+	      dragula="drag-tasks" 
+	      [(dragulaModel)]="taskService.doing" 
+	      (dragulaModelChange)="onChangeDrag($event, 'doing')"
+	      lines="none">
+        	<div *ngFor="let task of taskService.doing">
+		        <ion-item 
+		        [color]="primary" 
+		        expand="block" 
+		        text-wrap 
+		        class='task-card'
+		        *ngIf='task.group==department'
+		        (click)='onClickTask($event, task)'
+		        >
+		          	{{ task.name }}
+		        </ion-item>
+        	</div>
+	      </ion-list>
+	    </ion-col>
+	
+	    <ion-col class='task-container' size="12">
+	      <ion-item class="task-header">Done</ion-item>
+
+	      <ion-list 
+	      dragula="drag-tasks" 
+	      [(dragulaModel)]="taskService.done" 
+	      (dragulaModelChange)="onChangeDrag($event, 'done')"
+	      lines="none">
+        	<div *ngFor="let task of taskService.done">
+		        <ion-item 
+		        [color]="primary" 
+		        expand="block" 
+		        text-wrap 
+		        class='task-card'
+		        *ngIf='task.group==department'
+		        (click)='onClickTask($event, task)'
+		        >
+		          	{{ task.name }}
+		        </ion-item>
+        	</div>
+	      </ion-list>
+	    </ion-col>
+	
+	  </ion-row>
+	</ion-grid>
+
 	</div>
+
+	<ion-card class="newtask-container" *ngIf="showAddTaskView">
+		<ion-card-content>
+			<ion-item>
+				<ion-input type="text" [(ngModel)]="addTaskName"></ion-input>
+			</ion-item>
+			<div style="display: flex; justify-content: flex-end;">
+				<ion-button (click)='onClickAddTask($event)'>Add Task</ion-button>
+			</div>
+		</ion-card-content>
+	</ion-card>
+
+  <ion-fab-button size="small" class="task-fab" (click)="addTask()">
+  	<ion-icon name="add-circle-outline"></ion-icon>
+  </ion-fab-button>
 </ion-content>

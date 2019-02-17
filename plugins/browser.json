@@ -24,6 +24,19 @@
     },
     "cordova-plugin-ionic-keyboard": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-googleplus": {
+      "WEB_APPLICATION_CLIENT_ID": "694548309780-p7pvh160hh62p2dpma7822pv83hsd1js.apps.googleusercontent.com",
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.lemontree.ncc5678"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.lemontree.ncc5678"
+    },
+    "cordova-plugin-filechooser": {
+      "PACKAGE_NAME": "com.lemontree.ncc5678"
     }
   },
   "dependent_plugins": {}

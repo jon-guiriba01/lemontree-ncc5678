@@ -46,5 +46,40 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-googleplus": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-googleplus@7.0.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "REVERSED_CLIENT_ID": "com.lemontree.ncc5678",
+      "WEB_APPLICATION_CLIENT_ID": "694548309780-p7pvh160hh62p2dpma7822pv83hsd1js.apps.googleusercontent.com"
+    }
+  },
+  "cordova-plugin-nativestorage": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-nativestorage"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-sqlite-storage": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-sqlite-storage"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-filechooser": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-filechooser"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

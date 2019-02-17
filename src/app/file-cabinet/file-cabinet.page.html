@@ -1,7 +1,18 @@
-<ion-content padding>
+<ion-content padding style='position: relative;'>
 	<ion-list>
-	  <ion-item *ngFor="let file of files">
-	    <ion-label>{{file.name}}</ion-label>
-	  </ion-item>
+		<div *ngFor="let file of storageService.files">
+			<ion-item *ngIf='file.name.toLowerCase().includes(searchService.searchInput.toLowerCase()) || searchService.searchInput == ""'>
+			  <ion-label>{{file.name}}</ion-label>
+			  <ion-button (click)='onClickDownload(file, $event)' fill='clear'>
+			  	<ion-icon name='cloud-download'></ion-icon>
+			  </ion-button>
+			</ion-item>
+		</div>
 	</ion-list>
+
+
+  <ion-fab-button size="small" class="upload-fab" (click)="upload()">
+  	<input type="file" name="" style='display: none;' class='hidden-input'/>
+  	<ion-icon name="add-circle-outline"></ion-icon>
+  </ion-fab-button>
 </ion-content>

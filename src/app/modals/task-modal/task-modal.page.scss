@@ -1,0 +1,15 @@
+.activity-item{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.modal-header{
+	display: flex;
+	justify-content: space-between;
+}
+
+.progressbar{
+	position: absolute;
+	bottom: 5px;
+}

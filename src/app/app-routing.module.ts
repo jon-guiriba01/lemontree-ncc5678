@@ -11,6 +11,9 @@ const routes: Routes = [
   { path: 'file-cabinet', loadChildren: './file-cabinet/file-cabinet.module#FileCabinetPageModule' },
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' },
+  { path: 'task-modal', loadChildren: './modals/task-modal/task-modal.module#TaskModalPageModule' },
+  { path: 'add-event', loadChildren: './modals/add-event/add-event.module#AddEventPageModule' },
+  { path: 'test', loadChildren: './test/test.module#TestPageModule' },
 ];
 
 @NgModule({

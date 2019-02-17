@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Events } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  searchText
+
 	constructor(
 		private menu: MenuController
 		, private events: Events
-		, private router: Router
+    , private router: Router
+		, private searchService: SearchService
 	) {
 
 		this.initMenu()

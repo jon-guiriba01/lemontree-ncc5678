@@ -62,7 +62,7 @@ var SignupPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>signup</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>signup</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\t<form>\n\n\t\t<ion-item>\n\t\t  <ion-label position='floating' >Email</ion-label>\n\t\t  <ion-input type='email' name='email' [(ngModel)]='email'></ion-input>\n\t\t</ion-item>\n\n\t\t<ion-item>\n\t\t  <ion-label position='floating' >Password</ion-label>\n\t\t  <ion-input type='password' name='password' [(ngModel)]='password'></ion-input>\n\t\t</ion-item>\n\n\t\t<ion-item>\n\t\t  <ion-label position='floating'>Repeat Password</ion-label>\n\t\t  <ion-input type='password' name='password'  [(ngModel)]='repassword'></ion-input>\n\t\t</ion-item>\n\n\t\t<ion-button (click)=\"signup()\">\n\t\t\tSIGNUP\n\t\t</ion-button>\n\n\t</form>\n</ion-content>\n"
 
 /***/ }),
 
@@ -88,6 +88,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupPage", function() { return SignupPage; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -98,10 +99,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var SignupPage = /** @class */ (function () {
-    function SignupPage() {
+    function SignupPage(afAuth) {
+        this.afAuth = afAuth;
     }
     SignupPage.prototype.ngOnInit = function () {
+    };
+    SignupPage.prototype.signup = function () {
+        console.log("signup ", this.email);
+        console.log("password ", this.password);
+        this.afAuth.auth.createUserWithEmailAndPassword(this.email, this.password).then(function (res) {
+            console.log(res);
+        }).catch(function (res) {
+            console.log(res);
+        });
     };
     SignupPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -109,7 +121,7 @@ var SignupPage = /** @class */ (function () {
             template: __webpack_require__(/*! ./signup.page.html */ "./src/app/signup/signup.page.html"),
             styles: [__webpack_require__(/*! ./signup.page.scss */ "./src/app/signup/signup.page.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"]])
     ], SignupPage);
     return SignupPage;
 }());

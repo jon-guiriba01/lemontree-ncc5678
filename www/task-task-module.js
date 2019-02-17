@@ -62,7 +62,7 @@ var TaskPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content padding style=\"padding-top: 30px;\">\n\t<ion-tabs>\n\t  <ion-tab-bar slot=\"top\">\n\t    <ion-button  (click)=\"switchTab('marketing')\">\n\t      <ion-label>Marketing</ion-label>\n\t    </ion-button>\n\n\t    <ion-button (click)=\"switchTab('registration')\">\n\t      <ion-label>Registration</ion-label>\n\t    </ion-button>\n\n\t    <ion-button (click)=\"switchTab('operation')\">\n\t      <ion-label>Operation</ion-label>\n\t    </ion-button>\n\n\t    <ion-button (click)=\"switchTab('finance')\">\n\t      <ion-label>Finance</ion-label>\n\t    </ion-button>\n\n\t    <ion-button (click)=\"switchTab('events')\">\n\t      <ion-label>Events</ion-label>\n\t    </ion-button>\n\t  </ion-tab-bar>\n\t</ion-tabs>\n\n\t<div class=\"main-container\">\n\t\t<div id=\"do\">\n\t\t\t<ion-label>Do</ion-label>\n\t\t</div>\n\t\t<div id=\"doing\">\n\t\t\t<ion-label>Doing</ion-label>\n\t\t</div>\n\t\t<div id=\"done\">\n\t\t\t<ion-label>Done</ion-label>\n\t\t</div>\n\t</div>\n</ion-content>\n"
+module.exports = "<ion-content padding style=\"padding-top: 30px;\">\n\t<ion-tabs>\n\t  <ion-tab-bar slot=\"top\">\n\t    <ion-button  (click)=\"switchTab('marketing')\">\n\t      <ion-label>Marketing</ion-label>\n\t    </ion-button>\n\n\t    <ion-button (click)=\"switchTab('registration')\">\n\t      <ion-label>Registration</ion-label>\n\t    </ion-button>\n\n\t    <ion-button (click)=\"switchTab('operation')\">\n\t      <ion-label>Operation</ion-label>\n\t    </ion-button>\n\n\t    <ion-button (click)=\"switchTab('finance')\">\n\t      <ion-label>Finance</ion-label>\n\t    </ion-button>\n\n\t    <ion-button (click)=\"switchTab('events')\">\n\t      <ion-label>Events</ion-label>\n\t    </ion-button>\n\t  </ion-tab-bar>\n\t</ion-tabs>\n\n\t<div class=\"main-container\">\n\t\t<div id=\"do\">\n\t\t\t<ion-label>Do</ion-label>\n\t\t</div>\n\t\t<div id=\"doing\">\n\t\t\t<ion-label>Doing</ion-label>\n\t\t</div>\n\t\t<div id=\"done\">\n\t\t\t<ion-label>Done</ion-label>\n\t\t</div>\n\t</div>\n\n  <ion-fab-button size=\"small\">\n  \t<ion-icon name=\"add-circle-outline\"></ion-icon>\n  </ion-fab-button>\n</ion-content>\n"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ module.exports = "<ion-content padding style=\"padding-top: 30px;\">\n\t<ion-tab
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".main-container {\n  padding-top: 50px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFzay9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXGZyZWVsYW5jZS0xL3NyY1xcYXBwXFx0YXNrXFx0YXNrLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDLGlCQUFpQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvdGFzay90YXNrLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluLWNvbnRhaW5lcntcclxuXHRwYWRkaW5nLXRvcDogNTBweDtcclxufSJdfQ== */"
+module.exports = ".main-container {\n  padding-top: 50px;\n  width: 100%;\n  height: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFzay9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXGZyZWVsYW5jZS0xL3NyY1xcYXBwXFx0YXNrXFx0YXNrLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDLGlCQUFpQjtFQUNqQixXQUFXO0VBQ1gsWUFBWSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvdGFzay90YXNrLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluLWNvbnRhaW5lcntcclxuXHRwYWRkaW5nLXRvcDogNTBweDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRoZWlnaHQ6IDEwMCU7XHJcbn0iXX0= */"
 
 /***/ }),
 

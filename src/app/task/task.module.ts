@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
+import { DragulaModule } from 'ng2-dragula';
 import { IonicModule } from '@ionic/angular';
 
 import { TaskPage } from './task.page';
@@ -19,7 +20,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    DragulaModule
   ],
   declarations: [TaskPage]
 })

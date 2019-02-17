@@ -2,5 +2,7 @@
 	<ion-button (click)='btnMenuClickEvent()'>
 	  <ion-icon name="menu"></ion-icon>
 	</ion-button>
-	<ion-searchbar></ion-searchbar>
+	<ion-searchbar
+	 animated 
+	 (ionChange)='onChangeSearch($event)'></ion-searchbar>
 </div>

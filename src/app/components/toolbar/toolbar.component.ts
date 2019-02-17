@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Events } from '@ionic/angular';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,7 +10,10 @@ import { Events } from '@ionic/angular';
 export class ToolbarComponent implements OnInit {
 
   
-	constructor(public events: Events) {
+	constructor(
+    public events: Events
+    , public searchService: SearchService
+  ) {
 
 	}
 
@@ -19,5 +23,16 @@ export class ToolbarComponent implements OnInit {
   	this.events.publish("btnclick:menu", true);
   }
 
+
+  timeout
+  onChangeSearch(evt){
+    console.log(1,evt);
+    if(this.timeout)
+      clearTimeout(this.timeout)
+
+    setTimeout(()=>{
+        this.searchService.searchInput = evt.detail.value
+    },500)
+  }
 
 }
