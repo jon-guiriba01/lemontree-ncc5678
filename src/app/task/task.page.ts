@@ -42,13 +42,13 @@ export class TaskPage implements OnInit {
   prevDragged
 
   constructor(
-    private taskService: TaskService
-    , private modalController: ModalController
-    , private afs: AngularFirestore
-    , private storage: Storage
-    , private dragulaService: DragulaService
-    , private toastController: ToastController
-    , private searchService: SearchService
+    public taskService: TaskService
+    , public modalController: ModalController
+    , public afs: AngularFirestore
+    , public storage: Storage
+    , public dragulaService: DragulaService
+    , public toastController: ToastController
+    , public searchService: SearchService
    ) { 
  
     this.dragulaService.dropModel('drag-tasks')

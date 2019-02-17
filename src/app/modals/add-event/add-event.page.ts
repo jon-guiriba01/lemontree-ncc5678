@@ -27,7 +27,7 @@ export class AddEventPage implements OnInit {
   ngOnInit() {
   }
 
-  onClickAddEvent(){
+  onClickAddEvent(evt){
   	this.eventService.addEvent(this.name, this.description, this.date.format()).then(()=>{
   		this.events.publish('event:addSuccess')
   		this.modalController.dismiss()

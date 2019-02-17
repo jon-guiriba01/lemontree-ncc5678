@@ -55,7 +55,7 @@ export class TaskModalPage implements OnInit {
 
   }
 
-  onClickDelete(){
+  onClickDelete(evt){
   	this.taskService.deleteTask(this.task).then((res)=>{
   		this.modalController.dismiss()
   	});

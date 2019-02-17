@@ -8,7 +8,7 @@ import * as $ from 'jquery'
 import { SearchService } from '../services/search.service';
 
 
-    
+
 @Component({
   selector: 'app-file-cabinet',
   templateUrl: './file-cabinet.page.html',
@@ -18,10 +18,10 @@ export class FileCabinetPage implements OnInit {
 
 
   constructor(
-    private authService: AuthService
-    , private afStorage: AngularFireStorage
-    , private storageService: StorageService
-    , private searchService: SearchService
+    public authService: AuthService
+    , public afStorage: AngularFireStorage
+    , public storageService: StorageService
+    , public searchService: SearchService
   ) {
     this.loadGapi().then((res)=>{
         console.log(res);
