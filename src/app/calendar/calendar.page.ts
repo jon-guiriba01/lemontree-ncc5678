@@ -49,10 +49,8 @@ export class CalendarPage implements OnInit {
     let self = this
 
     $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay'
+      footer: {
+        center: 'month,agendaWeek,agendaDay',
       }
       , events: self.eventsService.events
       ,dayClick: async function(date, jsEvent, view) {
@@ -72,7 +70,33 @@ export class CalendarPage implements OnInit {
         // alert('Current view: ' + view.name);
 
 
-      }
+      },
+      customButtons: {
+        filter: {
+          text: 'Filters',
+          click: function() {
+          }
+        },
+        otherBtn: {
+          text: 'Others',
+          click: function() {
+          }
+        },
+        eventsBtn: {
+          text: 'Events',
+          click: function() {
+          }
+        },
+        deadlinesBtn: {
+          text: 'Deadlines',
+          click: function() {
+          }
+        },
+      },
+      header: {
+        center: 'filter, otherBtn, eventsBtn, deadlinesBtn ',
+      },
+      handleWindowResize: false
       // defaultView: 'basicWeek'
     });
   }

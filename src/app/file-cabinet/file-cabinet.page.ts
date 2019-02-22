@@ -16,7 +16,13 @@ import { SearchService } from '../services/search.service';
 })
 export class FileCabinetPage implements OnInit {
 
-
+  groups = [
+    'admin'
+    , 'operations'
+    , 'marketing'
+    , 'camps'
+    , 'showall'
+  ]
   constructor(
     public authService: AuthService
     , public afStorage: AngularFireStorage
@@ -80,6 +86,11 @@ export class FileCabinetPage implements OnInit {
 
   onClickDownload(file, event){
     this.storageService.downloadFile(file)
+  }
+
+
+  onClickDelete(file, event){
+    this.storageService.deleteFile(file)
   }
 
 

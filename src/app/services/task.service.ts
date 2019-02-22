@@ -11,15 +11,15 @@ import { from } from 'rxjs';
 })
 export class TaskService {
 
-  // tasks = []
-  tasks = {
-    todo:[]
-    , doing:[]
-    , done:[]
-  }
-  todo=[]
-  doing=[]
-  done=[]
+  tasks:Array<objects.Task> = [];
+  // tasks = {
+  //   todo:[]
+  //   , doing:[]
+  //   , done:[]
+  // }
+  // todo=[]
+  // doing=[]
+  // done=[]
 
   tasksCollection
   constructor(
@@ -31,29 +31,32 @@ export class TaskService {
     this.tasksCollection = this.afs.collection('tasks')
     this.tasksCollection.snapshotChanges().subscribe(
       (dataSet)=>{
-        let tasks = {
-          todo:[]
-          , doing:[]
-          , done:[]
-        }
+        let tasks = []
+
+        // let tasks = {
+        //   todo:[]
+        //   , doing:[]
+        //   , done:[]
+        // }
         for(let data of dataSet){
           let task = {...data.payload.doc.data()}
           task.id = data.payload.doc.id
+          // task.progress = task.activities.filter(e=>{return e.status}).length / task.activities.length;
+          // if(task.status == 'todo')
+          //   tasks.todo.push(task)
 
-          if(task.status == 'todo')
-            tasks.todo.push(task)
+          // else if(task.status == 'doing')
+          //   tasks.doing.push(task)
 
-          else if(task.status == 'doing')
-            tasks.doing.push(task)
-
-          else if(task.status == 'done')
-            tasks.done.push(task)
+          // else if(task.status == 'done')
+          //   tasks.done.push(task)
+            tasks.push(task)
         }
         
-        // this.tasks = tasks
-        this.todo = tasks.todo
-        this.doing = tasks.doing
-        this.done = tasks.done
+        this.tasks = tasks
+        // this.todo = tasks.todo
+        // this.doing = tasks.doing
+        // this.done = tasks.done
         console.log("this.tasks", tasks)
       }
     )
@@ -66,20 +69,27 @@ export class TaskService {
     return this.tasks
   }
 
-  createNewTask(taskName : string, department:string){
-     if(!taskName)
+  createNewTask(task: objects.Task){
+     if(!task.name)
        return
-    else if(taskName.length <= 0)
+    else if(task.name.length <= 0)
       return
-    let task = new objects.Task(taskName, department)
 
     console.log("[Added Task]", task)
-    this.tasksCollection.add({...task})
+
+    return new Promise((resolve,reject)=>{
+      this.tasksCollection.add({...task}).then((res)=>{
+        resolve()
+      }).catch((err)=>{
+        reject()
+        console.log("err", err)
+      })
+    })
      
   }
 
 
-  addActivityToTask(task, description){
+  addActivityToTask(task:objects.Task, description){
     return new Promise((resolve,reject)=>{
       console.log("[addActivityToTask]", task)
       let newAct = new objects.Activity(description)
@@ -94,14 +104,18 @@ export class TaskService {
 
       if(!isDup){
         task.activities.push({...newAct})
-        this.tasksCollection.doc(task.id).update(task).then((res)=>{
+        if(task.id){
+          this.tasksCollection.doc(task.id).update(task).then((res)=>{
           resolve()
-        
-        }).catch((err)=>{
-          console.log(err)
-          reject()
+          }).catch((err)=>{
+             console.log('*addActivityToTask',err)
+             reject()
+          })
+        }
+        else{
+          reject();
+        }
 
-        })
       }
     })
      
@@ -114,6 +128,9 @@ export class TaskService {
 
   updateTask(task){
     console.log("[updateTask]", task)
+
+    if(!task.id) return;
+
     return this.tasksCollection.doc(task.id).update(task)
   }
 

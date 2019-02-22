@@ -44,3 +44,83 @@ html{
 body {
   min-height: 100%;
 }
+
+.gradient-bg{
+  background: rgb(249,57,60);
+  background: linear-gradient(0deg, rgba(249,57,60,1) 0%, rgba(255,220,121,1) 100%);
+  --background: rgb(249,57,60);
+  --background: linear-gradient(0deg, rgba(249,57,60,1) 0%, rgba(255,220,121,1) 100%);
+}
+
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 800px;
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+
+.main-container>*{
+  width: 100%;
+}
+
+.action-row ion-button{
+  --background: var(--ion-color-medium);
+}
+
+.red-bg{
+  background: var(--red);
+}
+.yellow-bg{
+  background: var(--yellow);
+}
+.green-bg{
+  background: var(--green);
+}
+.red{
+  color: var(--red);
+  --color: var(--red);
+}
+.yellow{
+  color: var(--yellow);
+  --color: var(--yellow);
+}
+.green{
+  color: var(--green);
+  --color: var(--green);
+}
+
+.status-bar-legend span{
+  padding: 6px;
+  margin-left: 12px;
+  font-weight: bold;
+}
+
+.status-bar-legend{
+  font-weight: bold;
+}
+
+
+#calendar  .fc-button-group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#calendar .fc-button-group>*{
+  margin-right: 50px;
+}
+
+#calendar button{
+  border: none;
+  background: none;
+}
+
+
+#calendar *{
+  max-height: 70vh;
+}

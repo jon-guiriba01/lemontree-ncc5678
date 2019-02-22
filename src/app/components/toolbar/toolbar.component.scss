@@ -12,3 +12,8 @@
 	flex-basis: 80%;
 }
 
+
+ion-button{
+	--background: var(--ion-color-light);
+	--color: var(--ion-color-dark);
+}

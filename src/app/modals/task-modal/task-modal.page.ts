@@ -13,7 +13,8 @@ export class TaskModalPage implements OnInit {
 
 	newActivityDescription
 	progress = 0
-	@Input() task: Task;
+  @Input() task: Task;
+	@Input() isCreateNew: boolean;
   constructor(
     private taskService: TaskService
     , private modalController: ModalController
@@ -22,10 +23,21 @@ export class TaskModalPage implements OnInit {
   }
 
   ngOnInit() {
-  	setTimeout(()=>{this.getProgress()}, 100)
+    this.getProgress()
+  }
+
+  onClickSaveBtn(){
+    this.taskService.createNewTask(this.task).then((res)=>{
+      this.modalController.dismiss();
+    }).catch((err)=>{
+      console.log("err", err)
+    })
   }
 
   onClickAddActivity(evt){
+    if(this.newActivityDescription.trim().length <= 0)
+      return
+
   	this.taskService.addActivityToTask(this.task, this.newActivityDescription).then((res)=>{
       this.getProgress()
     });
@@ -39,8 +51,8 @@ export class TaskModalPage implements OnInit {
   			activity.status = act.status
   		}
   	}
+    this.getProgress()
   	this.taskService.updateTask(this.task)
-  	this.getProgress()
   }
 
   inputWait;
@@ -73,8 +85,7 @@ export class TaskModalPage implements OnInit {
 
   deleteActivity(evt, act ){
   	console.log('delete' ,act)
-  	console.log('delete' ,act)
-  	this.task.activities = this.task.activities.filter(e=>{
+   	this.task.activities = this.task.activities.filter(e=>{
   		if(e.description != act.description)
   			return e
   	})
@@ -84,18 +95,12 @@ export class TaskModalPage implements OnInit {
   }
 
   getProgress(){
-  	let done = 0.00
-  	let max = this.task.activities.length
-
-  	for(let activity of this.task.activities){
-  		if(activity.status)
-  			done += 1.0
-  	}
-
-  	this.progress = (done/max)
-  	console.log("p ", this.progress)
-
-  	$('.progressbar').attr('value', this.progress)
-  	return this.progress 
+    this.task.progress = this.task.activities.filter(e=>{return e.status}).length / this.task.activities.length 
   }
+
+  updateTask(){
+    this.taskService.updateTask(this.task)
+  }
+
+
 }

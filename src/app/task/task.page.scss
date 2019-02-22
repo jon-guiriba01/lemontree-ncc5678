@@ -1,11 +1,12 @@
 .main-container{
-	padding-top: 50px;
 	width: 100%;
 	height: 90%;
 }
 
 .task-fab{
-  float: right;
+  position: fixed;
+  right: 45px;
+  --background: var(--ion-color-secondary);
 }
 
 .newtask-container{
@@ -42,10 +43,92 @@
 .filler{
   padding: 20px;
 }
-.task-header{
-  --background: var(--ion-color-secondary)
-}
+
 .task-card{
   --background: var(--ion-color-primary);
   --color: var(--ion-color-light);
+}
+
+ion-tab-bar ion-button{
+  --background: var(--ion-color-medium);
+}
+
+.tasks-group{
+  flex-grow: 1;
+  height: 100%;
+  padding-top: 40px;
+}
+
+.task-header{
+  --background: var(--ion-color-medium-tint);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--ion-color-light);
+  padding: 0;
+  padding-left: 16px;
+} 
+
+.task-edit-btn{
+  font-size: 22px;
+  color: var(--ion-color-light);
+}
+
+.task-content{
+  background: var(--ion-color-dark);
+  color: var(--ion-color-light);
+  padding-top: 12px;
+}
+
+.task-content *{
+  color: var(--ion-color-light);
+}
+
+.task-name{
+  --color: var(--ion-color-dark);
+  font-size: 16px;
+}
+.task-status{
+  --background: var(--ion-color-dark);
+}
+
+.task-progress{
+  --background: transparent;
+}
+.task-progress.red{
+  --progress-background: var(--red);
+}
+.task-progress.yellow{
+  --progress-background: var(--yellow);
+}
+.task-progress.green{
+  --progress-background: var(--green);
+}
+
+.tab-bar-icon{
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+
+.action-row ion-button.red-bg{
+  --background: var(--red);
+}
+
+.action-row ion-button.yellow-bg{
+  --background: var(--yellow);
+}
+
+.action-row ion-button.green-bg{
+  --background: var(--green);
+}
+
+.action-row ion-button.dark-bg{
+  --background: var(--ion-color-dark);
+}
+
+.status-bar-legend{
+  margin: 20px 0;
 }

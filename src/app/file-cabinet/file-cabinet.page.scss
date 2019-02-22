@@ -1,5 +1,36 @@
 .upload-fab{
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
+  position: fixed;
+  right: 45px;
+  bottom: 15px;
+  --background: var(--ion-color-secondary);
+
+}
+
+.download-btn{
+	--background: var(--green);
+}
+
+.delete-btn{
+	--background: var(--red);
+}
+
+.filter-row{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 18px;
+
+}
+
+.filter-select{
+	background: var(--blue);
+	color: var(--ion-color-light);
+	margin-left: 16px;
+	min-width: 140px;
+}
+
+.filter-icon{
+	width: 18px;
+	height: 18px;
+	margin-right: 8px;
 }

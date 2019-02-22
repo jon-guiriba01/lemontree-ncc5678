@@ -1,15 +1,21 @@
+import * as moment from 'moment';
+
 class Task {
 	id:string
 	name:string
-	deadline:Date
+	deadline:string=moment().format('DD-MM-YYYY')
 	activities:Array<Activity>=[]
 	status:string='todo'
 	group:string
+	author:string='anonymus'
+	progress:number=0.0
 
-	constructor(name:string, group:string){
+	constructor(name:string, group:string, deadline:string=moment().format('YYYY-MM-DD')){
 		this.name = name
 		this.group = group
+		this.deadline = deadline
 	}
+
 }
 
 class Activity{

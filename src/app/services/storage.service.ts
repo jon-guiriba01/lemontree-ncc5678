@@ -60,12 +60,16 @@ export class StorageService {
   }
 
   downloadFile(file){
-  	console.log('[downloadFile]', file)
-  	
+    console.log('[downloadFile]', file)
+    
     var tempLink = document.createElement('a');
     tempLink.href = file.downloadURL;
     tempLink.setAttribute('download', name);
     tempLink.click();
+  }
+
+  deleteFile(file){
+  	console.log('[deleteFile]', file)
   }
 
 }

@@ -1,30 +1,173 @@
 <ion-content padding style="padding-top: 30px;" forceOverscroll="false">
-	<ion-tabs>
-	  <ion-tab-bar slot="top">
-	    <ion-button  (click)="switchTab('marketing')">
-	      <ion-label>Marketing</ion-label>
-	    </ion-button>
-
-	    <ion-button (click)="switchTab('registration')">
-	      <ion-label>Registration</ion-label>
-	    </ion-button>
-
-	    <ion-button (click)="switchTab('operation')">
-	      <ion-label>Operation</ion-label>
-	    </ion-button>
-
-	    <ion-button (click)="switchTab('finance')">
-	      <ion-label>Finance</ion-label>
-	    </ion-button>
-
-	    <ion-button (click)="switchTab('events')">
-	      <ion-label>Events</ion-label>
-	    </ion-button>
-	  </ion-tab-bar>
-	</ion-tabs>
-
 	<div class="main-container">
+		<div class="action-group">
+			<div class='action-row'>
+				<img class='tab-bar-icon' src='assets/imgs/settings_icon.png'/>
+			  <ion-button
+	  			[ngClass]="[filter=='todo' ? 'yellow-bg' : '']"
+	  			(click)="filterTasks('todo')"
+  			>
+			    <ion-label>To-do</ion-label>
+			  </ion-button>
 
+			  <ion-button 
+	  			[ngClass]="[filter=='doing' ? 'yellow-bg' : '']"
+  				(click)="filterTasks('doing')"
+			  >
+			    <ion-label>Doing</ion-label>
+			  </ion-button>
+
+			  <ion-button 
+	  			[ngClass]="[filter=='done' ? 'yellow-bg' : '']"
+  				(click)="filterTasks('done')"
+			  >
+			    <ion-label>Done</ion-label>
+			  </ion-button>
+
+			  <ion-button 
+	  			[ngClass]="[filter=='showall' ? 'yellow-bg' : '']"
+  				(click)="filterTasks('showall')"
+			  >
+			    <ion-label>SHOW ALL</ion-label>
+			  </ion-button>
+			</div>
+
+			<div class='action-row'>
+				<img class='tab-bar-icon' src='assets/imgs/sort_icon.png'/>
+ 
+ 			  <ion-button 
+ 	  			[ngClass]="[selectedDepartment=='admin' ? 'dark-bg' : '']"
+   				(click)="selectDepartment('admin')"
+ 			  >
+			    <ion-label>Admin</ion-label>
+			  </ion-button>
+
+			 
+ 			  <ion-button 
+ 	  			[ngClass]="[selectedDepartment=='operations' ? 'dark-bg' : '']"
+   				(click)="selectDepartment('operations')"
+ 			  >		
+			    <ion-label>Operations</ion-label>
+			  </ion-button>
+			  
+			  <ion-button 
+	  			[ngClass]="[selectedDepartment=='marketing' ? 'dark-bg' : '']"
+  				(click)="selectDepartment('marketing')"
+			  >
+			    <ion-label>Marketing</ion-label>
+			  </ion-button>
+
+			  <ion-button 
+	  			[ngClass]="[selectedDepartment=='camps' ? 'dark-bg' : '']"
+  				(click)="selectDepartment('camps')"
+			  >
+			    <ion-label>Camps</ion-label>
+			  </ion-button>
+
+			  <ion-button 
+	  			[ngClass]="[selectedDepartment=='showall' ? 'dark-bg' : '']"
+  				(click)="selectDepartment('showall')"
+			  >
+			    <ion-label>SHOW ALL</ion-label>
+			  </ion-button>
+			</div>
+
+			<div class='action-row'>
+				<img class='tab-bar-icon' src='assets/imgs/sort2_icon.png'/>
+			  <ion-button 
+	  			[ngClass]="[selectedOrder=='date_asc' ? 'dark-bg' : '']"
+  				(click)="selectOrder('date_asc')"
+			  >
+			  	<ion-icon name="arrow-round-up"></ion-icon>
+			    <ion-label>Date</ion-label>
+			  </ion-button>
+
+			  <ion-button 
+	  			[ngClass]="[selectedOrder=='date_desc' ? 'dark-bg' : '']"
+  				(click)="selectOrder('date_desc')"
+			  >
+			  	<ion-icon name="arrow-round-down"></ion-icon>
+			    <ion-label>Date</ion-label>
+			  </ion-button>
+
+			  <ion-button 
+	  			[ngClass]="[selectedOrder=='alphabet_asc' ? 'dark-bg' : '']"
+  				(click)="selectOrder('alphabet_asc')"
+			  >
+			  	<ion-icon name="arrow-round-up"></ion-icon>
+			    <ion-label>A-Z</ion-label>
+			  </ion-button>
+
+			  <ion-button 
+	  			[ngClass]="[selectedOrder=='alphabet_desc' ? 'dark-bg' : '']"
+  				(click)="selectOrder('alphabet_desc')"
+			  >
+			  	<ion-icon name="arrow-round-down"></ion-icon>
+			    <ion-label>A-Z</ion-label>
+			  </ion-button>
+
+			</div>
+		</div>
+		<div class="tasks-group">
+
+			<div class="status-bar-legend">
+				Status Bar Legend: <span class='red-bg' >0-50%</span> <span class='yellow-bg'>51-99%</span> <span class='green-bg'>100%</span>
+			</div>
+			
+			<ion-card *ngFor='let task of taskService.tasks'>
+			  <ion-card-header class='task-header'>
+			    <ion-card-title class='task-name'>
+			    	{{task.name}}
+			    </ion-card-title>
+
+			    <ion-button fill='clear' (click)='onClickTask($event, task)'>
+			    	<ion-icon name='arrow-dropright' class='task-edit-btn'></ion-icon>
+			    </ion-button>
+			  </ion-card-header>
+			
+			  <ion-card-content class='task-content'>
+			    <ion-card-subtitle><b>DEADLINE:</b> {{task.deadline}}</ion-card-subtitle>
+			    <ion-card-subtitle><b>ADDED BY:</b> {{task.author}}</ion-card-subtitle>
+			    <ion-card-subtitle><b>IN-CHARGE:</b> {{task.group}}</ion-card-subtitle>
+			  	<div class='task-status'>
+			  		<h4>STATUS</h4>
+			  		<div class="progress-bar-row">
+			  			<ion-progress-bar 
+				  			style='height: 20px;' 
+				  			class="task-progress"
+				  			[ngClass]="
+				  			[
+				  				task.progress <= 0.5 ? 'red' : '', 
+				  				task.progress > 0.5 ? 'yellow' : '', 
+				  				task.progress == 1 ? 'green' : '' 
+				  			]
+				  			"
+				  			value="{{task.progress}}"></ion-progress-bar>
+			  		</div>
+			  	</div>
+			  </ion-card-content>
+			</ion-card>			
+		</div>
+
+	</div>
+
+	<ion-card class="newtask-container" *ngIf="showAddTaskView">
+		<ion-card-content>
+			<ion-item>
+				<ion-input type="text" [(ngModel)]="addTaskName"></ion-input>
+			</ion-item>
+			<div style="display: flex; justify-content: flex-end;">
+				<ion-button (click)='onClickAddTask($event)'>Add Task</ion-button>
+			</div>
+		</ion-card-content>
+	</ion-card>
+
+  <ion-fab-button size="small" class="task-fab" (click)='onClickAddTask($event)'>
+  	<ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-content>
+
+	<!-- 
 	<ion-grid>
 	  <ion-row no-padding class="matrix">
 	    <ion-col class='task-container' size="12">
@@ -95,24 +238,7 @@
         	</div>
 	      </ion-list>
 	    </ion-col>
-	
-	  </ion-row>
-	</ion-grid>
 
-	</div>
-
-	<ion-card class="newtask-container" *ngIf="showAddTaskView">
-		<ion-card-content>
-			<ion-item>
-				<ion-input type="text" [(ngModel)]="addTaskName"></ion-input>
-			</ion-item>
-			<div style="display: flex; justify-content: flex-end;">
-				<ion-button (click)='onClickAddTask($event)'>Add Task</ion-button>
-			</div>
-		</ion-card-content>
-	</ion-card>
-
-  <ion-fab-button size="small" class="task-fab" (click)="addTask()">
-  	<ion-icon name="add-circle-outline"></ion-icon>
-  </ion-fab-button>
-</ion-content>
+	     </ion-row>
+	   </ion-grid>
+	 -->

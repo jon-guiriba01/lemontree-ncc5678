@@ -1,22 +1,99 @@
-ion-content{
-}
-.main-container{
+.wrapper{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 100%;
+}
+.main-container{
+	display: flex;
+  flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
   height: 800px;
+	min-width: 230px;
+	max-width: 900px;
 }
 
-.container1{
-	padding-left: 30px;
-	padding-right: 30px;
-	min-width: 600px;
-	max-width: 900px;
-
+.login-inputs{
+	width: 100%;
 }
 
 .login-btns{
-	padding-top: 40px;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.logo-container{
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.logo{
+	max-width: 350px;
+	max-height: 220px;
+}
+
+.ncc-logo{
+	display: flex;
+	justify-content: center;
+}
+
+.login-container{
+
+}
+
+input[name='email']{
+
+}
+
+input{
+	margin-bottom: 25px;
+	border: 3px solid var(--ion-color-secondary-tint);
+	border-radius: 4px;
+	width: 100%;
+	padding: 8px;
+	background: transparent;
+}
+
+::placeholder {
+   color: #fff;
+   text-align: center;
+}
+
+.login-signup{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
+
+.login-btn {
+	display: flex;
+	justify-content: space-between;
+	flex-grow: 1;
+  font-weight: bold;
+}
+
+.signup-btn{
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 15px;
+  color: var(--ion-color-light);
+  font-weight: bold;
+	flex-grow: 1;
+}
+
+.google-login-btn{
+	width: 100%;
+	color: var(--ion-color-light);
+	text-align: center;
+	cursor: pointer;
+	font-size: 25px;
+}
+
+.google-login-btn .google-icon{
+	vertical-align: middle;
+	font-size: 30px;
 }

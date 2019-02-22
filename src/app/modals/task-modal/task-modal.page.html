@@ -3,7 +3,7 @@
     <ion-title>
     	<div class="modal-header">
     		<ion-input type='text' [(ngModel)]='task.name' (ionChange)='onInputTaskName()'></ion-input>
-    		<ion-button (click)='onClickDelete($event)' fill='clear'>
+    		<ion-button *ngIf="!isCreateNew" (click)='onClickDelete($event)' fill='clear'>
     			<ion-icon name='trash'></ion-icon>
     		</ion-button>
     	</div>
@@ -12,38 +12,45 @@
 </ion-header>
 
 <ion-content padding style="position: relative;">
-
-
-	<ion-list>
-		<ion-item  *ngFor='let activity of task.activities' >
-			<div class="activity-item" (press)="deleteActivity($event, activity)" >
-				<ion-input type='text' [(ngModel)]='activity.description' (ionChange)='onInputActivityDescription()'></ion-input>
-				<div>
-					<ion-checkbox color='primary'  [(ngModel)]='activity.status' (ionChange)="onClickActivityStatus(activity)"></ion-checkbox>
-							
-			<!-- 		<ion-button (click)='more($event)' fill='clear'>
-						<ion-icon name="more"><
-					</ion-button> -->
-				</div>
-			</div>
-	
-		</ion-item>
-
-
 		<ion-item>
-			<ion-input 
-			type='text' 
-			[(ngModel)]='newActivityDescription' 
-			placeholder='Add new activity'
-			></ion-input>
-
-			<ion-button (click)='onClickAddActivity($event)' fill='clear'>
-				<ion-icon name='add'></ion-icon>
-			</ion-button>
-
+			<ion-label>Deadline:</ion-label> 
+			<ion-datetime display-format="DD-MM-YYYY" [(ngModel)]="task.deadline" (ionChange)='updateTask()'></ion-datetime>
+			
 		</ion-item>
 
-	</ion-list>
+		<ion-list>
+			<ion-item  *ngFor='let activity of task.activities' >
 
-	<ion-progress-bar class="progressbar" value='0'></ion-progress-bar>
+				<ion-icon name='close' class='delete-activity-btn' (click)="deleteActivity($event, activity)" ></ion-icon>
+				<div class="activity-item" (press)="deleteActivity($event, activity)" >
+					<ion-input type='text' [(ngModel)]='activity.description' (ionChange)='onInputActivityDescription()'></ion-input>
+					<div>
+						<ion-checkbox color='primary'  [(ngModel)]='activity.status' (ionChange)="onClickActivityStatus(activity)"></ion-checkbox>
+					</div>
+				</div>
+		
+			</ion-item>
+
+
+			<ion-item>
+				<ion-input 
+				type='text' 
+				[(ngModel)]='newActivityDescription' 
+				placeholder='Add new activity'
+				></ion-input>
+
+				<ion-button (click)='onClickAddActivity($event)' fill='clear'>
+					<ion-icon name='add'></ion-icon>
+				</ion-button>
+
+			</ion-item>
+
+		</ion-list>
+
+		<div class='action-row'>
+			<ion-button *ngIf="isCreateNew" class='save-btn' (click)='onClickSaveBtn($event)'>
+				Save
+			</ion-button>
+		</div>
+		
 </ion-content>

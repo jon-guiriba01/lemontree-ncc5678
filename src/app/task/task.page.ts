@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage';
 import { DragulaService } from 'ng2-dragula';
 import { ToastController } from '@ionic/angular';
 import { SearchService } from '../services/search.service';
+import * as objects from '../../models/app-objects'
 
 @Component({
   selector: 'app-task',
@@ -15,31 +16,13 @@ import { SearchService } from '../services/search.service';
 })
 export class TaskPage implements OnInit {
   
-  q1 = [
-    { value: 'Buy Milk', color: 'primary' },
-    { value: 'Write new Post', color: 'primary' }
-  ];
-  q2 = [
-    { value: 'Schedule newsletter', color: 'secondary' },
-    { value: 'Find new Ionic Academy topics', color: 'secondary' }
-  ];
-  q3 = [
-    { value: 'Improve page performance', color: 'tertiary' },
-    { value: 'Clean the house', color: 'tertiary' }
-  ];
-  q4 = [
-    { value: 'Unimportant things', color: 'warning' },
-    { value: 'Watch Netflix', color: 'warning' }
-  ];
-  
-  todo = { value: '', color: '' };
-  selectedQuadrant = 'q1';
-
   addTaskName
-  department = 'marketing'
   showAddTaskView = false
 
   prevDragged
+  filter = 'showall'
+  selectedDepartment = 'showall'
+  selectedOrder = 'date_asc'
 
   constructor(
     public taskService: TaskService
@@ -61,7 +44,7 @@ export class TaskPage implements OnInit {
     }).drake
 
     this.storage.get('department').then((res)=>{
-        this.department = res || 'marketing'
+        this.selectedDepartment = res || 'marketing'
     })
   }
 
@@ -71,10 +54,6 @@ export class TaskPage implements OnInit {
     if(this.prevDragged.status == status)
       return;
     setTimeout((res)=>{
-       console.log('-test', evt)
-       console.log('-test', status)
-
-       console.log('-testxxx', this.prevDragged)
        let prevDrag = this.prevDragged
        prevDrag.status = status
        this.taskService.updateTask(prevDrag)
@@ -87,28 +66,46 @@ export class TaskPage implements OnInit {
 
   switchTab(tab){
     this.storage.set('department', tab)
-    this.department = tab;
+    this.selectedDepartment = tab;
 	}
 
-  createNewTask(taskName, department){
-    this.taskService.createNewTask(taskName, department)
-  }
 
-  onClickAddTask(evt){
-    this.showAddTaskView = !this.showAddTaskView
-    this.createNewTask(this.addTaskName, this.department)
-  }
+  // onClickAddTask(evt){
+  //   this.showAddTaskView = !this.showAddTaskView
+  //   this.createNewTask(this.addTaskName, this.department)
+  // }
 
+  async onClickAddTask(evt){
+    console.log('[onClickTask]')
+      const modal = await this.modalController.create({
+        component: TaskModalPage,
+        componentProps: {
+         task: new objects.Task('New Task Title', this.selectedDepartment)
+         , isCreateNew: true
+         }
+      });
+      return await modal.present();
+   }
   async onClickTask(evt, task){
     console.log('[onClickTask]', task)
       const modal = await this.modalController.create({
         component: TaskModalPage,
         componentProps: { task: task }
       });
-      return await modal.present();
-   }
 
+      await modal.present();
+
+   }
    addTask(){
      this.showAddTaskView = !this.showAddTaskView
    }
+
+   filterTasks(filter){
+     this.filter = filter
+   }
+
+   selectDepartment(selectedDepartment){
+     this.selectedDepartment = selectedDepartment
+   }
+
 }

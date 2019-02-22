@@ -13,3 +13,40 @@
 	position: absolute;
 	bottom: 5px;
 }
+
+.action-row{
+	position: absolute;
+	bottom: 5px;
+	display: flex;
+	justify-content: flex-end;
+  width: 570px;
+}
+
+.save-btn{
+	--background: var(--ion-color-light);
+	--color: var(--ion-color-dark);
+}
+
+.delete-activity-btn{
+	z-index: 9999;
+	cursor: pointer;
+	margin-right: 20px;
+	color: var(--ion-color-secondary);
+}
+
+ion-toolbar{
+	--background: var(--ion-color-medium-tint);
+}
+
+ion-content{
+	--background: var(--ion-color-dark);
+	background: var(--ion-color-dark);
+}
+
+ion-item, ion-list{
+	--background: transparent;
+	background: transparent;
+	--color: var(--ion-color-light);
+	color: var(--ion-color-light);
+}
+
