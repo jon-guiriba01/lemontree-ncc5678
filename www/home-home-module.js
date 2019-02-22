@@ -51,7 +51,7 @@ var ComponentsModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"app-toolbar\">\n\t<ion-button (click)='btnMenuClickEvent()'>\n\t  <ion-icon name=\"menu\"></ion-icon>\n\t</ion-button>\n\t<ion-searchbar></ion-searchbar>\n</div>\n"
+module.exports = "<div class=\"app-toolbar\">\n\t<ion-button (click)='btnMenuClickEvent()'>\n\t  <ion-icon name=\"menu\"></ion-icon>\n\t</ion-button>\n\t<ion-searchbar\n\t animated \n\t (ionChange)='onChangeSearch($event)'></ion-searchbar>\n</div>\n"
 
 /***/ }),
 
@@ -62,7 +62,7 @@ module.exports = "<div class=\"app-toolbar\">\n\t<ion-button (click)='btnMenuCli
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".app-toolbar {\n  display: flex;\n  justify-content: center; }\n\n.app-toolbar > ion-button {\n  flex-basis: 10%;\n  min-width: 50px; }\n\n.app-toolbar > ion-searchbar {\n  flex-basis: 80%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy90b29sYmFyL0M6XFxVc2Vyc1xcSm9uXFxQcm9qZWN0c1xcZnJlZWxhbmNlLTEvc3JjXFxhcHBcXGNvbXBvbmVudHNcXHRvb2xiYXJcXHRvb2xiYXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDQyxhQUFhO0VBQ2IsdUJBQXVCLEVBQUE7O0FBR3hCO0VBQ0MsZUFBZTtFQUNmLGVBQWUsRUFBQTs7QUFHaEI7RUFDQyxlQUFlLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3Rvb2xiYXIvdG9vbGJhci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hcHAtdG9vbGJhcntcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG59XHJcblxyXG4uYXBwLXRvb2xiYXI+aW9uLWJ1dHRvbntcclxuXHRmbGV4LWJhc2lzOiAxMCU7XHJcblx0bWluLXdpZHRoOiA1MHB4O1xyXG59XHJcblxyXG4uYXBwLXRvb2xiYXI+aW9uLXNlYXJjaGJhcntcclxuXHRmbGV4LWJhc2lzOiA4MCU7XHJcbn1cclxuXHJcbiJdfQ== */"
+module.exports = ".app-toolbar {\n  display: flex;\n  justify-content: center; }\n\n.app-toolbar > ion-button {\n  flex-basis: 10%;\n  min-width: 50px; }\n\n.app-toolbar > ion-searchbar {\n  flex-basis: 80%; }\n\nion-button {\n  --background: var(--ion-color-light);\n  --color: var(--ion-color-dark); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy90b29sYmFyL0M6XFxVc2Vyc1xcSm9uXFxQcm9qZWN0c1xcRExTVS1OQ0MtNTY3OC1mcmVlbGFuY2Uvc3JjXFxhcHBcXGNvbXBvbmVudHNcXHRvb2xiYXJcXHRvb2xiYXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDQyxhQUFhO0VBQ2IsdUJBQXVCLEVBQUE7O0FBR3hCO0VBQ0MsZUFBZTtFQUNmLGVBQWUsRUFBQTs7QUFHaEI7RUFDQyxlQUFlLEVBQUE7O0FBSWhCO0VBQ0Msb0NBQWE7RUFDYiw4QkFBUSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy90b29sYmFyL3Rvb2xiYXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYXBwLXRvb2xiYXJ7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuLmFwcC10b29sYmFyPmlvbi1idXR0b257XHJcblx0ZmxleC1iYXNpczogMTAlO1xyXG5cdG1pbi13aWR0aDogNTBweDtcclxufVxyXG5cclxuLmFwcC10b29sYmFyPmlvbi1zZWFyY2hiYXJ7XHJcblx0ZmxleC1iYXNpczogODAlO1xyXG59XHJcblxyXG5cclxuaW9uLWJ1dHRvbntcclxuXHQtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XHJcblx0LS1jb2xvcjogdmFyKC0taW9uLWNvbG9yLWRhcmspO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -78,6 +78,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToolbarComponent", function() { return ToolbarComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _services_search_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/search.service */ "./src/app/services/search.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -89,14 +90,25 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var ToolbarComponent = /** @class */ (function () {
-    function ToolbarComponent(events) {
+    function ToolbarComponent(events, searchService) {
         this.events = events;
+        this.searchService = searchService;
     }
     ToolbarComponent.prototype.ngOnInit = function () {
     };
     ToolbarComponent.prototype.btnMenuClickEvent = function () {
         this.events.publish("btnclick:menu", true);
+    };
+    ToolbarComponent.prototype.onChangeSearch = function (evt) {
+        var _this = this;
+        console.log(1, evt);
+        if (this.timeout)
+            clearTimeout(this.timeout);
+        setTimeout(function () {
+            _this.searchService.searchInput = evt.detail.value;
+        }, 500);
     };
     ToolbarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -104,7 +116,8 @@ var ToolbarComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./toolbar.component.html */ "./src/app/components/toolbar/toolbar.component.html"),
             styles: [__webpack_require__(/*! ./toolbar.component.scss */ "./src/app/components/toolbar/toolbar.component.scss")]
         }),
-        __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["Events"]])
+        __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["Events"],
+            _services_search_service__WEBPACK_IMPORTED_MODULE_2__["SearchService"]])
     ], ToolbarComponent);
     return ToolbarComponent;
 }());
@@ -183,7 +196,7 @@ var HomePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<app-toolbar></app-toolbar> \n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding id=\"main\">\n\n\t<ion-tabs>\n\t  <ion-tab-bar slot=\"top\">\n\t    <ion-tab-button tab=\"calendar\">\n\t      <ion-icon name=\"calendar\"></ion-icon>\n\t      <ion-label>Calendar</ion-label>\n\t      <ion-badge>6</ion-badge>\n\t    </ion-tab-button>\n\n\t    <ion-tab-button tab=\"task\">\n\t      <ion-icon name=\"build\"></ion-icon>\n\t      <ion-label>Tasks</ion-label>\n\t    </ion-tab-button>\n\n\t    <ion-tab-button tab=\"file-cabinet\">\n\t      <ion-icon name=\"filing\"></ion-icon>\n\t      <ion-label>File Cabinet</ion-label>\n\t    </ion-tab-button>\n\t  </ion-tab-bar>\n\t</ion-tabs>\n    \n</ion-content>\n\n<ion-menu side=\"start\" menuId=\"main\" content-id=\"main\">\n  <ion-content>\n  \t<ion-avatar class=\"settings-avatar\">\n\t\t  <img src=\"../assets/hayley.png\"/>\n\t\t</ion-avatar>\n    <ion-list>\n      <ion-item style=\"z-index: 9999;\" (click)=\"navTo('/settings')\">Settings</ion-item>\n      <ion-item style=\"z-index: 9999;\" (click)=\"navTo('/profile')\">Profile</ion-item>\n      <ion-item style=\"z-index: 9999;\" (click)=\"logout()\">Logout</ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<app-toolbar></app-toolbar> \n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding id=\"main\">\n\n\t<ion-tabs>\n\t  <ion-tab-bar slot=\"bottom\">\n\t    <ion-tab-button tab=\"task\">\n\t      <ion-icon name=\"clipboard\"></ion-icon>\n\t      <!-- <ion-label>Tasks</ion-label> -->\n\t    </ion-tab-button>\n\n\t    <ion-tab-button tab=\"file-cabinet\">\n\t      <ion-icon name=\"filing\"></ion-icon>\n\t      <!-- <ion-label>File Cabinet</ion-label> -->\n\t    </ion-tab-button>\n\t    \n\t    <ion-tab-button tab=\"calendar\">\n\t      <ion-icon name=\"calendar\"></ion-icon>\n\t      <!-- <ion-label>Calendar</ion-label> -->\n\t      <!-- <ion-badge>6</ion-badge> -->\n\t    </ion-tab-button>\n\n\t  </ion-tab-bar>\n\t</ion-tabs>\n    \n</ion-content>\n\n<ion-menu side=\"start\" menuId=\"main\" content-id=\"main\">\n  <ion-content>\n  \t<ion-avatar class=\"settings-avatar\">\n\t\t  <img src=\"../assets/hayley.png\"/>\n\t\t</ion-avatar>\n    <ion-list>\n      <ion-item style=\"z-index: 9999;\" (click)=\"navTo('/settings')\">Settings</ion-item>\n      <ion-item style=\"z-index: 9999;\" (click)=\"navTo('/profile')\">Profile</ion-item>\n      <ion-item style=\"z-index: 9999;\" (click)=\"logout()\">Logout</ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n"
 
 /***/ }),
 
@@ -194,7 +207,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<app-too
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".settings-avatar {\n  margin: auto; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXGZyZWVsYW5jZS0xL3NyY1xcYXBwXFxob21lXFxob21lLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDLFlBQVksRUFBQSIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2V0dGluZ3MtYXZhdGFye1xuXHRtYXJnaW46IGF1dG87XG59XG4iXX0= */"
+module.exports = ".settings-avatar {\n  margin: auto; }\n\nion-toolbar {\n  --background: var(--ion-color-primary); }\n\nion-tab-bar {\n  --background: var(--ion-color-primary);\n  --color: var(--ion-color-light); }\n\nion-tab-button.tab-selected {\n  color: var(--ion-color-secondary);\n  --color-selected: var(--ion-color-secondary); }\n\nion-tab-button {\n  --color-selected: var(--ion-color-light); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXERMU1UtTkNDLTU2NzgtZnJlZWxhbmNlL3NyY1xcYXBwXFxob21lXFxob21lLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDLFlBQVksRUFBQTs7QUFHYjtFQUNDLHNDQUFhLEVBQUE7O0FBR2Q7RUFDQyxzQ0FBYTtFQUNiLCtCQUFRLEVBQUE7O0FBR1Q7RUFDQyxpQ0FBaUM7RUFDakMsNENBQWlCLEVBQUE7O0FBRWxCO0VBQ0Msd0NBQWlCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNldHRpbmdzLWF2YXRhcntcblx0bWFyZ2luOiBhdXRvO1xufVxuXG5pb24tdG9vbGJhcntcblx0LS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XG59XG5cbmlvbi10YWItYmFye1xuXHQtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcblx0LS1jb2xvcjogdmFyKC0taW9uLWNvbG9yLWxpZ2h0KTtcbn1cblxuaW9uLXRhYi1idXR0b24udGFiLXNlbGVjdGVke1xuXHRjb2xvcjogdmFyKC0taW9uLWNvbG9yLXNlY29uZGFyeSk7XG5cdC0tY29sb3Itc2VsZWN0ZWQ6IHZhcigtLWlvbi1jb2xvci1zZWNvbmRhcnkpO1xufVxuaW9uLXRhYi1idXR0b257XG5cdC0tY29sb3Itc2VsZWN0ZWQ6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -211,6 +224,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_search_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/search.service */ "./src/app/services/search.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -259,11 +273,13 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
 var HomePage = /** @class */ (function () {
-    function HomePage(menu, events, router) {
+    function HomePage(menu, events, router, searchService) {
         this.menu = menu;
         this.events = events;
         this.router = router;
+        this.searchService = searchService;
         this.initMenu();
     }
     HomePage.prototype.initMenu = function () {
@@ -294,7 +310,8 @@ var HomePage = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["MenuController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["Events"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _services_search_service__WEBPACK_IMPORTED_MODULE_3__["SearchService"]])
     ], HomePage);
     return HomePage;
 }());
@@ -327,7 +344,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var routes = [
     {
-        path: 'home',
+        path: '',
         component: _home_page__WEBPACK_IMPORTED_MODULE_2__["HomePage"],
         children: [
             {

@@ -829,6 +829,293 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-SG": "./node_modules/moment/locale/en-SG.js",
+	"./en-SG.js": "./node_modules/moment/locale/en-SG.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./ga": "./node_modules/moment/locale/ga.js",
+	"./ga.js": "./node_modules/moment/locale/ga.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it-ch": "./node_modules/moment/locale/it-ch.js",
+	"./it-ch.js": "./node_modules/moment/locale/it-ch.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku.js": "./node_modules/moment/locale/ku.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /*!**********************************************************!*\
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
@@ -839,31 +1126,48 @@ module.exports = webpackAsyncContext;
 var map = {
 	"../calendar/calendar.module": [
 		"./src/app/calendar/calendar.module.ts",
+		"default~calendar-calendar-module~file-cabinet-file-cabinet-module",
+		"common",
 		"calendar-calendar-module"
 	],
 	"../file-cabinet/file-cabinet.module": [
 		"./src/app/file-cabinet/file-cabinet.module.ts",
+		"default~calendar-calendar-module~file-cabinet-file-cabinet-module",
+		"common",
 		"file-cabinet-file-cabinet-module"
 	],
 	"../task/task.module": [
 		"./src/app/task/task.module.ts",
+		"common",
 		"task-task-module"
 	],
 	"./calendar/calendar.module": [
 		"./src/app/calendar/calendar.module.ts",
+		"default~calendar-calendar-module~file-cabinet-file-cabinet-module",
+		"common",
 		"calendar-calendar-module"
 	],
 	"./file-cabinet/file-cabinet.module": [
 		"./src/app/file-cabinet/file-cabinet.module.ts",
+		"default~calendar-calendar-module~file-cabinet-file-cabinet-module",
+		"common",
 		"file-cabinet-file-cabinet-module"
 	],
 	"./home/home.module": [
 		"./src/app/home/home.module.ts",
+		"common",
 		"home-home-module"
 	],
 	"./login/login.module": [
 		"./src/app/login/login.module.ts",
+		"common",
 		"login-login-module"
+	],
+	"./modals/add-event/add-event.module": [
+		"./src/app/modals/add-event/add-event.module.ts"
+	],
+	"./modals/task-modal/task-modal.module": [
+		"./src/app/modals/task-modal/task-modal.module.ts"
 	],
 	"./profile/profile.module": [
 		"./src/app/profile/profile.module.ts",
@@ -879,7 +1183,12 @@ var map = {
 	],
 	"./task/task.module": [
 		"./src/app/task/task.module.ts",
+		"common",
 		"task-task-module"
+	],
+	"./test/test.module": [
+		"./src/app/test/test.module.ts",
+		"test-test-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -891,7 +1200,7 @@ function webpackAsyncContext(req) {
 			throw e;
 		});
 	}
-	return __webpack_require__.e(ids[1]).then(function() {
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
 		var id = ids[0];
 		return __webpack_require__(id);
 	});
@@ -925,8 +1234,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var routes = [
-    // { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: '', loadChildren: './home/home.module#HomePageModule' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: 'home', loadChildren: './home/home.module#HomePageModule' },
     { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
     { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
     { path: 'task', loadChildren: './task/task.module#TaskPageModule' },
@@ -934,6 +1243,9 @@ var routes = [
     { path: 'file-cabinet', loadChildren: './file-cabinet/file-cabinet.module#FileCabinetPageModule' },
     { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
     { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' },
+    { path: 'task-modal', loadChildren: './modals/task-modal/task-modal.module#TaskModalPageModule' },
+    { path: 'add-event', loadChildren: './modals/add-event/add-event.module#AddEventPageModule' },
+    { path: 'test', loadChildren: './test/test.module#TestPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -976,6 +1288,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/util.service */ "./src/app/services/util.service.ts");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -989,11 +1303,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent(platform, splashScreen, statusBar) {
+    function AppComponent(platform, splashScreen, statusBar, util, storage) {
         this.platform = platform;
         this.splashScreen = splashScreen;
         this.statusBar = statusBar;
+        this.util = util;
+        this.storage = storage;
         this.initializeApp();
     }
     AppComponent.prototype.initializeApp = function () {
@@ -1001,6 +1319,12 @@ var AppComponent = /** @class */ (function () {
         this.platform.ready().then(function () {
             _this.statusBar.styleDefault();
             _this.splashScreen.hide();
+            _this.storage.get('tasks').then(function (res) {
+                if (!res) {
+                    var tasks = [];
+                    _this.storage.set('tasks', tasks);
+                }
+            });
         });
     };
     AppComponent = __decorate([
@@ -1010,7 +1334,9 @@ var AppComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["Platform"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_2__["SplashScreen"],
-            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_3__["StatusBar"]])
+            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_3__["StatusBar"],
+            _services_util_service__WEBPACK_IMPORTED_MODULE_4__["UtilService"],
+            _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -1041,9 +1367,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_native_storage_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/native-storage/ngx */ "./node_modules/@ionic-native/native-storage/ngx/index.js");
 /* harmony import */ var _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/google-plus/ngx */ "./node_modules/@ionic-native/google-plus/ngx/index.js");
 /* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
-/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../config */ "./src/config.ts");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+/* harmony import */ var _angular_fire_storage__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/fire/storage */ "./node_modules/@angular/fire/storage/index.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../config */ "./src/config.ts");
+/* harmony import */ var _modals_task_modal_task_modal_page__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modals/task-modal/task-modal.page */ "./src/app/modals/task-modal/task-modal.page.ts");
+/* harmony import */ var _modals_add_event_add_event_page__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modals/add-event/add-event.page */ "./src/app/modals/add-event/add-event.page.ts");
+/* harmony import */ var _modals_task_modal_task_modal_module__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modals/task-modal/task-modal.module */ "./src/app/modals/task-modal/task-modal.module.ts");
+/* harmony import */ var _modals_add_event_add_event_module__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modals/add-event/add-event.module */ "./src/app/modals/add-event/add-event.module.ts");
+/* harmony import */ var ng2_dragula__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ng2-dragula */ "./node_modules/ng2-dragula/dist/fesm5/ng2-dragula.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1065,21 +1398,33 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
-            entryComponents: [],
+            entryComponents: [_modals_task_modal_task_modal_page__WEBPACK_IMPORTED_MODULE_17__["TaskModalPage"], _modals_add_event_add_event_page__WEBPACK_IMPORTED_MODULE_18__["AddEventPage"]],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                ng2_dragula__WEBPACK_IMPORTED_MODULE_21__["DragulaModule"].forRoot(),
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"].forRoot(),
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
                 ionic2_calendar__WEBPACK_IMPORTED_MODULE_8__["NgCalendarModule"],
-                _angular_fire__WEBPACK_IMPORTED_MODULE_11__["AngularFireModule"].initializeApp(_config__WEBPACK_IMPORTED_MODULE_14__["firebase"]),
-                _angular_fire_auth__WEBPACK_IMPORTED_MODULE_12__["AngularFireAuthModule"],
-                _ionic_storage__WEBPACK_IMPORTED_MODULE_13__["IonicStorageModule"].forRoot()
+                _angular_fire__WEBPACK_IMPORTED_MODULE_11__["AngularFireModule"].initializeApp(_config__WEBPACK_IMPORTED_MODULE_16__["firebase"]),
+                _angular_fire_auth__WEBPACK_IMPORTED_MODULE_13__["AngularFireAuthModule"],
+                _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_12__["AngularFirestoreModule"].enablePersistence(),
+                _modals_task_modal_task_modal_module__WEBPACK_IMPORTED_MODULE_19__["TaskModalPageModule"],
+                _modals_add_event_add_event_module__WEBPACK_IMPORTED_MODULE_20__["AddEventPageModule"],
+                _angular_fire_storage__WEBPACK_IMPORTED_MODULE_14__["AngularFireStorageModule"],
+                _ionic_storage__WEBPACK_IMPORTED_MODULE_15__["IonicStorageModule"].forRoot()
             ],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"],
@@ -1099,16 +1444,649 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/modals/add-event/add-event.module.ts":
+/*!******************************************************!*\
+  !*** ./src/app/modals/add-event/add-event.module.ts ***!
+  \******************************************************/
+/*! exports provided: AddEventPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddEventPageModule", function() { return AddEventPageModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _add_event_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./add-event.page */ "./src/app/modals/add-event/add-event.page.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var routes = [
+    {
+        path: '',
+        component: _add_event_page__WEBPACK_IMPORTED_MODULE_5__["AddEventPage"]
+    }
+];
+var AddEventPageModule = /** @class */ (function () {
+    function AddEventPageModule() {
+    }
+    AddEventPageModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes)
+            ],
+            declarations: [_add_event_page__WEBPACK_IMPORTED_MODULE_5__["AddEventPage"]]
+        })
+    ], AddEventPageModule);
+    return AddEventPageModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modals/add-event/add-event.page.html":
+/*!******************************************************!*\
+  !*** ./src/app/modals/add-event/add-event.page.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>ADD EVENT</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\t<ion-item>\n\t\t<ion-label position=\"floating\">\n\t\t\tName\n\t\t</ion-label>\n\t\t<ion-input type='text' [(ngModel)]='name' > \n\t\t</ion-input>\n\t</ion-item>\n\t<ion-item>\n\t\t<ion-label position=\"floating\">\n\t\t\tDescription\n\t\t</ion-label>\n\t\t<ion-textarea  rows=\"6\"  [(ngModel)]='description'>\n\t\t</ion-textarea >\n\t</ion-item>\n\n\t<ion-button (click)='onClickAddEvent($event)'>\n\t\tSubmit\n\t</ion-button>\n</ion-content>\n"
+
+/***/ }),
+
+/***/ "./src/app/modals/add-event/add-event.page.scss":
+/*!******************************************************!*\
+  !*** ./src/app/modals/add-event/add-event.page.scss ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZGFscy9hZGQtZXZlbnQvYWRkLWV2ZW50LnBhZ2Uuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/modals/add-event/add-event.page.ts":
+/*!****************************************************!*\
+  !*** ./src/app/modals/add-event/add-event.page.ts ***!
+  \****************************************************/
+/*! exports provided: AddEventPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddEventPage", function() { return AddEventPage; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_events_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/events.service */ "./src/app/services/events.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AddEventPage = /** @class */ (function () {
+    function AddEventPage(eventService, events, modalController) {
+        this.eventService = eventService;
+        this.events = events;
+        this.modalController = modalController;
+    }
+    AddEventPage.prototype.ngOnInit = function () {
+    };
+    AddEventPage.prototype.onClickAddEvent = function (evt) {
+        var _this = this;
+        this.eventService.addEvent(this.name, this.description, this.date.format()).then(function () {
+            _this.events.publish('event:addSuccess');
+            _this.modalController.dismiss();
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], AddEventPage.prototype, "date", void 0);
+    AddEventPage = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-add-event',
+            template: __webpack_require__(/*! ./add-event.page.html */ "./src/app/modals/add-event/add-event.page.html"),
+            styles: [__webpack_require__(/*! ./add-event.page.scss */ "./src/app/modals/add-event/add-event.page.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_events_service__WEBPACK_IMPORTED_MODULE_1__["EventsService"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"]])
+    ], AddEventPage);
+    return AddEventPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modals/task-modal/task-modal.module.ts":
+/*!********************************************************!*\
+  !*** ./src/app/modals/task-modal/task-modal.module.ts ***!
+  \********************************************************/
+/*! exports provided: TaskModalPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskModalPageModule", function() { return TaskModalPageModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _task_modal_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./task-modal.page */ "./src/app/modals/task-modal/task-modal.page.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var routes = [
+    {
+        path: '',
+        component: _task_modal_page__WEBPACK_IMPORTED_MODULE_5__["TaskModalPage"]
+    }
+];
+var TaskModalPageModule = /** @class */ (function () {
+    function TaskModalPageModule() {
+    }
+    TaskModalPageModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes)
+            ],
+            declarations: [_task_modal_page__WEBPACK_IMPORTED_MODULE_5__["TaskModalPage"]]
+        })
+    ], TaskModalPageModule);
+    return TaskModalPageModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modals/task-modal/task-modal.page.html":
+/*!********************************************************!*\
+  !*** ./src/app/modals/task-modal/task-modal.page.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<div class=\"modal-header\">\n    \t\t<ion-input type='text' [(ngModel)]='task.name' (ionChange)='onInputTaskName()'></ion-input>\n    \t\t<ion-button *ngIf=\"!isCreateNew\" (click)='onClickDelete($event)' fill='clear'>\n    \t\t\t<ion-icon name='trash'></ion-icon>\n    \t\t</ion-button>\n    \t</div>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding style=\"position: relative;\">\n\t\t<ion-item>\n\t\t\t<ion-label>Deadline:</ion-label> \n\t\t\t<ion-datetime display-format=\"DD-MM-YYYY\" [(ngModel)]=\"task.deadline\" (ionChange)='updateTask()'></ion-datetime>\n\t\t\t\n\t\t</ion-item>\n\n\t\t<ion-list>\n\t\t\t<ion-item  *ngFor='let activity of task.activities' >\n\n\t\t\t\t<ion-icon name='close' class='delete-activity-btn' (click)=\"deleteActivity($event, activity)\" ></ion-icon>\n\t\t\t\t<div class=\"activity-item\" (press)=\"deleteActivity($event, activity)\" >\n\t\t\t\t\t<ion-input type='text' [(ngModel)]='activity.description' (ionChange)='onInputActivityDescription()'></ion-input>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<ion-checkbox color='primary'  [(ngModel)]='activity.status' (ionChange)=\"onClickActivityStatus(activity)\"></ion-checkbox>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\n\t\t\t</ion-item>\n\n\n\t\t\t<ion-item>\n\t\t\t\t<ion-input \n\t\t\t\ttype='text' \n\t\t\t\t[(ngModel)]='newActivityDescription' \n\t\t\t\tplaceholder='Add new activity'\n\t\t\t\t></ion-input>\n\n\t\t\t\t<ion-button (click)='onClickAddActivity($event)' fill='clear'>\n\t\t\t\t\t<ion-icon name='add'></ion-icon>\n\t\t\t\t</ion-button>\n\n\t\t\t</ion-item>\n\n\t\t</ion-list>\n\n\t\t<div class='action-row'>\n\t\t\t<ion-button *ngIf=\"isCreateNew\" class='save-btn' (click)='onClickSaveBtn($event)'>\n\t\t\t\tSave\n\t\t\t</ion-button>\n\t\t</div>\n\t\t\n</ion-content>\n"
+
+/***/ }),
+
+/***/ "./src/app/modals/task-modal/task-modal.page.scss":
+/*!********************************************************!*\
+  !*** ./src/app/modals/task-modal/task-modal.page.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".activity-item {\n  display: flex;\n  justify-content: space-between;\n  width: 100%; }\n\n.modal-header {\n  display: flex;\n  justify-content: space-between; }\n\n.progressbar {\n  position: absolute;\n  bottom: 5px; }\n\n.action-row {\n  position: absolute;\n  bottom: 5px;\n  display: flex;\n  justify-content: flex-end;\n  width: 570px; }\n\n.save-btn {\n  --background: var(--ion-color-light);\n  --color: var(--ion-color-dark); }\n\n.delete-activity-btn {\n  z-index: 9999;\n  cursor: pointer;\n  margin-right: 20px;\n  color: var(--ion-color-secondary); }\n\nion-toolbar {\n  --background: var(--ion-color-medium-tint); }\n\nion-content {\n  --background: var(--ion-color-dark);\n  background: var(--ion-color-dark); }\n\nion-item, ion-list {\n  --background: transparent;\n  background: transparent;\n  --color: var(--ion-color-light);\n  color: var(--ion-color-light); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL3Rhc2stbW9kYWwvQzpcXFVzZXJzXFxKb25cXFByb2plY3RzXFxETFNVLU5DQy01Njc4LWZyZWVsYW5jZS9zcmNcXGFwcFxcbW9kYWxzXFx0YXNrLW1vZGFsXFx0YXNrLW1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDLGFBQWE7RUFDYiw4QkFBOEI7RUFDOUIsV0FBVyxFQUFBOztBQUdaO0VBQ0MsYUFBYTtFQUNiLDhCQUE4QixFQUFBOztBQUcvQjtFQUNDLGtCQUFrQjtFQUNsQixXQUFXLEVBQUE7O0FBR1o7RUFDQyxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGFBQWE7RUFDYix5QkFBeUI7RUFDeEIsWUFBWSxFQUFBOztBQUdkO0VBQ0Msb0NBQWE7RUFDYiw4QkFBUSxFQUFBOztBQUdUO0VBQ0MsYUFBYTtFQUNiLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsaUNBQWlDLEVBQUE7O0FBR2xDO0VBQ0MsMENBQWEsRUFBQTs7QUFHZDtFQUNDLG1DQUFhO0VBQ2IsaUNBQWlDLEVBQUE7O0FBR2xDO0VBQ0MseUJBQWE7RUFDYix1QkFBdUI7RUFDdkIsK0JBQVE7RUFDUiw2QkFBNkIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL21vZGFscy90YXNrLW1vZGFsL3Rhc2stbW9kYWwucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFjdGl2aXR5LWl0ZW17XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcblx0d2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5tb2RhbC1oZWFkZXJ7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbn1cclxuXHJcbi5wcm9ncmVzc2JhcntcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0Ym90dG9tOiA1cHg7XHJcbn1cclxuXHJcbi5hY3Rpb24tcm93e1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRib3R0b206IDVweDtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgd2lkdGg6IDU3MHB4O1xyXG59XHJcblxyXG4uc2F2ZS1idG57XHJcblx0LS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItbGlnaHQpO1xyXG5cdC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1kYXJrKTtcclxufVxyXG5cclxuLmRlbGV0ZS1hY3Rpdml0eS1idG57XHJcblx0ei1pbmRleDogOTk5OTtcclxuXHRjdXJzb3I6IHBvaW50ZXI7XHJcblx0bWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG5cdGNvbG9yOiB2YXIoLS1pb24tY29sb3Itc2Vjb25kYXJ5KTtcclxufVxyXG5cclxuaW9uLXRvb2xiYXJ7XHJcblx0LS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItbWVkaXVtLXRpbnQpO1xyXG59XHJcblxyXG5pb24tY29udGVudHtcclxuXHQtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1kYXJrKTtcclxuXHRiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItZGFyayk7XHJcbn1cclxuXHJcbmlvbi1pdGVtLCBpb24tbGlzdHtcclxuXHQtLWJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG5cdGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG5cdC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XHJcblx0Y29sb3I6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XHJcbn1cclxuXHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/modals/task-modal/task-modal.page.ts":
+/*!******************************************************!*\
+  !*** ./src/app/modals/task-modal/task-modal.page.ts ***!
+  \******************************************************/
+/*! exports provided: TaskModalPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskModalPage", function() { return TaskModalPage; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _models_app_objects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../models/app-objects */ "./src/models/app-objects.ts");
+/* harmony import */ var _services_task_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/task.service */ "./src/app/services/task.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var TaskModalPage = /** @class */ (function () {
+    function TaskModalPage(taskService, modalController) {
+        this.taskService = taskService;
+        this.modalController = modalController;
+        this.progress = 0;
+    }
+    TaskModalPage.prototype.ngOnInit = function () {
+        this.getProgress();
+    };
+    TaskModalPage.prototype.onClickSaveBtn = function () {
+        var _this = this;
+        this.taskService.createNewTask(this.task).then(function (res) {
+            _this.modalController.dismiss();
+        }).catch(function (err) {
+            console.log("err", err);
+        });
+    };
+    TaskModalPage.prototype.onClickAddActivity = function (evt) {
+        var _this = this;
+        if (this.newActivityDescription.trim().length <= 0)
+            return;
+        this.taskService.addActivityToTask(this.task, this.newActivityDescription).then(function (res) {
+            _this.getProgress();
+        });
+        this.newActivityDescription = null;
+    };
+    TaskModalPage.prototype.onClickActivityStatus = function (act, evt) {
+        for (var _i = 0, _a = this.task.activities; _i < _a.length; _i++) {
+            var activity = _a[_i];
+            if (activity.description == act.description) {
+                activity.status = act.status;
+            }
+        }
+        this.getProgress();
+        this.taskService.updateTask(this.task);
+    };
+    TaskModalPage.prototype.onInputTaskName = function () {
+        var _this = this;
+        if (this.inputWait) {
+            clearTimeout(this.inputWait);
+        }
+        this.inputWait = setTimeout(function () {
+            _this.taskService.updateTask(_this.task);
+        }, 500);
+    };
+    TaskModalPage.prototype.onClickDelete = function (evt) {
+        var _this = this;
+        this.taskService.deleteTask(this.task).then(function (res) {
+            _this.modalController.dismiss();
+        });
+    };
+    TaskModalPage.prototype.onInputActivityDescription = function () {
+        var _this = this;
+        if (this.inputWait) {
+            clearTimeout(this.inputWait);
+        }
+        this.inputWait = setTimeout(function () {
+            _this.taskService.updateTask(_this.task);
+        }, 500);
+    };
+    TaskModalPage.prototype.deleteActivity = function (evt, act) {
+        console.log('delete', act);
+        this.task.activities = this.task.activities.filter(function (e) {
+            if (e.description != act.description)
+                return e;
+        });
+        console.log('deletexxxx', this.task);
+        this.taskService.updateTask(this.task);
+    };
+    TaskModalPage.prototype.getProgress = function () {
+        this.task.progress = this.task.activities.filter(function (e) { return e.status; }).length / this.task.activities.length;
+    };
+    TaskModalPage.prototype.updateTask = function () {
+        this.taskService.updateTask(this.task);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _models_app_objects__WEBPACK_IMPORTED_MODULE_1__["Task"])
+    ], TaskModalPage.prototype, "task", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], TaskModalPage.prototype, "isCreateNew", void 0);
+    TaskModalPage = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-task-modal',
+            template: __webpack_require__(/*! ./task-modal.page.html */ "./src/app/modals/task-modal/task-modal.page.html"),
+            styles: [__webpack_require__(/*! ./task-modal.page.scss */ "./src/app/modals/task-modal/task-modal.page.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]])
+    ], TaskModalPage);
+    return TaskModalPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/events.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/services/events.service.ts ***!
+  \********************************************/
+/*! exports provided: EventsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventsService", function() { return EventsService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
+/* harmony import */ var _models_app_objects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/app-objects */ "./src/models/app-objects.ts");
+/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/util.service */ "./src/app/services/util.service.ts");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var EventsService = /** @class */ (function () {
+    function EventsService(sotrage, util, afs) {
+        var _this = this;
+        this.sotrage = sotrage;
+        this.util = util;
+        this.afs = afs;
+        this.events = [];
+        this.eventsCollection = this.afs.collection('events');
+        this.eventsCollection.snapshotChanges().subscribe(function (dataSet) {
+            var events = [];
+            for (var _i = 0, dataSet_1 = dataSet; _i < dataSet_1.length; _i++) {
+                var data = dataSet_1[_i];
+                var event_1 = __assign({}, data.payload.doc.data());
+                event_1.id = data.payload.doc.id;
+                event_1.start = event_1.date;
+                event_1.title = event_1.name;
+                events.push(event_1);
+            }
+            _this.events = events;
+            console.log("this.events", _this.events);
+        });
+    }
+    EventsService.prototype.addEvent = function (name, description, date) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            if (!name || !description || !date)
+                return;
+            else if (name.length <= 0 || description.length <= 0 || date.length <= 0)
+                return;
+            var event = new _models_app_objects__WEBPACK_IMPORTED_MODULE_2__["Event"](name, description, date);
+            console.log("[Added Event]", event);
+            _this.eventsCollection.add(__assign({}, event)).then(function (res) {
+                resolve();
+            });
+        });
+    };
+    EventsService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_ionic_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"],
+            _services_util_service__WEBPACK_IMPORTED_MODULE_3__["UtilService"],
+            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"]])
+    ], EventsService);
+    return EventsService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/task.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/task.service.ts ***!
+  \******************************************/
+/*! exports provided: TaskService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskService", function() { return TaskService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
+/* harmony import */ var _models_app_objects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/app-objects */ "./src/models/app-objects.ts");
+/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/util.service */ "./src/app/services/util.service.ts");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var TaskService = /** @class */ (function () {
+    function TaskService(sotrage, util, afs) {
+        var _this = this;
+        this.sotrage = sotrage;
+        this.util = util;
+        this.afs = afs;
+        this.tasks = [];
+        this.tasksCollection = this.afs.collection('tasks');
+        this.tasksCollection.snapshotChanges().subscribe(function (dataSet) {
+            var tasks = [];
+            // let tasks = {
+            //   todo:[]
+            //   , doing:[]
+            //   , done:[]
+            // }
+            for (var _i = 0, dataSet_1 = dataSet; _i < dataSet_1.length; _i++) {
+                var data = dataSet_1[_i];
+                var task = __assign({}, data.payload.doc.data());
+                task.id = data.payload.doc.id;
+                // task.progress = task.activities.filter(e=>{return e.status}).length / task.activities.length;
+                // if(task.status == 'todo')
+                //   tasks.todo.push(task)
+                // else if(task.status == 'doing')
+                //   tasks.doing.push(task)
+                // else if(task.status == 'done')
+                //   tasks.done.push(task)
+                tasks.push(task);
+            }
+            _this.tasks = tasks;
+            // this.todo = tasks.todo
+            // this.doing = tasks.doing
+            // this.done = tasks.done
+            console.log("this.tasks", tasks);
+        });
+    }
+    TaskService.prototype.getTasks = function (dept) {
+        console.log('[getTasks]', this.tasks);
+        return this.tasks;
+    };
+    TaskService.prototype.createNewTask = function (task) {
+        var _this = this;
+        if (!task.name)
+            return;
+        else if (task.name.length <= 0)
+            return;
+        console.log("[Added Task]", task);
+        return new Promise(function (resolve, reject) {
+            _this.tasksCollection.add(__assign({}, task)).then(function (res) {
+                resolve();
+            }).catch(function (err) {
+                reject();
+                console.log("err", err);
+            });
+        });
+    };
+    TaskService.prototype.addActivityToTask = function (task, description) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            console.log("[addActivityToTask]", task);
+            var newAct = new _models_app_objects__WEBPACK_IMPORTED_MODULE_2__["Activity"](description);
+            console.log("[addActivityToTask] activity|", newAct);
+            var isDup = false;
+            for (var _i = 0, _a = task.activities; _i < _a.length; _i++) {
+                var activity = _a[_i];
+                if (activity.description == newAct.description) {
+                    isDup = true;
+                }
+            }
+            if (!isDup) {
+                task.activities.push(__assign({}, newAct));
+                if (task.id) {
+                    _this.tasksCollection.doc(task.id).update(task).then(function (res) {
+                        resolve();
+                    }).catch(function (err) {
+                        console.log('*addActivityToTask', err);
+                        reject();
+                    });
+                }
+                else {
+                    reject();
+                }
+            }
+        });
+    };
+    TaskService.prototype.deleteTask = function (task) {
+        console.log("[deleteTask]", task);
+        return this.tasksCollection.doc(task.id).delete();
+    };
+    TaskService.prototype.updateTask = function (task) {
+        console.log("[updateTask]", task);
+        if (!task.id)
+            return;
+        return this.tasksCollection.doc(task.id).update(task);
+    };
+    TaskService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_ionic_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"],
+            _services_util_service__WEBPACK_IMPORTED_MODULE_3__["UtilService"],
+            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"]])
+    ], TaskService);
+    return TaskService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/util.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/util.service.ts ***!
+  \******************************************/
+/*! exports provided: UtilService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilService", function() { return UtilService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var UtilService = /** @class */ (function () {
+    function UtilService(storage) {
+        this.storage = storage;
+    }
+    UtilService.prototype.getTaskId = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.storage.get('uq-task-id').then(function (res) {
+                res += 1;
+                _this.storage.set('uq-task-id', res);
+                resolve(res);
+            });
+        });
+    };
+    UtilService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_ionic_storage__WEBPACK_IMPORTED_MODULE_1__["Storage"]])
+    ], UtilService);
+    return UtilService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/config.ts":
 /*!***********************!*\
   !*** ./src/config.ts ***!
   \***********************/
-/*! exports provided: firebase */
+/*! exports provided: firebase, google */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "firebase", function() { return firebase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "google", function() { return google; });
 var firebase = {
     apiKey: "AIzaSyByRDKKbcqIaMtzU_N_devKrE0zKPmGOTk",
     authDomain: "ncc5678-9f609.firebaseapp.com",
@@ -1116,6 +2094,10 @@ var firebase = {
     projectId: "ncc5678-9f609",
     storageBucket: "ncc5678-9f609.appspot.com",
     messagingSenderId: "549453225877"
+};
+var google = {
+    webClientId: '694548309780-p7pvh160hh62p2dpma7822pv83hsd1js.apps.googleusercontent.com',
+    apikey: 'AIzaSyBO3-f5lc3BYJGBNdlYaEz0odwcxefP0Yc'
 };
 
 
@@ -1162,6 +2144,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -1175,6 +2160,56 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 
 /***/ }),
 
+/***/ "./src/models/app-objects.ts":
+/*!***********************************!*\
+  !*** ./src/models/app-objects.ts ***!
+  \***********************************/
+/*! exports provided: Activity, Task, Event */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Activity", function() { return Activity; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Task", function() { return Task; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Event", function() { return Event; });
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+
+var Task = /** @class */ (function () {
+    function Task(name, group, deadline) {
+        if (deadline === void 0) { deadline = moment__WEBPACK_IMPORTED_MODULE_0__().format('YYYY-MM-DD'); }
+        this.deadline = moment__WEBPACK_IMPORTED_MODULE_0__().format('DD-MM-YYYY');
+        this.activities = [];
+        this.status = 'todo';
+        this.author = 'anonymus';
+        this.progress = 0.0;
+        this.name = name;
+        this.group = group;
+        this.deadline = deadline;
+    }
+    return Task;
+}());
+var Activity = /** @class */ (function () {
+    function Activity(description) {
+        this.status = false;
+        // this.id = id
+        this.description = description;
+    }
+    return Activity;
+}());
+var Event = /** @class */ (function () {
+    function Event(name, description, date) {
+        this.name = name;
+        this.description = description;
+        this.date = date;
+    }
+    return Event;
+}());
+
+
+
+/***/ }),
+
 /***/ 0:
 /*!***************************!*\
   !*** multi ./src/main.ts ***!
@@ -1182,7 +2217,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Jon\Projects\freelance-1\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Jon\Projects\DLSU-NCC-5678-freelance\src\main.ts */"./src/main.ts");
 
 
 /***/ })

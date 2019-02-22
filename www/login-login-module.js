@@ -62,7 +62,7 @@ var LoginPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content padding>\n\t<div class=\"main-container\">\n\t\t<div class=\"container1\">\n\t\t\t<ion-item>\n\t\t\t  <ion-label position=\"floating\">Email</ion-label>\n\t\t\t\t<ion-input [(ngModel)]='email' name=\"email\" type=\"text\"></ion-input>\n\t\t\t</ion-item>\n\t\t\t<ion-item>\n\t\t\t  <ion-label position=\"floating\">Password</ion-label>\n\t\t\t\t<ion-input [(ngModel)]='password' name=\"password\" type=\"password\"></ion-input>\n\t\t\t</ion-item>\n\n\t\t\t<div class=\"login-btns\">\n\t\t\t\t<ion-button (click)=\"login()\">Login</ion-button>\n\t\t\t\t<ion-button (click)=\"signup()\">Signup</ion-button>\n\t\t\t\t<ion-button (click)=\"googleLogin()\">\n\t\t\t\t\t<ion-icon name=\"logo-google\"></ion-icon>\n\t\t\t\t\tGoogle Login\n\t\t\t\t</ion-button>\n\t\t\t</div>\n\t\t\t\n\t\t\t\n\t\t</div>\n\t</div>\n</ion-content>\n"
+module.exports = "<ion-content class='gradient-bg' padding >\n\t<div class=\"wrapper\">\n\n\t\t<div class=\"main-container\">\n\n\t\t\t<div class='logo-container'>\n\t\t\t\t<img class='logo' src=\"assets/imgs/app_logo.png\"/>\n\t\t\t</div>\n\t\t\t<div class=\"login-inputs\">\n\t\t\t\t<input [(ngModel)]='email' name=\"email\" type=\"text\" placeholder='Username'/>\n\t\t\t\t<input [(ngModel)]='password' name=\"password\" type=\"password\" placeholder='Password'/>\n\t\t\t</div>\n\n\t\t\t<div class=\"login-btns\">\n\t\t\t\t<div class='login-signup'>\n\t\t\t\t\t<ion-button class='login-btn' (click)=\"login()\">LOGIN</ion-button>\n\t\t\t\t\t<a class='signup-btn' (click)=\"signup()\">SIGNUP</a>\n\t\t\t\t</div>\n\t\t\t\t<h4 class='google-login-btn' (click)=\"googleLogin()\">\n\t\t\t\t\t<ion-icon class='google-icon'  name=\"logo-googleplus\"></ion-icon> |\n\t\t\t\t\tcontinue with Google\n\t\t\t\t</h4>\n\t\t\t</div>\n\n\t\t\t<div class=\"ncc-logo\">\n\t\t\t\t<img class='logo' src=\"assets/imgs/ncc_logo.png\"/>\n\t\t\t</div>\n\n\t\t</div>\n\t\t\n\t</div>\n</ion-content>\n"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ module.exports = "<ion-content padding>\n\t<div class=\"main-container\">\n\t\t<
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".main-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 800px; }\n\n.container1 {\n  padding-left: 30px;\n  padding-right: 30px;\n  min-width: 600px;\n  max-width: 900px; }\n\n.login-btns {\n  padding-top: 40px;\n  display: flex;\n  flex-direction: column; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vQzpcXFVzZXJzXFxKb25cXFByb2plY3RzXFxmcmVlbGFuY2UtMS9zcmNcXGFwcFxcbG9naW5cXGxvZ2luLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNDLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ2xCLGFBQWEsRUFBQTs7QUFHZjtFQUNDLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGdCQUFnQixFQUFBOztBQUlqQjtFQUNDLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2Isc0JBQXNCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9sb2dpbi9sb2dpbi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudHtcclxufVxyXG4ubWFpbi1jb250YWluZXJ7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuXHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGhlaWdodDogODAwcHg7XHJcbn1cclxuXHJcbi5jb250YWluZXIxe1xyXG5cdHBhZGRpbmctbGVmdDogMzBweDtcclxuXHRwYWRkaW5nLXJpZ2h0OiAzMHB4O1xyXG5cdG1pbi13aWR0aDogNjAwcHg7XHJcblx0bWF4LXdpZHRoOiA5MDBweDtcclxuXHJcbn1cclxuXHJcbi5sb2dpbi1idG5ze1xyXG5cdHBhZGRpbmctdG9wOiA0MHB4O1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0ZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxufSJdfQ== */"
+module.exports = ".wrapper {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100%; }\n\n.main-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  height: 800px;\n  min-width: 230px;\n  max-width: 900px; }\n\n.login-inputs {\n  width: 100%; }\n\n.login-btns {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  margin-bottom: 50px; }\n\n.logo-container {\n  margin-bottom: 50px;\n  display: flex;\n  justify-content: center; }\n\n.logo {\n  max-width: 350px;\n  max-height: 220px; }\n\n.ncc-logo {\n  display: flex;\n  justify-content: center; }\n\ninput {\n  margin-bottom: 25px;\n  border: 3px solid var(--ion-color-secondary-tint);\n  border-radius: 4px;\n  width: 100%;\n  padding: 8px;\n  background: transparent; }\n\n::-webkit-input-placeholder {\n  color: #fff;\n  text-align: center; }\n\n:-ms-input-placeholder {\n  color: #fff;\n  text-align: center; }\n\n::-ms-input-placeholder {\n  color: #fff;\n  text-align: center; }\n\n::placeholder {\n  color: #fff;\n  text-align: center; }\n\n.login-signup {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 15px; }\n\n.login-btn {\n  display: flex;\n  justify-content: space-between;\n  flex-grow: 1;\n  font-weight: bold; }\n\n.signup-btn {\n  text-align: center;\n  vertical-align: middle;\n  margin-top: 15px;\n  color: var(--ion-color-light);\n  font-weight: bold;\n  flex-grow: 1; }\n\n.google-login-btn {\n  width: 100%;\n  color: var(--ion-color-light);\n  text-align: center;\n  cursor: pointer;\n  font-size: 25px; }\n\n.google-login-btn .google-icon {\n  vertical-align: middle;\n  font-size: 30px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vQzpcXFVzZXJzXFxKb25cXFByb2plY3RzXFxETFNVLU5DQy01Njc4LWZyZWVsYW5jZS9zcmNcXGFwcFxcbG9naW5cXGxvZ2luLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLFlBQVksRUFBQTs7QUFFYjtFQUNDLGFBQWE7RUFDWixzQkFBc0I7RUFDdkIsOEJBQThCO0VBQzlCLG1CQUFtQjtFQUNsQixhQUFhO0VBQ2QsZ0JBQWdCO0VBQ2hCLGdCQUFnQixFQUFBOztBQUdqQjtFQUNDLFdBQVcsRUFBQTs7QUFHWjtFQUNDLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsV0FBVztFQUNYLG1CQUFtQixFQUFBOztBQUdwQjtFQUNDLG1CQUFtQjtFQUNuQixhQUFhO0VBQ2IsdUJBQXVCLEVBQUE7O0FBR3hCO0VBQ0MsZ0JBQWdCO0VBQ2hCLGlCQUFpQixFQUFBOztBQUdsQjtFQUNDLGFBQWE7RUFDYix1QkFBdUIsRUFBQTs7QUFXeEI7RUFDQyxtQkFBbUI7RUFDbkIsaURBQWlEO0VBQ2pELGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsWUFBWTtFQUNaLHVCQUF1QixFQUFBOztBQUd4QjtFQUNHLFdBQVc7RUFDWCxrQkFBa0IsRUFBQTs7QUFGckI7RUFDRyxXQUFXO0VBQ1gsa0JBQWtCLEVBQUE7O0FBRnJCO0VBQ0csV0FBVztFQUNYLGtCQUFrQixFQUFBOztBQUZyQjtFQUNHLFdBQVc7RUFDWCxrQkFBa0IsRUFBQTs7QUFHckI7RUFDQyxhQUFhO0VBQ2IsOEJBQThCO0VBQzlCLG1CQUFtQixFQUFBOztBQUdwQjtFQUNDLGFBQWE7RUFDYiw4QkFBOEI7RUFDOUIsWUFBWTtFQUNYLGlCQUFpQixFQUFBOztBQUduQjtFQUNFLGtCQUFrQjtFQUNsQixzQkFBc0I7RUFDdEIsZ0JBQWdCO0VBQ2hCLDZCQUE2QjtFQUM3QixpQkFBaUI7RUFDbEIsWUFBWSxFQUFBOztBQUdiO0VBQ0MsV0FBVztFQUNYLDZCQUE2QjtFQUM3QixrQkFBa0I7RUFDbEIsZUFBZTtFQUNmLGVBQWUsRUFBQTs7QUFHaEI7RUFDQyxzQkFBc0I7RUFDdEIsZUFBZSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvbG9naW4vbG9naW4ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLndyYXBwZXJ7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuXHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cdGhlaWdodDogMTAwJTtcclxufVxyXG4ubWFpbi1jb250YWluZXJ7XHJcblx0ZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cdGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuXHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGhlaWdodDogODAwcHg7XHJcblx0bWluLXdpZHRoOiAyMzBweDtcclxuXHRtYXgtd2lkdGg6IDkwMHB4O1xyXG59XHJcblxyXG4ubG9naW4taW5wdXRze1xyXG5cdHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4ubG9naW4tYnRuc3tcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0bWFyZ2luLWJvdHRvbTogNTBweDtcclxufVxyXG5cclxuLmxvZ28tY29udGFpbmVye1xyXG5cdG1hcmdpbi1ib3R0b206IDUwcHg7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuLmxvZ297XHJcblx0bWF4LXdpZHRoOiAzNTBweDtcclxuXHRtYXgtaGVpZ2h0OiAyMjBweDtcclxufVxyXG5cclxuLm5jYy1sb2dve1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi5sb2dpbi1jb250YWluZXJ7XHJcblxyXG59XHJcblxyXG5pbnB1dFtuYW1lPSdlbWFpbCdde1xyXG5cclxufVxyXG5cclxuaW5wdXR7XHJcblx0bWFyZ2luLWJvdHRvbTogMjVweDtcclxuXHRib3JkZXI6IDNweCBzb2xpZCB2YXIoLS1pb24tY29sb3Itc2Vjb25kYXJ5LXRpbnQpO1xyXG5cdGJvcmRlci1yYWRpdXM6IDRweDtcclxuXHR3aWR0aDogMTAwJTtcclxuXHRwYWRkaW5nOiA4cHg7XHJcblx0YmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcbn1cclxuXHJcbjo6cGxhY2Vob2xkZXIge1xyXG4gICBjb2xvcjogI2ZmZjtcclxuICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4ubG9naW4tc2lnbnVwe1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0anVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cdG1hcmdpbi1ib3R0b206IDE1cHg7XHJcbn1cclxuXHJcbi5sb2dpbi1idG4ge1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0anVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cdGZsZXgtZ3JvdzogMTtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuLnNpZ251cC1idG57XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbiAgbWFyZ2luLXRvcDogMTVweDtcclxuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLWxpZ2h0KTtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuXHRmbGV4LWdyb3c6IDE7XHJcbn1cclxuXHJcbi5nb29nbGUtbG9naW4tYnRue1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGNvbG9yOiB2YXIoLS1pb24tY29sb3ItbGlnaHQpO1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRjdXJzb3I6IHBvaW50ZXI7XHJcblx0Zm9udC1zaXplOiAyNXB4O1xyXG59XHJcblxyXG4uZ29vZ2xlLWxvZ2luLWJ0biAuZ29vZ2xlLWljb257XHJcblx0dmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuXHRmb250LXNpemU6IDMwcHg7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -92,9 +92,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/google-plus/ngx */ "./node_modules/@ionic-native/google-plus/ngx/index.js");
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/auth.service */ "./src/app/services/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -104,41 +103,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 
 
 
@@ -147,13 +111,14 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 var LoginPage = /** @class */ (function () {
-    function LoginPage(router, loadingController, googlePlus, sotrage, afAuth, platform) {
+    function LoginPage(router, loadingController, googlePlus, sotrage, afAuth, platform, authService) {
         this.router = router;
         this.loadingController = loadingController;
         this.googlePlus = googlePlus;
         this.sotrage = sotrage;
         this.afAuth = afAuth;
         this.platform = platform;
+        this.authService = authService;
     }
     LoginPage.prototype.ngOnInit = function () {
     };
@@ -168,99 +133,12 @@ var LoginPage = /** @class */ (function () {
         }).catch(function (res) {
             console.log(res);
         });
-        // this.router.navigateByUrl('/home');
     };
     LoginPage.prototype.googleLogin = function () {
-        if (this.platform.is('android')) {
-            this.mobileGoogleLogin();
-        }
-        else if (this.platform.is('desktop')) {
-            this.webGoogleLogin();
-        }
-    };
-    LoginPage.prototype.mobileGoogleLogin = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var loading;
-            var _this = this;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.loadingController.create({
-                            message: 'Please wait...'
-                        })];
-                    case 1:
-                        loading = _a.sent();
-                        this.presentLoading(loading);
-                        this.googlePlus.login({
-                            'scopes': '',
-                            // 'webClientId': '694548309780-p7pvh160hh62p2dpma7822pv83hsd1js.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
-                            'webClientId': '549453225877-oh2jll0jb8vspp5r9fungtdnaic4eoop.apps.googleusercontent.com',
-                            'offline': true // Optional, but requires the webClientId - 
-                            // if set to true the plugin will also return a serverAuthCode, 
-                            // which can be used to grant offline access to a non-Google server
-                        })
-                            .then(function (user) {
-                            console.log("user", user);
-                            loading.dismiss();
-                            _this.sotrage.set('google_user', {
-                                name: user.displayName,
-                                email: user.email,
-                                picture: user.imageUrl
-                            })
-                                .then(function () {
-                                _this.router.navigate(["/home"]);
-                            }, function (error) {
-                                console.log(error);
-                            });
-                            loading.dismiss();
-                        }, function (err) {
-                            console.log(err);
-                            loading.dismiss();
-                        });
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    LoginPage.prototype.webGoogleLogin = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var provider, credential, err_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        provider = new firebase_app__WEBPACK_IMPORTED_MODULE_5__["auth"].GoogleAuthProvider();
-                        return [4 /*yield*/, this.afAuth.auth.signInWithPopup(provider)];
-                    case 1:
-                        credential = _a.sent();
-                        return [3 /*break*/, 3];
-                    case 2:
-                        err_1 = _a.sent();
-                        console.log(err_1);
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    LoginPage.prototype.presentLoading = function (loading) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, loading.present()];
-                    case 1: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    LoginPage.prototype.googleLogout = function () {
         var _this = this;
-        this.googlePlus.logout()
-            .then(function (res) {
-            //user logged out so we will remove him from the NativeStorage
-            _this.sotrage.set('google_user', null);
-            _this.router.navigate(["/login"]);
-        }, function (err) {
-            console.log(err);
+        this.authService.googleLogin().then(function (res) {
+            _this.router.navigateByUrl('/home');
+            console.log(res);
         });
     };
     LoginPage = __decorate([
@@ -273,8 +151,9 @@ var LoginPage = /** @class */ (function () {
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"],
             _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_3__["GooglePlus"],
             _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"],
-            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__["AngularFireAuth"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"]])
+            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__["AngularFireAuth"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"],
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"]])
     ], LoginPage);
     return LoginPage;
 }());
