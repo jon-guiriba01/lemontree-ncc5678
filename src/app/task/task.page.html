@@ -4,29 +4,29 @@
 			<div class='action-row'>
 				<img class='tab-bar-icon' src='assets/imgs/settings_icon.png'/>
 			  <ion-button
-	  			[ngClass]="[filter=='todo' ? 'yellow-bg' : '']"
-	  			(click)="filterTasks('todo')"
+	  			[ngClass]="[statusFilter=='todo' ? 'yellow-bg' : '']"
+	  			(click)="selectStatusFilter('todo')"
   			>
 			    <ion-label>To-do</ion-label>
 			  </ion-button>
 
 			  <ion-button 
-	  			[ngClass]="[filter=='doing' ? 'yellow-bg' : '']"
-  				(click)="filterTasks('doing')"
+	  			[ngClass]="[statusFilter=='doing' ? 'yellow-bg' : '']"
+  				(click)="selectStatusFilter('doing')"
 			  >
 			    <ion-label>Doing</ion-label>
 			  </ion-button>
 
 			  <ion-button 
-	  			[ngClass]="[filter=='done' ? 'yellow-bg' : '']"
-  				(click)="filterTasks('done')"
+	  			[ngClass]="[statusFilter=='done' ? 'yellow-bg' : '']"
+  				(click)="selectStatusFilter('done')"
 			  >
 			    <ion-label>Done</ion-label>
 			  </ion-button>
 
 			  <ion-button 
-	  			[ngClass]="[filter=='showall' ? 'yellow-bg' : '']"
-  				(click)="filterTasks('showall')"
+	  			[ngClass]="[statusFilter=='showall' ? 'yellow-bg' : '']"
+  				(click)="selectStatusFilter('showall')"
 			  >
 			    <ion-label>SHOW ALL</ion-label>
 			  </ion-button>
@@ -109,44 +109,46 @@
 			</div>
 		</div>
 		<div class="tasks-group">
-
 			<div class="status-bar-legend">
 				Status Bar Legend: <span class='red-bg' >0-50%</span> <span class='yellow-bg'>51-99%</span> <span class='green-bg'>100%</span>
 			</div>
 			
-			<ion-card *ngFor='let task of taskService.tasks'>
-			  <ion-card-header class='task-header'>
-			    <ion-card-title class='task-name'>
-			    	{{task.name}}
-			    </ion-card-title>
+			<div *ngFor='let task of taskService.tasks'>
+				<ion-card *ngIf='(task.status == statusFilter || statusFilter == "showall") && (task.group == selectedDepartment || selectedDepartment == "showall")'>
+				  <ion-card-header class='task-header'>
+				    <ion-card-title class='task-name'>
+				    	{{task.name}}
+				    </ion-card-title>
 
-			    <ion-button fill='clear' (click)='onClickTask($event, task)'>
-			    	<ion-icon name='arrow-dropright' class='task-edit-btn'></ion-icon>
-			    </ion-button>
-			  </ion-card-header>
-			
-			  <ion-card-content class='task-content'>
-			    <ion-card-subtitle><b>DEADLINE:</b> {{task.deadline}}</ion-card-subtitle>
-			    <ion-card-subtitle><b>ADDED BY:</b> {{task.author}}</ion-card-subtitle>
-			    <ion-card-subtitle><b>IN-CHARGE:</b> {{task.group}}</ion-card-subtitle>
-			  	<div class='task-status'>
-			  		<h4>STATUS</h4>
-			  		<div class="progress-bar-row">
-			  			<ion-progress-bar 
-				  			style='height: 20px;' 
-				  			class="task-progress"
-				  			[ngClass]="
-				  			[
-				  				task.progress <= 0.5 ? 'red' : '', 
-				  				task.progress > 0.5 ? 'yellow' : '', 
-				  				task.progress == 1 ? 'green' : '' 
-				  			]
-				  			"
-				  			value="{{task.progress}}"></ion-progress-bar>
-			  		</div>
-			  	</div>
-			  </ion-card-content>
-			</ion-card>			
+				    <ion-button fill='clear' (click)='onClickTask($event, task)'>
+				    	<ion-icon name='arrow-dropright' class='task-edit-btn'></ion-icon>
+				    </ion-button>
+				  </ion-card-header>
+				
+				  <ion-card-content class='task-content'>
+				    <ion-card-subtitle><b>DEADLINE:</b> {{task.deadline}}</ion-card-subtitle>
+				    <ion-card-subtitle><b>ADDED BY:</b> {{task.author}}</ion-card-subtitle>
+				    <ion-card-subtitle><b>IN-CHARGE:</b> {{task.group}}</ion-card-subtitle>
+				  	<div class='task-status'>
+				  		<h4>STATUS</h4>
+				  		<div class="progress-bar-row">
+				  			<ion-progress-bar 
+					  			style='height: 20px;' 
+					  			class="task-progress"
+					  			[ngClass]="
+					  			[
+					  				task.progress <= 0.5 ? 'red' : '', 
+					  				task.progress > 0.5 ? 'yellow' : '', 
+					  				task.progress == 1 ? 'green' : '' 
+					  			]
+					  			"
+					  			value="{{task.progress}}"></ion-progress-bar>
+				  		</div>
+				  	</div>
+				  </ion-card-content>
+				</ion-card>	
+				
+			</div>		
 		</div>
 
 	</div>

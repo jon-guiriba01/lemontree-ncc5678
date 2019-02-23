@@ -22,6 +22,7 @@ export class TaskService {
   // done=[]
 
   tasksCollection
+
   constructor(
     public sotrage: Storage
     , public util: UtilService
@@ -132,6 +133,50 @@ export class TaskService {
     if(!task.id) return;
 
     return this.tasksCollection.doc(task.id).update(task)
+  }
+
+
+  orderTasks(order){
+    switch (order) {
+      case "date_asc":
+        this.tasks.sort((a,b) => {
+          if (a.deadline < b.deadline)
+              return -1;
+            if (a.deadline > b.deadline)
+              return 1;
+            return 0;
+        }); 
+        break;
+      case "date_desc":
+        this.tasks.sort((a,b) => {
+          if (a.deadline > b.deadline)
+              return -1;
+            if (a.deadline < b.deadline)
+              return 1;
+            return 0;
+        }); 
+        break;
+      case "alphabet_asc":
+        this.tasks.sort((a,b) => {
+          if (a.name < b.name)
+              return -1;
+            if (a.name > b.name)
+              return 1;
+            return 0;
+        }); 
+      
+        break;
+      case "alphabet_adesc":
+        this.tasks.sort((a,b) => {
+          if (a.name < b.name)
+              return -1;
+            if (a.name > b.name)
+              return 1;
+            return 0;
+        }); 
+
+        break;
+    }
   }
 
   // getTaskList(){

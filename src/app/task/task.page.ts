@@ -20,7 +20,7 @@ export class TaskPage implements OnInit {
   showAddTaskView = false
 
   prevDragged
-  filter = 'showall'
+  statusFilter = 'showall'
   selectedDepartment = 'showall'
   selectedOrder = 'date_asc'
 
@@ -44,7 +44,7 @@ export class TaskPage implements OnInit {
     }).drake
 
     this.storage.get('department').then((res)=>{
-        this.selectedDepartment = res || 'marketing'
+        // this.selectedDepartment = res || 'marketing'
     })
   }
 
@@ -66,7 +66,7 @@ export class TaskPage implements OnInit {
 
   switchTab(tab){
     this.storage.set('department', tab)
-    this.selectedDepartment = tab;
+    // this.selectedDepartment = tab;
 	}
 
 
@@ -100,8 +100,10 @@ export class TaskPage implements OnInit {
      this.showAddTaskView = !this.showAddTaskView
    }
 
-   filterTasks(filter){
-     this.filter = filter
+   selectStatusFilter(statusFilter){
+     this.statusFilter = statusFilter
+
+     // this.taskService.filterTasks(this.filter)
    }
 
    selectDepartment(selectedDepartment){
@@ -109,6 +111,8 @@ export class TaskPage implements OnInit {
    }
    selectOrder(selectedOrder){
      this.selectedOrder = selectedOrder
+
+     this.taskService.orderTasks(this.selectedOrder)
    }
 
 }
