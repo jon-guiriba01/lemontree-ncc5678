@@ -93,7 +93,9 @@ export class FileCabinetPage implements OnInit {
     this.storageService.deleteFile(file)
   }
 
-
+  filterDownloadListByGroup(){
+    
+  }
 
 
    // var fileMetadata = {

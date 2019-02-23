@@ -107,5 +107,8 @@ export class TaskPage implements OnInit {
    selectDepartment(selectedDepartment){
      this.selectedDepartment = selectedDepartment
    }
+   selectOrder(selectedOrder){
+     this.selectedOrder = selectedOrder
+   }
 
 }

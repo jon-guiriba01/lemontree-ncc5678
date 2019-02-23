@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
 // import { Options } from 'fullcalendar';
 import * as $ from 'jquery'
 import 'fullcalendar';
@@ -7,6 +7,7 @@ import { ModalController } from '@ionic/angular';
 import { AddEventPage } from '../modals/add-event/add-event.page';
 import { Events } from '@ionic/angular';
 
+import {Platform} from '@ionic/angular';
 
 @Component({
   selector: 'app-calendar',
@@ -26,10 +27,17 @@ export class CalendarPage implements OnInit {
   eventSource = null
   startTime = null;
   endTime = null;
+
+  selectedView = {
+    day: false,
+    week: false,
+    month: true
+  }
   constructor(
     private eventsService: EventsService
     , private modalController: ModalController
     ,public events:Events
+    ,public platform:Platform
   ) {
     this.events.subscribe('event:addSuccess',()=>{
       setTimeout(()=>{
@@ -48,11 +56,10 @@ export class CalendarPage implements OnInit {
 
     let self = this
 
+
+    
     $('#calendar').fullCalendar({
-      footer: {
-        center: 'month,agendaWeek,agendaDay',
-      }
-      , events: self.eventsService.events
+      events: self.eventsService.events
       ,dayClick: async function(date, jsEvent, view) {
         let dom =  $(this)
 
@@ -94,9 +101,10 @@ export class CalendarPage implements OnInit {
         },
       },
       header: {
-        center: 'filter, otherBtn, eventsBtn, deadlinesBtn ',
+        center: 'otherBtn, eventsBtn, deadlinesBtn ',
       },
       handleWindowResize: false
+      , height: this.platform.height() - 250
       // defaultView: 'basicWeek'
     });
   }
@@ -120,5 +128,24 @@ export class CalendarPage implements OnInit {
 
   reloadSource(startTime, endTime){
 
+  }
+
+  monthView(){
+    console.log('-test 1')
+    $('#calendar').fullCalendar('changeView', 'month');
+    this.selectedView.day = false
+    this.selectedView.week = false
+  }
+  weekView(){
+    console.log('-test 2')
+    $('#calendar').fullCalendar('changeView', 'agendaWeek');
+    this.selectedView.day = false
+    this.selectedView.month = false
+  }
+  dayView(){
+    console.log('-test 3')
+    $('#calendar').fullCalendar('changeView', 'agendaDay');
+    this.selectedView.week = false
+    this.selectedView.month = false
   }
 }

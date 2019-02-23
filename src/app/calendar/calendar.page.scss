@@ -21,3 +21,17 @@ button{
 	border: none;
 	background: none;
 }
+
+.custom-btns-row{
+	display: flex;
+	justify-content: center;
+}
+
+ion-checkbox{
+	--border-radius: 24px;
+	margin-right: 8px;
+	--checkmark-color: var(--ion-color-light);
+	--background-checked: var(--ion-color-dark);
+	--border-color-checked: var(--ion-color-dark);
+}
+
