@@ -17,6 +17,7 @@ export class LoginPage implements OnInit {
 
   email
   password
+  hasLoginError = false
 
   constructor(
   	private router: Router
@@ -40,6 +41,7 @@ export class LoginPage implements OnInit {
       console.log(res);
       this.router.navigateByUrl('/home');
     }).catch((res)=>{
+      this.hasLoginError = true;
       console.log(res);
     })
   

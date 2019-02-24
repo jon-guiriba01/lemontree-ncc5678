@@ -6,6 +6,10 @@
 			<div class='logo-container'>
 				<img class='logo' src="assets/imgs/app_logo.png"/>
 			</div>
+			<div class='error-list'>
+				<p *ngIf='hasLoginError' text-center><i>Invalid email / password</i></p>
+			</div>
+
 			<div class="login-inputs">
 				<input [(ngModel)]='email' name="email" type="text" placeholder='Username'/>
 				<input [(ngModel)]='password' name="password" type="password" placeholder='Password'/>

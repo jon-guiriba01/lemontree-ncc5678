@@ -107,6 +107,8 @@ export class TaskService {
         task.activities.push({...newAct})
         if(task.id){
           this.tasksCollection.doc(task.id).update(task).then((res)=>{
+            task.status = this.getTaskStatus(task)
+
           resolve()
           }).catch((err)=>{
              console.log('*addActivityToTask',err)
@@ -132,7 +134,27 @@ export class TaskService {
 
     if(!task.id) return;
 
+    task.status = this.getTaskStatus(task)
+
+    console.log("[updateTask] --before update", task)
     return this.tasksCollection.doc(task.id).update(task)
+  }
+
+  getTaskStatus(task){
+
+    let progress = task.activities.filter(e=>{return e.status}).length / task.activities.length 
+    console.log("[updateTask] --progress", task)
+  
+    if(progress <= 0)
+      return "todo"
+
+    else if(progress > 0 && progress < 1)
+      return "doing"
+
+    else 
+      return "done"
+
+
   }
 
 
@@ -166,7 +188,7 @@ export class TaskService {
         }); 
       
         break;
-      case "alphabet_adesc":
+      case "alphabet_desc":
         this.tasks.sort((a,b) => {
           if (a.name < b.name)
               return -1;

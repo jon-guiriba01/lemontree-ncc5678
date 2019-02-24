@@ -1,0 +1,30 @@
+
+
+ion-toolbar{
+	--background: var(--ion-color-medium-tint);
+}
+
+ion-content{
+	--background: var(--ion-color-dark);
+	background: var(--ion-color-dark);
+}
+
+ion-item, ion-list{
+	--background: transparent;
+	background: transparent;
+	--color: var(--ion-color-light);
+	color: var(--ion-color-light);
+}
+
+
+.action-row{
+	position: absolute;
+	bottom: 5px;
+	display: flex;
+	justify-content: flex-end;
+  width: 570px;
+}
+
+ion-content ion-label{
+	--color: var(--yellow);
+}

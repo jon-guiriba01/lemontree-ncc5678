@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { finalize } from 'rxjs/operators';
+import { AlertController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,8 @@ export class StorageService {
   constructor(
   	private afStorage: AngularFireStorage
     , private afs: AngularFirestore
+    , private alertController: AlertController
+    , private loadingController: LoadingController
   ) {
   	this.filesCollection = this.afs.collection('files')
     this.filesCollection.snapshotChanges().subscribe(
@@ -31,14 +35,24 @@ export class StorageService {
     )
   }
 
-  uploadFile(file, path = 'filecabinet'){
+  loading
+  async uploadFile(file, group, path = 'filecabinet'){
     console.log('[uploadFile]', file)
     console.log('-path', path)
     let fullPath = `${path}/${file.name}`;
     const fileRef = this.afStorage.ref(fullPath);
+
+    this.loading = await this.loadingController.create({
+      message: 'Please wait...',
+      spinner: 'crescent'
+     });
+
+    this.loading.present();
+    
     const uploadTask = this.afStorage.upload(fullPath,file);
 
     let afUploadTask = uploadTask.percentageChanges()
+
 
     uploadTask.snapshotChanges().pipe(
         finalize(async () => {
@@ -48,6 +62,11 @@ export class StorageService {
             name:file.name
             , path: fullPath
             , downloadURL: downloadURL
+            , group: group
+            }).then((uploadAddToFirestoreFinished)=>{
+              this.loading.dismiss()
+            }).catch((err)=>{
+              console.log("err", err)
             })
           })
       
@@ -68,8 +87,11 @@ export class StorageService {
     tempLink.click();
   }
 
-  deleteFile(file){
+  async deleteFile(file){
   	console.log('[deleteFile]', file)
-  }
+    this.filesCollection.doc(file.id).delete()
+    this.afStorage.ref(file.path).delete()
+
+   }
 
 }

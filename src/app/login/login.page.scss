@@ -83,6 +83,7 @@ input{
   color: var(--ion-color-light);
   font-weight: bold;
 	flex-grow: 1;
+	cursor: pointer;
 }
 
 .google-login-btn{
@@ -96,4 +97,8 @@ input{
 .google-login-btn .google-icon{
 	vertical-align: middle;
 	font-size: 30px;
+}
+
+.error-list p{
+	color: var(--red);
 }

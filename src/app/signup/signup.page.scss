@@ -1,0 +1,65 @@
+ion-toolbar{
+	--background: var(--ion-color-primary);
+}
+
+.signup-btn{
+	--background: var(--ion-color-primary);
+
+}
+
+ion-content{
+/*	--background: var(--ion-color-dark);
+	background: var(--ion-color-dark);*/
+}
+
+ion-item, ion-list{
+	--background: transparent;
+	background: transparent;
+	--color: var(--ion-color-dark);
+	color: var(--ion-color-dark);
+}
+
+
+.action-row{
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 60px;
+}
+
+ion-content ion-label{
+	/*--color: var(--yellow);*/
+}
+
+ion-input{
+	--padding-start: 12px !important; 
+}
+
+.form-card{
+	--background: var(--ion-color-light)
+}
+
+
+.logo-container{
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+
+.logo{
+	max-width: 220px;
+	max-height: 120px;
+}
+
+
+.back-btn{
+	width: 38px;
+	height: 32px;
+	cursor: pointer;
+}
+
+.error-msg{
+	font-size: 12px;
+	margin-top: 5px;
+	padding-left: 15px;
+}

@@ -5,7 +5,7 @@
 			<img class='filter-icon' src='assets/imgs/settings_icon.png'/>
 			<label>Filter</label>
 
-			<ion-select class='filter-select' value="showall" (ionChange)='filterDownloadListByGroup()'>
+			<ion-select class='filter-select' [(ngModel)]="selectedDepartment" (ionChange)='filterDownloadListByGroup()'>
 			  <ion-select-option *ngFor='let group of groups' value="{{group}}">{{group | uppercase}}</ion-select-option>
 			</ion-select>
 		</ion-item>
@@ -13,7 +13,13 @@
 
 	<ion-list>
 		<div *ngFor="let file of storageService.files">
-			<ion-item *ngIf='file.name.toLowerCase().includes(searchService.searchInput.toLowerCase()) || searchService.searchInput == ""'>
+			<ion-item *ngIf='( 
+				file.name.toLowerCase().includes(searchService.searchInput.toLowerCase()
+				) || searchService.searchInput == "" 
+			) 
+			&& (
+			selectedDepartment == "showall" || selectedDepartment == file.group) '>
+			
 			  <ion-label>{{file.name}}</ion-label>
 			  <ion-button (click)='onClickDownload(file, $event)' class='download-btn'>
 			  	<ion-icon name='download'></ion-icon>

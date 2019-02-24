@@ -6,6 +6,7 @@ import { StorageService } from '../services/storage.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import * as $ from 'jquery'
 import { SearchService } from '../services/search.service';
+import { AlertController } from '@ionic/angular';
 
 
 
@@ -23,11 +24,16 @@ export class FileCabinetPage implements OnInit {
     , 'camps'
     , 'showall'
   ]
+
+  selectedDepartment = 'showall'
+
+
   constructor(
     public authService: AuthService
     , public afStorage: AngularFireStorage
     , public storageService: StorageService
     , public searchService: SearchService
+    , public alertController: AlertController
   ) {
     this.loadGapi().then((res)=>{
         console.log(res);
@@ -48,7 +54,7 @@ export class FileCabinetPage implements OnInit {
         e.stopImmediatePropagation();
         var file = e.target.files[0];
         console.log('The file "' + file.name +  '" has been selected.');
-        this.storageService.uploadFile(file)
+        this.storageService.uploadFile(file, this.selectedDepartment)
     });
 
   }
@@ -89,8 +95,29 @@ export class FileCabinetPage implements OnInit {
   }
 
 
-  onClickDelete(file, event){
-    this.storageService.deleteFile(file)
+  async onClickDelete(file, event){
+
+    const alert = await this.alertController.create({
+      header: 'File Delete',
+      message: 'Are you sure <strong>delete</strong>!!!',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+          }
+        }, {
+          text: 'Yes',
+          handler: () => {
+            this.storageService.deleteFile(file)
+
+          }
+        }
+      ]
+    });
+
+    await alert.present();  
   }
 
   filterDownloadListByGroup(){
