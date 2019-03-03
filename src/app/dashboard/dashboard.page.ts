@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../services/events.service'
+import { AuthService } from '../services/auth.service'
+import { StorageService } from '../services/storage.service'
 import * as moment from 'moment'
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
@@ -14,10 +16,12 @@ import * as $ from 'jquery'
 })
 export class DashboardPage implements OnInit {
 
-	upcomingEvents = []
+	upcomingEvents:any = []
 
   constructor(
   	public eventService : EventsService
+  	, public authService : AuthService
+  	, public storageService : StorageService
   	, public router : Router
     , private modalController: ModalController
 
@@ -42,7 +46,7 @@ export class DashboardPage implements OnInit {
 		const modal = await this.modalController.create({
 		  component: TaskModalPage,
 		  componentProps: { 
-       task: new objects.Task('New Task Title', null)
+       task: new objects.Task('New Task Title', this.authService.user.team)
        , isCreateNew: true
       }
 		});
@@ -58,7 +62,7 @@ export class DashboardPage implements OnInit {
 	      e.stopImmediatePropagation();
 	      var file = e.target.files[0];
 	      console.log('The file "' + file.name +  '" has been selected.');
-	      this.storageService.uploadFile(file, null)
+	      this.storageService.uploadFile(file, this.authService.user.team)
 	  });
 
 	}

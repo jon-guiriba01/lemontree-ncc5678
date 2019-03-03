@@ -69,7 +69,7 @@ export class EventsService {
         (dataSet)=>{
           let events = []
           for(let data of dataSet){
-            let event = {...data.payload.doc.data()}
+            let event:any = {...data.payload.doc.data()}
             event.id = data.payload.doc.id
             event.start = event.date
             event.formattedDate = moment(event.date).format('ll')

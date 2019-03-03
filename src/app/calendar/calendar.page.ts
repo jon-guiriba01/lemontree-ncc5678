@@ -77,13 +77,13 @@ export class CalendarPage implements OnInit {
 
 
     setTimeout(()=>{
-      $('#calendar').fullCalendar('addEventSource', {
+      $('#calendar').fullCalendar('refetchEventSources', {
         events:this.eventsService.events
         , color:'#39b54a'
        })
     } , 1500)
     setTimeout(()=>{
-      $('#calendar').fullCalendar('addEventSource', {
+      $('#calendar').fullCalendar('refetchEventSources', {
         events:this.taskService.tasks
         , color:'#fc2231'
        })
