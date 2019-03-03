@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'task-modal', loadChildren: './modals/task-modal/task-modal.module#TaskModalPageModule' },
   { path: 'add-event', loadChildren: './modals/add-event/add-event.module#AddEventPageModule' },
   { path: 'test', loadChildren: './test/test.module#TestPageModule' },
+  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' },
 ];
 
 @NgModule({

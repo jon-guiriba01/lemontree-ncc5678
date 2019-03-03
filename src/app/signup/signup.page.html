@@ -1,69 +1,177 @@
 <ion-content padding class='gradient-bg'>
 	<div class='main-container'>	
 		<ion-card padding class='form-card'>
+			<ion-icon class='back-btn' name='arrow-back' (click)='navTo("/login")'></ion-icon>
+
 			<form [formGroup]="loginForm">
-				<ion-card-header>
-					<ion-icon class='back-btn' name='arrow-back' (click)='navTo("/login")'></ion-icon>
+				<ion-card-header class='form-card-header'>
+		<!-- 			<div class='title-container'>
+						<h6 class='form-card-title'>Sign Up</h6>
+					</div> -->
 				</ion-card-header>
-				<div class='logo-container'>
-					<img class='logo' src="assets/imgs/app_logo.png"/>
-				</div>
-				<ion-item>
-				  <ion-label position='floating' >Name</ion-label>
-				  <ion-input type='text' formControlName='name' ></ion-input>
-				</ion-item>
+				<ion-grid>
+					<ion-row>
+						<ion-col size='6'>
+							
+							<ion-item>
+							  <ion-label position='floating' class='input-label'>First Name</ion-label>
+							  <ion-input type='text' formControlName='firstName' ></ion-input>
+							</ion-item>
 
-        <div class="error-list" >
-        	<div *ngFor="let validation of validationMessages.name" >
-	        	<h5 class="error-msg" *ngIf="loginForm.get('name').hasError(validation.type) && (loginForm.get('name').dirty || loginForm.get('name').touched)" >
-	        		{{validation.message}}
-	        	</h5>
-        	</div>
-        </div>
+			        <div class="error-list" >
+			        	<div *ngFor="let validation of validationMessages.firstName" >
+				        	<h5 class="error-msg" *ngIf="loginForm.get('firstName').hasError(validation.type) && (loginForm.get('firstName').dirty || loginForm.get('firstName').touched)" >
+				        		{{validation.message}}
+				        	</h5>
+			        	</div>
+			        </div>
 
+						</ion-col>
+						<ion-col size='6'>
+							
+							<ion-item>
+							  <ion-label position='floating' class='input-label'>Last Name</ion-label>
+							  <ion-input type='text' formControlName='lastName' ></ion-input>
+							</ion-item>
+
+			        <div class="error-list" >
+			        	<div *ngFor="let validation of validationMessages.lastName" >
+				        	<h5 class="error-msg" *ngIf="loginForm.get('lastName').hasError(validation.type) && (loginForm.get('lastName').dirty || loginForm.get('lastName').touched)" >
+				        		{{validation.message}}
+				        	</h5>
+			        	</div>
+			        </div>
+
+						</ion-col>
+					</ion-row>
+
+					<ion-row>
+						<ion-col>
+							<ion-item>
+							  <ion-label position='floating' class='input-label'>Email</ion-label>
+							  <ion-input type='email' formControlName='email' ></ion-input>
+							</ion-item>
+
+
+			        <div class="error-list" >
+			        	<div *ngFor="let validation of validationMessages.email" >
+				        	<h5 class="error-msg" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)" >
+				        		{{validation.message}}
+				        	</h5>
+			        	</div>
+			        </div>
+
+						</ion-col>
+					</ion-row>
+
+					<ion-row>
+						<ion-col>
 	
-				<ion-item>
-				  <ion-label position='floating' >Email</ion-label>
-				  <ion-input type='email' formControlName='email' ></ion-input>
-				</ion-item>
+							<ion-item>
+							  <ion-label position='floating' class='input-label'>Birthdate</ion-label>
+							  <ion-datetime class='datetime-input' display-format="MMM DD, YYYY" formControlName='birthdate'></ion-datetime>
+							</ion-item>
 
 
-        <div class="error-list" >
-        	<div *ngFor="let validation of validationMessages.email" >
-	        	<h5 class="error-msg" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)" >
-	        		{{validation.message}}
-	        	</h5>
-        	</div>
-        </div>
+			        <div class="error-list" >
+			        	<div *ngFor="let validation of validationMessages.birthdate" >
+				        	<h5 class="error-msg" *ngIf="loginForm.get('birthdate').hasError(validation.type) && (loginForm.get('birthdate').dirty || loginForm.get('birthdate').touched)" >
+				        		{{validation.message}}
+				        	</h5>
+			        	</div>
+			        </div>
 
+						</ion-col>
+					</ion-row>
+
+					<ion-row>
+						<ion-col>
 	
-				<ion-item>
-				  <ion-label position='floating' >Password</ion-label>
-				  <ion-input type='password' formControlName='password' ></ion-input>
-				</ion-item>
+							<ion-item>
+							  <ion-label position='floating' class='input-label'>Contact Number</ion-label>
+							  <ion-input maxlength='11' minlength='11' type='number' formControlName='contactNumber' ></ion-input>
+							</ion-item>
 
 
-        <div class="error-list" >
-        	<div *ngFor="let validation of validationMessages.password" >
-	        	<h5 class="error-msg" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)" >
-	        		{{validation.message}}
-	        	</h5>
-        	</div>
-        </div>
+			        <div class="error-list" >
+			        	<div *ngFor="let validation of validationMessages.contactNumber" >
+				        	<h5 class="error-msg" *ngIf="loginForm.get('contactNumber').hasError(validation.type) && (loginForm.get('contactNumber').dirty || loginForm.get('contactNumber').touched)" >
+				        		{{validation.message}}
+				        	</h5>
+			        	</div>
+			        </div>
 
-				<ion-item>
-				  <ion-label position='floating'>Repeat Password</ion-label>
-				  <ion-input type='password' formControlName='repassword'  ></ion-input>
-				</ion-item>
+						</ion-col>
+					</ion-row>
+
+					<ion-row>
+						<ion-col>
+	
+							<ion-item>
+							  <ion-label position='floating' class='input-label'>Password</ion-label>
+							  <ion-input type='password' formControlName='password' ></ion-input>
+							</ion-item>
 
 
-        <div class="error-list" >
-        	<div *ngFor="let validation of validationMessages.repassword" >
-	        	<h5 class="error-msg" *ngIf="loginForm.get('repassword').hasError(validation.type) && (loginForm.get('repassword').dirty || loginForm.get('repassword').touched)" >
-	        		{{validation.message}}
-	        	</h5>
-        	</div>
-        </div>
+			        <div class="error-list" >
+			        	<div *ngFor="let validation of validationMessages.password" >
+				        	<h5 class="error-msg" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)" >
+				        		{{validation.message}}
+				        	</h5>
+			        	</div>
+			        </div>
+
+						</ion-col>
+					</ion-row>
+
+
+				<ion-row>
+
+					<ion-col>
+						<ion-item>
+						  <ion-label position='floating' class='input-label'>Repeat Password</ion-label>
+						  <ion-input type='password' formControlName='repassword'  ></ion-input>
+						</ion-item>
+
+
+		        <div class="error-list" >
+		        	<div *ngFor="let validation of validationMessages.repassword" >
+			        	<h5 class="error-msg" *ngIf="loginForm.get('repassword').hasError(validation.type) && (loginForm.get('repassword').dirty || loginForm.get('repassword').touched)" >
+			        		{{validation.message}}
+			        	</h5>
+		        	</div>
+		        </div>
+					</ion-col>
+
+				</ion-row>
+
+				<ion-row>
+					<ion-col>
+		
+						<ion-item>
+						  <ion-label position='floating' class='input-label'>Team</ion-label>    
+
+						  <ion-select formControlName='team' okText="Okay" cancelText="Dismiss">
+								<ion-select-option value="admin">Admin</ion-select-option>
+								<ion-select-option value="operations">Operations</ion-select-option>
+								<ion-select-option value="marketing">Marketing</ion-select-option>
+								<ion-select-option value="camps">Camps</ion-select-option>
+							</ion-select>
+
+						</ion-item>
+
+
+		        <div class="error-list" >
+		        	<div *ngFor="let validation of validationMessages.contactNumber" >
+			        	<h5 class="error-msg" *ngIf="loginForm.get('contactNumber').hasError(validation.type) && (loginForm.get('contactNumber').dirty || loginForm.get('contactNumber').touched)" >
+			        		{{validation.message}}
+			        	</h5>
+		        	</div>
+		        </div>
+
+					</ion-col>
+				</ion-row>
+				</ion-grid>
 
 	
 				<div class='action-row'>

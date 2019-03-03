@@ -1,9 +1,132 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>settings</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class='gradient-bg' padding>
+	<div class='main-container'>
+		<h6 class='main-header'>SETTINGS</h6>
+		<ion-card class='signup-card'>
 
-<ion-content padding>
+			<ion-icon class='back-btn' name='arrow-back' (click)='navTo("/home")'></ion-icon>
+		<!-- 	
+		  <ion-card-header>
+		    <ion-card-title>Settings</ion-card-title>
+		  </ion-card-header>
+		 -->
+		  <ion-card-content>
+				<form [formGroup]="settingsForm">
+	  			<ion-grid>
 
+	  			  <ion-row>
+
+	  			    <ion-col>
+	  			      <ion-item>
+	  			        <ion-label position='floating'>First Name</ion-label>
+	  			        <ion-input type='text' formControlName='firstName' [(ngModel)]='authService.user.first_name' (ionChange)='updateFirstName()'></ion-input>
+	  			      </ion-item>
+				        <div class="error-list" >
+				        	<div *ngFor="let validation of validationMessages.firstName" >
+					        	<h5 class="error-msg" *ngIf="settingsForm.get('firstName').hasError(validation.type) && (settingsForm.get('firstName').dirty || settingsForm.get('firstName').touched)" >
+					        		{{validation.message}}
+					        	</h5>
+				        	</div>
+				        </div>
+	  			    </ion-col>
+
+	  			    <ion-col>
+	  			      <ion-item>
+	  			        <ion-label position='floating'>Last Name</ion-label>
+	  			        <ion-input type='text' formControlName='lastName' [(ngModel)]='authService.user.last_name' (ionChange)='updateLastName()'></ion-input>
+	  			      </ion-item>
+				        <div class="error-list" >
+				        	<div *ngFor="let validation of validationMessages.lastName" >
+					        	<h5 class="error-msg" *ngIf="settingsForm.get('lastName').hasError(validation.type) && (settingsForm.get('lastName').dirty || settingsForm.get('lastName').touched)" >
+					        		{{validation.message}}
+					        	</h5>
+				        	</div>
+				        </div>
+	  			    </ion-col>
+
+
+	  			  </ion-row>
+
+	  			  <ion-row>
+
+	  			    <ion-col>
+
+	  			      <ion-item>
+	  			        <ion-label position='floating'>Email</ion-label>
+	  			        <ion-input type='text' formControlName='email' [(ngModel)]='authService.user.email' disabled='true'></ion-input>
+	  			      </ion-item>
+				        <div class="error-list" >
+				        	<div *ngFor="let validation of validationMessages.email" >
+					        	<h5 class="error-msg" *ngIf="settingsForm.get('email').hasError(validation.type) && (settingsForm.get('email').dirty || settingsForm.get('email').touched)" >
+					        		{{validation.message}}
+					        	</h5>
+				        	</div>
+				        </div>
+
+	  			    </ion-col>
+	  			    
+	  			  </ion-row>
+
+	  			  <ion-row>
+
+	  			    <ion-col>
+
+	  			      <ion-item>
+	  			        <ion-label position='floating'>Contact Number</ion-label>
+	  			        <ion-input type='text' formControlName='contactNumber'  [(ngModel)]='authService.user.contact_number' (ionChange)='updateContactNumber()'></ion-input>
+	  			      </ion-item>
+				        <div class="error-list" >
+				        	<div *ngFor="let validation of validationMessages.contactNumber" >
+					        	<h5 class="error-msg" *ngIf="settingsForm.get('contactNumber').hasError(validation.type) && (settingsForm.get('contactNumber').dirty || settingsForm.get('contactNumber').touched)" >
+					        		{{validation.message}}
+					        	</h5>
+				        	</div>
+				        </div>
+
+	  			    </ion-col>
+
+	  			  </ion-row>
+
+	  			  <ion-row>
+
+	  			    <ion-col>
+
+	  			      <ion-item>
+	  			        <ion-label position='floating'>Birthdate</ion-label>
+	  			        <ion-datetime class='datetime-input' display-format="MMM DD, YYYY" formControlName='birthdate' [(ngModel)]='authService.user.birthdate' (ionChange)='updateBirthdate()'></ion-datetime>
+	  			      </ion-item>
+				        <div class="error-list" >
+				        	<div *ngFor="let validation of validationMessages.birthdate" >
+					        	<h5 class="error-msg" *ngIf="settingsForm.get('birthdate').hasError(validation.type) && (settingsForm.get('birthdate').dirty || settingsForm.get('birthdate').touched)" >
+					        		{{validation.message}}
+					        	</h5>
+				        	</div>
+				        </div>
+
+	  			    </ion-col>
+
+	  			    <ion-col size='4'>
+
+	  			      <ion-item>
+	  			        <ion-label position='floating'>Team</ion-label>
+	  			        <ion-input class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()'></ion-input>
+	  			      </ion-item>
+				        <div class="error-list" >
+				        	<div *ngFor="let validation of validationMessages.team" >
+					        	<h5 class="error-msg" *ngIf="settingsForm.get('team').hasError(validation.type) && (settingsForm.get('team').dirty || settingsForm.get('team').touched)" >
+					        		{{validation.message}}
+					        	</h5>
+				        	</div>
+				        </div>
+
+	  			    </ion-col>
+
+	  			  </ion-row>
+
+	  			</ion-grid>
+				</form>
+		
+		  </ion-card-content>
+		</ion-card>
+	</div>
+	
 </ion-content>

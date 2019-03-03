@@ -35,6 +35,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'dashboard',
+        children: [
+          {
+            path: '',
+            loadChildren: '../dashboard/dashboard.module#DashboardPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/home/calendar',
         pathMatch: 'full'

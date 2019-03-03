@@ -20,6 +20,13 @@
 		</ion-textarea >
 	</ion-item>
 
+	<ion-item>
+		<ion-label position="floating">
+			Date
+		</ion-label>
+		  <ion-datetime display-format="MMM DD, YYYY" min="2019" [(ngModel)]='date'></ion-datetime>
+	</ion-item>
+
 	<div class='action-row'>
 		<ion-button (click)='onClickAddEvent($event)'>
 			Submit

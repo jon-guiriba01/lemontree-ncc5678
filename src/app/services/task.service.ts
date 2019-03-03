@@ -42,6 +42,8 @@ export class TaskService {
         for(let data of dataSet){
           let task = {...data.payload.doc.data()}
           task.id = data.payload.doc.id
+          task.start = task.deadline
+          task.title = task.name
           // task.progress = task.activities.filter(e=>{return e.status}).length / task.activities.length;
           // if(task.status == 'todo')
           //   tasks.todo.push(task)

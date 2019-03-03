@@ -3,9 +3,11 @@ import { Component, OnInit,  } from '@angular/core';
 import * as $ from 'jquery'
 import 'fullcalendar';
 import { EventsService } from '../services/events.service'
+import { TaskService } from '../services/task.service'
 import { ModalController } from '@ionic/angular';
 import { AddEventPage } from '../modals/add-event/add-event.page';
 import { Events } from '@ionic/angular';
+import * as moment from 'moment'
 
 import {Platform} from '@ionic/angular';
 
@@ -35,78 +37,57 @@ export class CalendarPage implements OnInit {
   }
   constructor(
     private eventsService: EventsService
+    , private taskService: TaskService
     , private modalController: ModalController
     ,public events:Events
     ,public platform:Platform
   ) {
     this.events.subscribe('event:addSuccess',()=>{
-      setTimeout(()=>{
-        $('#calendar').fullCalendar('addEventSource', this.eventsService.events)
+        setTimeout(()=>{
+          $('#calendar').fullCalendar('addEventSource', {
+            events:this.eventsService.events
+            , color:'#39b54a'
+           })
       } , 1000)
-      
     })
   }
 
   ngOnInit() {
-
-    setTimeout(()=>{
-      console.log('[ngOnInit]', this.eventsService.events)
-      $('#calendar').fullCalendar('addEventSource', this.eventsService.events)
-    } , 1000)
-
     let self = this
-
-
     
     $('#calendar').fullCalendar({
-      events: self.eventsService.events
-      ,dayClick: async function(date, jsEvent, view) {
+      dayClick: async function(date, jsEvent, view) {
         let dom =  $(this)
-
+        console.log('-test', date.format('ll'))
           const modal = await self.modalController.create({
             component: AddEventPage,
-            componentProps: { date: date }
+            componentProps: { date: date.format('ll') }
           });
           return await modal.present();
-
-        // alert('Clicked on: ' + date.format());
-          
-          // eventsService.
-        // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-
-        // alert('Current view: ' + view.name);
-
-
-      },
-      customButtons: {
-        filter: {
-          text: 'Filters',
-          click: function() {
-          }
-        },
-        otherBtn: {
-          text: 'Others',
-          click: function() {
-          }
-        },
-        eventsBtn: {
-          text: 'Events',
-          click: function() {
-          }
-        },
-        deadlinesBtn: {
-          text: 'Deadlines',
-          click: function() {
-          }
-        },
       },
       header: {
-        center: 'otherBtn, eventsBtn, deadlinesBtn ',
-      },
-      handleWindowResize: false
-      , height: this.platform.height() - 250
+        center: 'prev, title, next'
+        ,left: ''
+        ,right: ''
+      }
+      ,handleWindowResize: true
+      , height: this.platform.height() - 450
       // defaultView: 'basicWeek'
     });
+
+
+    setTimeout(()=>{
+      $('#calendar').fullCalendar('addEventSource', {
+        events:this.eventsService.events
+        , color:'#39b54a'
+       })
+    } , 1500)
+    setTimeout(()=>{
+      $('#calendar').fullCalendar('addEventSource', {
+        events:this.taskService.tasks
+        , color:'#fc2231'
+       })
+    } , 1500)
   }
 
   
@@ -128,6 +109,14 @@ export class CalendarPage implements OnInit {
 
   reloadSource(startTime, endTime){
 
+  }
+
+  async onClickAddEvent(evt){
+    const modal = await this.modalController.create({
+      component: AddEventPage,
+      componentProps: { date: moment().format('ll') }
+    });
+    return await modal.present();
   }
 
   monthView(){

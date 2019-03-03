@@ -3,6 +3,7 @@ import { MenuController } from '@ionic/angular';
 import { Events } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SearchService } from '../services/search.service';
+import Cookies from 'js-cookie'
 
 @Component({
   selector: 'app-home',
@@ -14,10 +15,10 @@ export class HomePage {
   searchText
 
 	constructor(
-		private menu: MenuController
-		, private events: Events
-    , private router: Router
-		, private searchService: SearchService
+		public menu: MenuController
+		, public events: Events
+    , public router: Router
+		, public searchService: SearchService
 	) {
 
 		this.initMenu()
@@ -39,6 +40,7 @@ export class HomePage {
 
   logout(){
   	console.log("loguot")
+    Cookies.set('user', null)
   	this.router.navigateByUrl('/login');
   }
 

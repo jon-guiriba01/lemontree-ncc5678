@@ -1,0 +1,88 @@
+.card-icon{
+	max-width: 180px;
+	max-height: 180px;
+	width: 180px;
+	height: 180px;
+}
+
+.option-card{
+	min-width: 150px;
+	min-height: 150px;
+}
+
+.option-card.newtask{
+	background-image: url('../../assets/imgs/new_task_icon.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100px;
+}
+
+.option-card.newfile{
+	background-image: url('../../assets/imgs/new_file_icon.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100px;
+}
+
+.option-card.profile{
+	background-image: url('../../assets/imgs/profile_icon.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100px;
+}
+
+.option-card.settings{
+	background-image: url('../../assets/imgs/gear_icon.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100px;
+}
+
+.main-container{
+	justify-content: flex-start;
+}
+
+.dashboard-card{
+	height: 100%;
+}
+
+.dashboard-row{
+	flex-basis: 60%;
+}
+
+.dashboard-row{
+	flex-basis: 60%;
+}
+
+.action-row{
+	flex-basis: 40%;
+}
+
+h6{
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	color: var(--ion-color-dark-tint);
+}
+
+.dashboard-title{
+	color: var(--ion-color-warning);
+	font-size: 26px;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.event-item{
+	display: flex;
+	justify-content: space-between;
+}
+
+.event-item h5{
+	flex-basis: 50%;
+	text-align: left;
+	font-size: 24px;
+}
+
+.option-card{
+	cursor: pointer;
+}

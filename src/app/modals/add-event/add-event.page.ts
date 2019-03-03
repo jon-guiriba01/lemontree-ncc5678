@@ -5,6 +5,9 @@ import { EventsService } from '../../services/events.service';
 import { ModalController } from '@ionic/angular';
 import * as $ from 'jquery'
 import { Events } from '@ionic/angular';
+import { NavParams } from '@ionic/angular';
+import * as moment from 'moment'
+
 
 @Component({
   selector: 'app-add-event',
@@ -20,15 +23,22 @@ export class AddEventPage implements OnInit {
   constructor(
   	public eventService:EventsService
 		,public events:Events
-		,public modalController:ModalController
+    ,public modalController:ModalController
+		,public navParams: NavParams
   ) { 
   }
 
   ngOnInit() {
+    // this.date = moment().format('YYYY-MM-DD')
+    console.log('dxxate', this.date)
+    this.date = moment(this.date).format('YYYY-MM-DD')
+    // if(this.date)
+    //   this.date = this.date.format()
+    // console.log('date', this.date)
   }
 
   onClickAddEvent(evt){
-  	this.eventService.addEvent(this.name, this.description, this.date.format()).then(()=>{
+  	this.eventService.addEvent(this.name, this.description, this.date).then(()=>{
   		this.events.publish('event:addSuccess')
   		this.modalController.dismiss()
   	});

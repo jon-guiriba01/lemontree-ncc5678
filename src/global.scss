@@ -10,6 +10,12 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 @import "~fullcalendar/dist/fullcalendar.css";
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('assets/fonts/Poppins-Regular.otf');
+}
+
 /* in-flight clone */
 .gu-mirror {
   position: fixed !important;
@@ -121,7 +127,7 @@ body {
   box-shadow: none;
 }
 
-.fc-toolbar.fc-header-toolbar>.fc-center>button{
+/*.fc-toolbar.fc-header-toolbar>.fc-center>button{
   background: var(--green) !important;
   color: #fff;
 }
@@ -132,8 +138,37 @@ body {
 .fc-toolbar.fc-header-toolbar>.fc-center>button:nth-child(2){
   background: var(--red)  !important;
   color: #fff;
-}
+}*/
 /*.fc-day-grid-container.fc-scroller {
     height: auto!important;
     overflow-y: auto;
 }*/
+
+*{
+  font-family: 'Poppins-Regular';
+}
+
+
+.fc-day-number{
+  float: none !important;
+}
+
+.fc-day-top{
+  text-align: center;
+}
+
+.fc td, .fc th {
+  border-style: none !important;
+}
+
+.fc-day-header.fc-widget-header{
+  color: var(--ion-color-medium) !important;
+}
+
+.fc-other-month{
+  opacity: 0 !important; 
+}
+
+.fc-today-button {
+  display: none;
+}

@@ -2,19 +2,35 @@
 </div>
 
 <ion-row class='custom-btns-row'>
-	<ion-item >
+	<ion-item  lines='none'>
 	  <ion-label>Month</ion-label>
 	  <ion-checkbox slot="start" (click)="monthView()" [(ngModel)]='selectedView.month'></ion-checkbox>
 	</ion-item>
 
-	<ion-item >
+	<ion-item  lines='none'>
 	  <ion-label>Week</ion-label>
 	  <ion-checkbox slot="start" (click)="weekView()" [(ngModel)]='selectedView.week'></ion-checkbox>
 	</ion-item>
 
-	<ion-item >
+	<ion-item  lines='none'>
 	  <ion-label>Day</ion-label>
 	  <ion-checkbox slot="start" (click)="dayView()" [(ngModel)]='selectedView.day'></ion-checkbox>
 	</ion-item>
-	
 </ion-row>
+
+<ion-row class='legends-row'>
+	<div class='legend-events'>
+		Events
+	</div>
+	<div class='legend-deadlines'>
+		Deadlines
+	</div>
+	<div class='legend-others'>
+		Others
+	</div>
+</ion-row>
+
+  <ion-fab-button size="small" class="calendar-fab" (click)='onClickAddEvent($event)'>
+  	<ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+	

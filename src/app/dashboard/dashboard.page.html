@@ -1,0 +1,65 @@
+<ion-content padding>
+	<div class='main-container'>
+		<div class='action-row'>
+			<ion-grid>
+			  <ion-row>
+			    <ion-col (click)='newTask()'>
+			    	<ion-card class='option-card newtask'>
+			    	  <ion-card-content>
+			    	  	<!-- <img class='card-icon' src='assets/imgs/new_task_icon.png'/> -->
+			    	  </ion-card-content>
+			    	</ion-card>
+			    	<h6>Add Task</h6>
+			    </ion-col>
+			    <ion-col>
+			    	<ion-card class='option-card newfile' (click)='upload()'>
+			    	  <ion-card-content class='option-card'>
+			    	  	<!-- <img class='card-icon' src='assets/imgs/new_file_icon.png'/> -->
+			    	  </ion-card-content>
+			    	</ion-card>
+			    	<h6>Add File</h6>
+			    </ion-col>
+			  </ion-row>
+			  <ion-row>
+			    <ion-col (click)="navTo('/profile')">
+			    	<ion-card class='option-card profile' >
+			    	  <ion-card-content>
+			    	  	<!-- <img class='card-icon' src='assets/imgs/profile_icon.png'/> -->
+			    	  </ion-card-content>
+			    	</ion-card>
+			    	<h6>Profile</h6>
+			    </ion-col>
+			    <ion-col (click)="navTo('/settings')">
+			    	<ion-card class='option-card settings'>
+			    	  <ion-card-content>
+			    	  	<!-- <img class='card-icon' src='assets/imgs/gear_icon.png'/> -->
+			    	  </ion-card-content>
+			    	</ion-card>
+			    	<h6>Settings</h6>
+			    </ion-col>
+			  </ion-row>
+			</ion-grid>
+		</div>
+
+		<ion-row class='dashboard-row'>
+		  <ion-col>
+		  	<ion-card class='dashboard-card'>
+		  	  <ion-card-content>
+		  	  	<h5 class='dashboard-title'>Upcoming Events:</h5>
+		  	  	<div class='event-item' *ngFor='let event of upcomingEvents'>
+		  	  		<h5>
+  	  					{{event.formattedDate}}
+		  	  		</h5>
+		  	  		<h5>
+  	  					{{event.name}}
+		  	  		</h5>
+		  	  	</div>
+		  	  </ion-card-content>
+		  	</ion-card>
+		  </ion-col>
+		</ion-row>
+
+		</div>
+</ion-content>
+
+<input type="file" name="" style='display: none;' class='hidden-input'/>

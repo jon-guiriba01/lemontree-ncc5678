@@ -5,6 +5,7 @@ import { UtilService } from '../services/util.service'
 import { AngularFirestore, AngularFirestoreCollection  } from '@angular/fire/firestore';
 import { map  } from 'rxjs/operators';
 import { from } from 'rxjs';
+import * as moment from 'moment'
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,31 @@ export class EventsService {
 
   	})
 	     
+  }
+
+  getUpcomingEvents(){
+    let prevMonth = moment().subtract(30, 'days').format('YYYY-MM-DD')
+    let upcomingEventsCollection = this.afs.collection('events', ref=>ref.where('date', '>', prevMonth))
+    
+    return new Promise((resolve,reject)=>{
+
+      upcomingEventsCollection.snapshotChanges().subscribe(
+        (dataSet)=>{
+          let events = []
+          for(let data of dataSet){
+            let event = {...data.payload.doc.data()}
+            event.id = data.payload.doc.id
+            event.start = event.date
+            event.formattedDate = moment(event.date).format('ll')
+            event.title = event.name
+            events.push(event)
+          }
+
+          resolve(events)
+        }
+      )
+    })
+
   }
 
 }

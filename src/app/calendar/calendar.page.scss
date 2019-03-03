@@ -25,6 +25,9 @@ button{
 .custom-btns-row{
 	display: flex;
 	justify-content: center;
+	position: absolute;
+	bottom: 215px;
+	width: 100%;
 }
 
 ion-checkbox{
@@ -35,3 +38,35 @@ ion-checkbox{
 	--border-color-checked: var(--ion-color-dark);
 }
 
+.calendar-fab{
+  position: fixed;
+  right: 45px;
+  bottom: 15px;
+  --background: var(--ion-color-secondary);
+}
+
+.legends-row{
+	width: 400px;
+	padding: 40px;
+}
+.legends-row>div{
+	margin-right: 10px;
+}
+
+.legend-events{
+	border: solid 2px var(--green);
+	padding: 4px;
+	border-radius: 4px;
+}
+
+.legend-deadlines{
+	border: solid 2px var(--red);
+	padding: 4px;
+	border-radius: 4px;
+}
+
+.legend-others{
+	border: solid 2px var(--yellow);
+	padding: 4px;
+	border-radius: 6px;
+}

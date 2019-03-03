@@ -7,6 +7,8 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Storage } from '@ionic/storage';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
+import Cookies from 'js-cookie'
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +24,13 @@ export class AuthService {
     , public sotrage: Storage
     , public afAuth: AngularFireAuth
     , public platform: Platform
-  ) { }
+    , private afs: AngularFirestore
+  ) {
+    this.user = Cookies.getJSON('user')
+    console.log('[AuthService constructor]', this.user)
+
+
+  }
 
   async googleLogin(){
     try{
@@ -80,6 +88,23 @@ export class AuthService {
       const credential = await this.afAuth.auth.signInWithPopup(provider);
       this.user = credential;
       console.log("credential", credential)
+
+
+      // let userCollection = this.afs.collection('users', ref => ref.where('email', '==', this.email))
+
+      // userCollection.snapshotChanges().subscribe(
+      //   (dataSet)=>{
+      //     if(dataSet){
+      //       let user = {...dataSet[0].payload.doc.data()}
+      //       user['id'] = dataSet[0].payload.doc.id
+      //       Cookies.set('user', user)
+      //       this.authService.user = user;
+      //       this.router.navigateByUrl('/home');
+      //     }
+      //   }
+      // )
+      
+
       this.router.navigate(["/home"]);
 
     } catch(err) {
@@ -100,5 +125,16 @@ export class AuthService {
     }, err =>{
       console.log(err);
     })
-}
+  }
+
+  timeout
+  updateUser(){
+    if(this.timeout){
+
+    }
+
+
+    let userCollection = this.afs.collection('users')
+    return userCollection.doc(this.user.id).update(this.user)
+  }
 }

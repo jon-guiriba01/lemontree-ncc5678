@@ -7,6 +7,8 @@ import { Storage } from '@ionic/storage';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../services/auth.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import Cookies from 'js-cookie'
 
 @Component({
   selector: 'app-login',
@@ -27,6 +29,7 @@ export class LoginPage implements OnInit {
     , public afAuth: AngularFireAuth
     , public platform: Platform
     , public authService: AuthService
+    , private afs: AngularFirestore
   ) { }
 
   ngOnInit() {
@@ -38,19 +41,32 @@ export class LoginPage implements OnInit {
 
   login(){
     this.afAuth.auth.signInWithEmailAndPassword(this.email,this.password).then((res)=>{
-      console.log(res);
-      this.router.navigateByUrl('/home');
-    }).catch((res)=>{
-      this.hasLoginError = true;
-      console.log(res);
-    })
+      console.log("-login()", res);
+      // this.authService.
+
+      let userCollection = this.afs.collection('users', ref => ref.where('email', '==', this.email))
+
+      userCollection.snapshotChanges().subscribe(
+        (dataSet)=>{
+          if(dataSet){
+            let user = {...dataSet[0].payload.doc.data()}
+            user['id'] = dataSet[0].payload.doc.id
+            Cookies.set('user', user)
+            this.authService.user = user;
+            this.router.navigateByUrl('/home');
+          }
+        }
+      )
+
+      }).catch((res)=>{
+        this.hasLoginError = true;
+        console.log(res);
+      })
   
   }
 
   googleLogin(){
     this.authService.googleLogin().then((res)=>{
-      this.router.navigateByUrl('/home');
-        console.log(res);
     });
   }
 
