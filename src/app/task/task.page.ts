@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage';
 import { DragulaService } from 'ng2-dragula';
 import { ToastController } from '@ionic/angular';
 import { SearchService } from '../services/search.service';
+import { AuthService } from '../services/auth.service';
 import * as objects from '../../models/app-objects'
 import * as $ from 'jquery'
 @Component({
@@ -58,6 +59,7 @@ export class TaskPage implements OnInit {
     , public dragulaService: DragulaService
     , public toastController: ToastController
     , public searchService: SearchService
+    , public authService: AuthService
    ) { 
  
     this.dragulaService.dropModel('drag-tasks')
@@ -82,7 +84,7 @@ export class TaskPage implements OnInit {
     setTimeout((res)=>{
        let prevDrag = this.prevDragged
        prevDrag.status = status
-       this.taskService.updateTask(prevDrag)
+       this.taskService.updateTask(prevDrag, this.authService.user)
     },1)
   }
 
