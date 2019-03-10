@@ -42,4 +42,48 @@ ion-content{
 .main-container{
 	justify-content: center;
 	align-items: center;
+	height: 700px;
+}
+h6{
+	font-size: 30px;
+	text-align: center;
+	color: var(--yellow);
+	margin-bottom: 20px;
+	font-weight: bold
+}
+ion-button{
+	--background: var(--ion-color-light-tint);
+	--color: var(--ion-color-dark-tint);
+	margin-bottom: 30px;
+	max-width: 280px;
+	font-size: 20px;
+}
+
+.change-password-form{
+	max-width: 280px;
+	margin: 0 auto;
+	display: block;
+	padding: 8px;
+	background: var(--ion-color-light-tint);
+	margin-bottom: 50px;
+	transition: max-height 0.25s ease-in;
+	overflow: hidden;
+}
+
+.change-password-btn{
+	margin: 0 auto;
+	display: block;
+}
+
+.submit-change-password-btn{
+	margin: 0 auto;
+	font-size: 16px;
+	padding: 5px;
+
+}
+
+.closed-list{
+	height: 0;
+	max-height: 0;
+	padding: 0;
 }

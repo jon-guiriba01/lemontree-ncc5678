@@ -11,7 +11,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding style="position: relative;">
+<ion-content  style="position: relative;">
 		<ion-item>
 			<ion-label>Deadline:</ion-label> 
 			<ion-datetime display-format="DD-MM-YYYY" [(ngModel)]="task.deadline" (ionChange)='updateTask()'></ion-datetime>
@@ -39,8 +39,8 @@
 				placeholder='Add new activity'
 				></ion-input>
 
-				<ion-button (click)='onClickAddActivity($event)' fill='clear'>
-					<ion-icon name='add'></ion-icon>
+				<ion-button class='add-activity-btn' (click)='onClickAddActivity($event)' fill='clear'>
+					<ion-icon  name='add'></ion-icon>
 				</ion-button>
 
 			</ion-item>

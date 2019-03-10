@@ -11,7 +11,7 @@ import { from } from 'rxjs';
 })
 export class TaskService {
 
-  tasks:Array<objects.Task> = [];
+  tasks = [];
   // tasks = {
   //   todo:[]
   //   , doing:[]

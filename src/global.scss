@@ -172,3 +172,14 @@ body {
 .fc-today-button {
   display: none;
 }
+
+.fc-day-grid-event.fc-h-event{
+  width: 2px !important;
+  height: 4px !important;
+  border-radius: 25px !important;
+  font-size: 0 !important;
+  line-height: 0;
+  overflow: hidden;
+  color: transparent !important;
+  margin: 0 auto;
+}

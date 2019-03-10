@@ -4,17 +4,17 @@
 <ion-row class='custom-btns-row'>
 	<ion-item  lines='none'>
 	  <ion-label>Month</ion-label>
-	  <ion-checkbox slot="start" (click)="monthView()" [(ngModel)]='selectedView.month'></ion-checkbox>
+	  <ion-checkbox id='month-cb' slot="start" (click)="monthView()" [(ngModel)]='selectedView.month'></ion-checkbox>
 	</ion-item>
 
 	<ion-item  lines='none'>
 	  <ion-label>Week</ion-label>
-	  <ion-checkbox slot="start" (click)="weekView()" [(ngModel)]='selectedView.week'></ion-checkbox>
+	  <ion-checkbox id='week-cb' slot="start" (click)="weekView()" [(ngModel)]='selectedView.week'></ion-checkbox>
 	</ion-item>
 
 	<ion-item  lines='none'>
 	  <ion-label>Day</ion-label>
-	  <ion-checkbox slot="start" (click)="dayView()" [(ngModel)]='selectedView.day'></ion-checkbox>
+	  <ion-checkbox id='day-cb' slot="start" (click)="dayView()" [(ngModel)]='selectedView.day' [checked]='selectedView.day'></ion-checkbox>
 	</ion-item>
 </ion-row>
 

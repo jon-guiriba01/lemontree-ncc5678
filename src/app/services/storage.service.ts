@@ -53,11 +53,14 @@ export class StorageService {
 
     let afUploadTask = uploadTask.percentageChanges()
 
+    return new Promise((resolve,reject)=>{
 
-    uploadTask.snapshotChanges().pipe(
+      uploadTask.snapshotChanges().pipe(
         finalize(async () => {
           console.log('-finalize', path)
+
           fileRef.getDownloadURL().subscribe((downloadURL)=>{
+
             this.filesCollection.add({
             name:file.name
             , path: fullPath
@@ -66,15 +69,22 @@ export class StorageService {
             }).then((uploadAddToFirestoreFinished)=>{
               this.loading.dismiss()
             }).catch((err)=>{
+              reject()
               console.log("err", err)
             })
-          })
-      
-        } )
-     )
-    .subscribe((res)=>{
-      console.log('afUploadTask', res)
 
+            resolve(downloadURL)
+            
+          })
+        
+
+
+        } )
+       )
+      .subscribe((res)=>{
+        console.log('afUploadTask', res)
+
+      })
     })
   }
 

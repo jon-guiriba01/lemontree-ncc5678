@@ -70,3 +70,7 @@ ion-checkbox{
 	padding: 4px;
 	border-radius: 6px;
 }
+
+ion-checkbox svg path{
+	display: none !important;
+}

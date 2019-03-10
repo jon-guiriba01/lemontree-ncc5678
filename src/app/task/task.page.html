@@ -1,110 +1,40 @@
 <ion-content padding style="padding-top: 30px;" forceOverscroll="false">
 	<div class="main-container">
 		<div class="action-group">
-			<div class='action-row'>
-				<img class='tab-bar-icon' src='assets/imgs/settings_icon.png'/>
-			  <ion-button
-	  			[ngClass]="[statusFilter=='todo' ? 'yellow-bg' : '']"
-	  			(click)="selectStatusFilter('todo')"
+			<img class='tab-bar-icon ' src='assets/imgs/settings_icon.png'/>
+
+			<div id='filter-row'  class='action-row closed-list'>
+			  <ion-button *ngFor='let filter of filters'
+	  			[ngClass]="[statusFilter==filter.value ? 'yellow-bg' : '']"
+	  			(click)="selectStatusFilter(filter.value)"
   			>
-			    <ion-label>To-do</ion-label>
+			    <ion-label>{{filter.name}}</ion-label>
 			  </ion-button>
 
-			  <ion-button 
-	  			[ngClass]="[statusFilter=='doing' ? 'yellow-bg' : '']"
-  				(click)="selectStatusFilter('doing')"
-			  >
-			    <ion-label>Doing</ion-label>
-			  </ion-button>
-
-			  <ion-button 
-	  			[ngClass]="[statusFilter=='done' ? 'yellow-bg' : '']"
-  				(click)="selectStatusFilter('done')"
-			  >
-			    <ion-label>Done</ion-label>
-			  </ion-button>
-
-			  <ion-button 
-	  			[ngClass]="[statusFilter=='showall' ? 'yellow-bg' : '']"
-  				(click)="selectStatusFilter('showall')"
-			  >
-			    <ion-label>SHOW ALL</ion-label>
-			  </ion-button>
 			</div>
 
-			<div class='action-row'>
-				<img class='tab-bar-icon' src='assets/imgs/sort_icon.png'/>
+			<img class='tab-bar-icon ' src='assets/imgs/sort_icon.png'/>
+			<div id='department-row' class='action-row closed-list'>
  
- 			  <ion-button 
- 	  			[ngClass]="[selectedDepartment=='admin' ? 'dark-bg' : '']"
-   				(click)="selectDepartment('admin')"
- 			  >
-			    <ion-label>Admin</ion-label>
-			  </ion-button>
-
-			 
- 			  <ion-button 
- 	  			[ngClass]="[selectedDepartment=='operations' ? 'dark-bg' : '']"
-   				(click)="selectDepartment('operations')"
- 			  >		
-			    <ion-label>Operations</ion-label>
-			  </ion-button>
-			  
-			  <ion-button 
-	  			[ngClass]="[selectedDepartment=='marketing' ? 'dark-bg' : '']"
-  				(click)="selectDepartment('marketing')"
-			  >
-			    <ion-label>Marketing</ion-label>
-			  </ion-button>
-
-			  <ion-button 
-	  			[ngClass]="[selectedDepartment=='camps' ? 'dark-bg' : '']"
-  				(click)="selectDepartment('camps')"
-			  >
-			    <ion-label>Camps</ion-label>
-			  </ion-button>
-
-			  <ion-button 
-	  			[ngClass]="[selectedDepartment=='showall' ? 'dark-bg' : '']"
-  				(click)="selectDepartment('showall')"
-			  >
-			    <ion-label>SHOW ALL</ion-label>
-			  </ion-button>
+ 			  <ion-button *ngFor='let department of departments'
+ 	  			[ngClass]="[selectedDepartment==department.value ? 'dark-bg' : '']"
+ 	  			(click)="selectDepartment(department.value)"
+   			>
+ 			    <ion-label>{{department.name}}</ion-label>
+ 			  </ion-button>
+ 			  
 			</div>
 
-			<div class='action-row'>
-				<img class='tab-bar-icon' src='assets/imgs/sort2_icon.png'/>
-			  <ion-button 
-	  			[ngClass]="[selectedOrder=='date_asc' ? 'dark-bg' : '']"
-  				(click)="selectOrder('date_asc')"
-			  >
-			  	<ion-icon name="arrow-round-up"></ion-icon>
-			    <ion-label>Date</ion-label>
-			  </ion-button>
-
-			  <ion-button 
-	  			[ngClass]="[selectedOrder=='date_desc' ? 'dark-bg' : '']"
-  				(click)="selectOrder('date_desc')"
-			  >
-			  	<ion-icon name="arrow-round-down"></ion-icon>
-			    <ion-label>Date</ion-label>
-			  </ion-button>
-
-			  <ion-button 
-	  			[ngClass]="[selectedOrder=='alphabet_asc' ? 'dark-bg' : '']"
-  				(click)="selectOrder('alphabet_asc')"
-			  >
-			  	<ion-icon name="arrow-round-up"></ion-icon>
-			    <ion-label>A-Z</ion-label>
-			  </ion-button>
-
-			  <ion-button 
-	  			[ngClass]="[selectedOrder=='alphabet_desc' ? 'dark-bg' : '']"
-  				(click)="selectOrder('alphabet_desc')"
-			  >
-			  	<ion-icon name="arrow-round-down"></ion-icon>
-			    <ion-label>A-Z</ion-label>
-			  </ion-button>
+			<img class='tab-bar-icon ' src='assets/imgs/sort2_icon.png'/>
+			<div id='order-row' class='action-row closed-list'>
+ 
+ 			  <ion-button *ngFor='let order of orders'
+ 	  			[ngClass]="[selectedOrder==order.value ? 'dark-bg' : '']"
+ 	  			(click)="selectOrder(order.value)"
+   			>
+			  	<ion-icon name="{{order.icon}}"></ion-icon>
+ 			    <ion-label>{{order.name}}</ion-label>
+ 			  </ion-button>
 
 			</div>
 		</div>

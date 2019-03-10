@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'add-event', loadChildren: './modals/add-event/add-event.module#AddEventPageModule' },
   { path: 'test', loadChildren: './test/test.module#TestPageModule' },
   { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' },
+  { path: 'test', loadChildren: './pages/test/test.module#TestPageModule' },
 ];
 
 @NgModule({

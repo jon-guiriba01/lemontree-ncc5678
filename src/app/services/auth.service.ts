@@ -13,9 +13,20 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
 
-	user
+export class AuthService {
+  
+
+	user:any = {
+    id: null
+    ,first_name: null
+    ,last_name: null
+    ,email: null
+    ,contact_number: null
+    ,birthdate: null
+    ,team: null
+    ,credential: null
+  }
 
   constructor(
   	private router: Router
@@ -86,7 +97,7 @@ export class AuthService {
       const provider = new firebase.auth.GoogleAuthProvider();
       provider.addScope('https://www.googleapis.com/auth/drive')
       const credential = await this.afAuth.auth.signInWithPopup(provider);
-      this.user = credential;
+      this.user.credential = credential;
       console.log("credential", credential)
 
 
@@ -130,11 +141,12 @@ export class AuthService {
   timeout
   updateUser(){
     if(this.timeout){
-
+      clearTimeout(this.timeout)
     }
 
-
-    let userCollection = this.afs.collection('users')
-    return userCollection.doc(this.user.id).update(this.user)
+    this.timeout = setTimeout(()=>{
+      let userCollection = this.afs.collection('users')
+      return userCollection.doc(this.user.id).update(this.user)
+    }, 500)
   }
 }

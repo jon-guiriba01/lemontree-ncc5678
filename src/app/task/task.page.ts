@@ -8,7 +8,7 @@ import { DragulaService } from 'ng2-dragula';
 import { ToastController } from '@ionic/angular';
 import { SearchService } from '../services/search.service';
 import * as objects from '../../models/app-objects'
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-task',
   templateUrl: './task.page.html',
@@ -23,6 +23,32 @@ export class TaskPage implements OnInit {
   statusFilter = 'showall'
   selectedDepartment = 'showall'
   selectedOrder = 'date_asc'
+
+  filters = [
+    {name:'SHOW ALL', value:'showall'}
+    ,{name:'To-do', value:'todo'}
+    ,{name:'Doing', value:'doing'}
+    ,{name:'Done', value:'done'}
+  ]
+
+  departments = [
+    {name:'SHOW ALL', value:'showall'}
+    ,{name:'Operations', value:'operations'}
+    ,{name:'Marketing', value:'marketing'}
+    ,{name:'Camps', value:'camps'}
+  ]
+
+
+  orders = [
+    {name:'Date', value:'date_asc', icon:'arrow-round-up'}
+    ,{name:'Date', value:'date_desc', icon:'arrow-round-down' }
+    ,{name:'A-Z', value:'alphabet_asc', icon:'arrow-round-down'}
+    ,{name:'A-Z', value:'alphabet_desc', icon:'arrow-round-up'}
+  ]
+
+
+  isDepartmentOpen
+  isOrderOpen
 
   constructor(
     public taskService: TaskService
@@ -101,18 +127,39 @@ export class TaskPage implements OnInit {
    }
 
    selectStatusFilter(statusFilter){
-     this.statusFilter = statusFilter
-
+     if($('#filter-row').hasClass('closed-list')){
+       $('#filter-row').removeClass('closed-list')
+     }
+     else{
+       this.statusFilter = statusFilter
+       this.filters.sort(function(x,y){ return x.value == statusFilter ? -1 : y.value == statusFilter ? 1 : 0; });
+       $('#filter-row').addClass('closed-list')
+     }
      // this.taskService.filterTasks(this.filter)
    }
 
    selectDepartment(selectedDepartment){
-     this.selectedDepartment = selectedDepartment
+
+     if($('#department-row').hasClass('closed-list')){
+       $('#department-row').removeClass('closed-list')
+     }
+     else{
+       this.selectedDepartment = selectedDepartment
+       this.departments.sort(function(x,y){ return x.value == selectedDepartment ? -1 : y.value == selectedDepartment ? 1 : 0; });
+       $('#department-row').addClass('closed-list')
+     }
+
    }
    selectOrder(selectedOrder){
-     this.selectedOrder = selectedOrder
-
-     this.taskService.orderTasks(this.selectedOrder)
+     if($('#order-row').hasClass('closed-list')){
+       $('#order-row').removeClass('closed-list')
+     }
+     else{
+       this.selectedOrder = selectedOrder
+       this.taskService.orderTasks(this.selectedOrder)
+       this.orders.sort(function(x,y){ return x.value == selectedOrder ? -1 : y.value == selectedOrder ? 1 : 0; });
+       $('#order-row').addClass('closed-list')
+     }
    }
 
 }
