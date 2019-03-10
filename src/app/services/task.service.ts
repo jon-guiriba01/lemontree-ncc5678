@@ -72,13 +72,27 @@ export class TaskService {
     return this.tasks
   }
 
-  createNewTask(task: objects.Task){
+  createNewTask(task: objects.Task, user){
      if(!task.name)
        return
     else if(task.name.length <= 0)
       return
 
     console.log("[Added Task]", task)
+
+
+
+    if(task.involvedUsers){
+      
+      let duplicate = task.involvedUsers.filter(e=> e.id == user.id)
+
+      if(!duplicate)
+        task.involvedUsers.push(user)
+    
+    }else{
+      task.involvedUsers = [user]
+    }
+    
 
     return new Promise((resolve,reject)=>{
       this.tasksCollection.add({...task}).then((res)=>{
@@ -92,7 +106,7 @@ export class TaskService {
   }
 
 
-  addActivityToTask(task:objects.Task, description){
+  addActivityToTask(task:objects.Task, description, user){
     return new Promise((resolve,reject)=>{
       console.log("[addActivityToTask]", task)
       let newAct = new objects.Activity(description)
@@ -103,6 +117,18 @@ export class TaskService {
         if(activity.description == newAct.description){
           isDup = true
         }
+      }
+
+
+      if(task.involvedUsers){
+        
+        let duplicate = task.involvedUsers.filter(e=> e.id == user.id)
+
+        if(!duplicate)
+          task.involvedUsers.push(user)
+      
+      }else{
+        task.involvedUsers = [user]
       }
 
       if(!isDup){
@@ -131,12 +157,23 @@ export class TaskService {
     return this.tasksCollection.doc(task.id).delete();
   }
 
-  updateTask(task){
+  updateTask(task, user){
     console.log("[updateTask]", task)
 
     if(!task.id) return;
 
     task.status = this.getTaskStatus(task)
+
+    if(task.involvedUsers){
+      
+      let duplicate = task.involvedUsers.filter(e=> e.id == user.id)
+
+      if(!duplicate)
+        task.involvedUsers.push(user)
+    
+    }else{
+      task.involvedUsers = [user]
+    }
 
     console.log("[updateTask] --before update", task)
     return this.tasksCollection.doc(task.id).update(task)

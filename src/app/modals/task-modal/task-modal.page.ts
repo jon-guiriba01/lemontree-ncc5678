@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Task } from '../../../models/app-objects'
 import { TaskService } from '../../services/task.service';
+import { AuthService } from '../../services/auth.service';
 import { ModalController } from '@ionic/angular';
 import * as $ from 'jquery'
 
@@ -18,6 +19,7 @@ export class TaskModalPage implements OnInit {
   constructor(
     private taskService: TaskService
     , private modalController: ModalController
+    , private authService: AuthService
 
   ) { 
   }
@@ -27,7 +29,7 @@ export class TaskModalPage implements OnInit {
   }
 
   onClickSaveBtn(){
-    this.taskService.createNewTask(this.task).then((res)=>{
+    this.taskService.createNewTask(this.task,this.authService.user).then((res)=>{
       this.modalController.dismiss();
     }).catch((err)=>{
       console.log("err", err)
@@ -38,7 +40,7 @@ export class TaskModalPage implements OnInit {
     if(this.newActivityDescription.trim().length <= 0)
       return
 
-  	this.taskService.addActivityToTask(this.task, this.newActivityDescription).then((res)=>{
+  	this.taskService.addActivityToTask(this.task, this.newActivityDescription,this.authService.user).then((res)=>{
       this.getProgress()
     });
   	this.newActivityDescription = null;
@@ -52,7 +54,7 @@ export class TaskModalPage implements OnInit {
   		}
   	}
     this.getProgress()
-  	this.taskService.updateTask(this.task)
+  	this.taskService.updateTask(this.task,this.authService.user)
   }
 
   inputWait;
@@ -62,7 +64,7 @@ export class TaskModalPage implements OnInit {
   	}
 
   	this.inputWait = setTimeout(()=>{
-  		this.taskService.updateTask(this.task)
+  		this.taskService.updateTask(this.task,this.authService.user)
   	}, 500)
 
   }
@@ -78,20 +80,18 @@ export class TaskModalPage implements OnInit {
   	}
 
   	this.inputWait = setTimeout(()=>{
-  		this.taskService.updateTask(this.task)
+  		this.taskService.updateTask(this.task,this.authService.user)
   	}, 500)
 
   }
 
   deleteActivity(evt, act ){
-  	console.log('delete' ,act)
    	this.task.activities = this.task.activities.filter(e=>{
   		if(e.description != act.description)
   			return e
   	})
 
-  	console.log('deletexxxx' , this.task)
-		this.taskService.updateTask(this.task)
+		this.taskService.updateTask(this.task,this.authService.user)
   }
 
   getProgress(){
@@ -99,7 +99,7 @@ export class TaskModalPage implements OnInit {
   }
 
   updateTask(){
-    this.taskService.updateTask(this.task)
+    this.taskService.updateTask(this.task,this.authService.user)
   }
 
 

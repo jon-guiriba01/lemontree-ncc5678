@@ -62,3 +62,17 @@ ion-title{
 	margin-top: -10px;
 	font-weight: bold;
 }
+
+.avatar-row{
+	padding-left: 8px;
+}
+.involved-avatar{
+	position: absolute;
+	bottom: 20px;
+	width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}

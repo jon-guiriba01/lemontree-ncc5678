@@ -9,6 +9,7 @@ class Task {
 	group:string
 	author:string='anonymus'
 	progress:number=0.0
+	involvedUsers = []
 
 	constructor(name:string, group:string, deadline:string=moment().format('YYYY-MM-DD')){
 		this.name = name

@@ -52,5 +52,11 @@
 				Save
 			</ion-button>
 		</div>
+
+		<div class='avatar-row'>
+			<<ion-avatar class='involved-avatar' *ngFor='let user of task.involvedUsers'>
+				<img src="{{user.profileImageUrl}}">
+			</ion-avatar>
+		</div>
 		
 </ion-content>
