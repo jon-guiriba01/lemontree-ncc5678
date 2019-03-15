@@ -18,11 +18,12 @@ import { AlertController } from '@ionic/angular';
 export class FileCabinetPage implements OnInit {
 
   groups = [
-    'admin'
-    , 'operations'
-    , 'marketing'
-    , 'camps'
-    , 'showall'
+    {name: 'admin',value:'admin'}
+    , {name: 'operations', value:'operations'}
+    , {name: 'marketing', value:'marketing'}
+    , {name: 'camps', value:'camps'}
+    , {name: 'registration', value:'registration'}
+    , {name: 'show all', value:'showall'}
   ]
 
   selectedDepartment = 'showall'
