@@ -67,7 +67,7 @@
 				  <ion-card-content class='task-content'>
 				    <ion-card-subtitle><b>DEADLINE:</b> {{task.deadline}}</ion-card-subtitle>
 				    <ion-card-subtitle><b>ADDED BY:</b> {{task.author}}</ion-card-subtitle>
-				    <ion-card-subtitle><b>IN-CHARGE:</b> {{task.team}}</ion-card-subtitle>
+				    <ion-card-subtitle><b>IN-CHARGE:</b> {{task.team | titlecase}}</ion-card-subtitle>
 				  	<div class='task-status'>
 				  		<h4>STATUS</h4>
 				  		<div class="progress-bar-row">

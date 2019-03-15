@@ -37,6 +37,8 @@ export class TaskPage implements OnInit {
     ,{name:'Operations', value:'operations'}
     ,{name:'Marketing', value:'marketing'}
     ,{name:'Camps', value:'camps'}
+    ,{name:'Admin', value:'admin'}
+    ,{name:'Registration', value:'registration'}
   ]
 
 
