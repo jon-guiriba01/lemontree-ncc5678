@@ -1033,10 +1033,10 @@ firebase/auth
 
 loader
 
-@angular/forms
+@angular/core
 MIT
 
-@angular/core
+@angular/forms
 MIT
 
 zone.js
