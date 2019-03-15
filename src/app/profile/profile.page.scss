@@ -1,3 +1,5 @@
+@import '../mobile_mixin';
+
 .head-container{
 }
 
@@ -18,12 +20,27 @@ ion-label{
 	color: var(--red) !important;
 	font-weight: bold;
 	font-size: 26px;
+
+
+			
+	@include for-size(phone-only) {
+		max-height: 18px;
+	}
 }
 
 ion-input, ion-datetime, ion-select{
 	color: var(--ion-color-light);
 	background: var(--yellow);
 	--padding-start: 8px !important;
+
+		
+	@include for-size(phone-only) {
+  	max-height: 22px;
+  	font-size: 13px;
+  	--padding-top: 0px;
+  	--padding-bottom: 0px;
+	}
+
 }
 
 ion-button{
@@ -54,6 +71,7 @@ ion-button{
 .avatar-col{
 	display: flex;
 	justify-content: center;
+	padding: 8px;
 }
 
 .edit-btn{
@@ -63,4 +81,50 @@ ion-button{
 .avatar{
 	width: 100%;
 	height: 100%;
+}
+
+.profile-item ion-label{
+	margin-top: 0px;
+}
+.profile-item{
+
+	@include for-size(phone-only) {
+		max-height: 56px;
+	}
+}
+
+.avatar-team-wrapper{
+	display: flex;
+	justify-content: space-between;
+}
+
+ion-grid{
+	padding: 0;
+}
+
+ion-col{
+	padding: 0;
+}
+
+.avatar-container{
+	max-width: 90px;
+	min-width: 90px;
+	min-width: 90px;
+	min-height: 90px;
+}
+
+.head-container{
+	margin-bottom: 18px;
+}
+
+.extra-toolbar{
+	height: 15px;
+}
+
+
+ion-toolbar{
+
+  @include for-size(phone-only) {
+    /*height: 35px;*/
+  }
 }

@@ -43,14 +43,13 @@ export class CalendarPage implements OnInit {
     private eventsService: EventsService
     , private taskService: TaskService
     , private modalController: ModalController
-    ,public events:Events
-    ,public platform:Platform
+    , public events:Events
+    , public platform:Platform
   ) {
 
 
     this.events.subscribe('event:addSuccess',()=>{
       console.log('refetchEventSources')
-        // setTimeout(()=>{
       $('#calendar').fullCalendar('removeEvents')
       
       $('#calendar').fullCalendar('addEventSource', {
@@ -69,6 +68,11 @@ export class CalendarPage implements OnInit {
 
     let self = this
     
+    let heightAdjustment = 450
+
+    if(this.platform.width() < 599)
+      heightAdjustment = 240
+
     $('#calendar').fullCalendar({
       dayClick: async function(date, jsEvent, view) {
         let dom =  $(this)
@@ -85,7 +89,7 @@ export class CalendarPage implements OnInit {
         ,right: ''
       }
       ,handleWindowResize: true
-      , height: this.platform.height() - 450
+      , height: this.platform.height() - heightAdjustment
       // defaultView: 'basicWeek'
     });
 

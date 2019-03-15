@@ -1,3 +1,12 @@
+@import '../../mobile_mixin';
+
+ion-content *{
+
+	@include for-size(phone-only) {
+		font-size: 12px;
+	}
+
+}
 .activity-item{
 	display: flex;
 	justify-content: space-between;
@@ -20,6 +29,10 @@
 	display: flex;
 	justify-content: flex-end;
   width: 570px;
+	
+	@include for-size(phone-only) {
+  	width: 92%;
+	}
 }
 
 .save-btn{
@@ -56,11 +69,18 @@ ion-input{
 	--padding-start: 2px;
 	--padding-top: 2px;
 	--padding-bottom: 2px;
+
+	@include for-size(phone-only) {
+		font-size: 12px;
+	}
+
 }
 
 ion-title{
 	margin-top: -10px;
 	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
 }
 
 .avatar-row{
@@ -75,4 +95,22 @@ ion-title{
 	justify-content: center;
 	align-items: center;
 
+}
+
+.add-activity-btn{
+	--padding-end: 0;
+}
+
+
+.title-wrapper{
+	padding-left: 0;
+}
+
+.close-btn{
+	margin-right: 8px;
+	cursor: pointer;
+}
+
+.close-btn{
+  margin-top: 13px;
 }

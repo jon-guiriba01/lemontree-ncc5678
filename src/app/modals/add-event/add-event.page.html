@@ -1,6 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>ADD EVENT</ion-title>
+    <ion-title>
+    	<div class='modal-header' style="display:flex; justify-content: start; align-items: center;">
+    		<h6 (click)='dismiss($event)' class="close-btn">
+    			<ion-icon name='arrow-back'></ion-icon>
+    		</h6>
+	    	<h6>ADD EVENT</h6>
+    	</div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -29,7 +36,7 @@
 
 	<div class='action-row'>
 		<ion-button (click)='onClickAddEvent($event)'>
-			Submit
+			Save
 		</ion-button>
 	</div>
 </ion-content>

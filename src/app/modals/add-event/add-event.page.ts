@@ -43,4 +43,8 @@ export class AddEventPage implements OnInit {
   		this.modalController.dismiss()
   	});
   }
+
+  dismiss(evt){
+    this.modalController.dismiss()
+  }
 }

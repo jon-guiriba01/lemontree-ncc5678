@@ -1,7 +1,14 @@
+@import '../../mobile_mixin';
 
+ion-content *{
 
+	@include for-size(phone-only) {
+		font-size: 12px;
+	}
+
+}
 ion-toolbar{
-	--background: var(--ion-color-medium-tint);
+	/*--background: var(--ion-color-medium-tint);*/
 }
 
 ion-content{
@@ -23,8 +30,53 @@ ion-item, ion-list{
 	display: flex;
 	justify-content: flex-end;
   width: 570px;
+	
+	@include for-size(phone-only) {
+  	width: 92%;
+	}
 }
 
 ion-content ion-label{
 	--color: var(--yellow);
+}
+
+ion-title{
+	display: flex;
+	justify-content: space-between;
+  padding-left: 6px;
+}
+
+
+.close-btn{
+	font-size: 16px !important;
+	margin-right: 8px;
+	cursor: pointer;
+  margin-top: 6px !important;
+}
+
+ion-input{
+	--padding-end: 2px;
+	--padding-start: 2px;
+	--padding-top: 2px;
+	--padding-bottom: 2px;
+
+	@include for-size(phone-only) {
+		font-size: 12px;
+	}
+
+}
+
+
+ion-toolbar{
+	--background: var(--yellow);
+  height: 45px;
+}
+
+.modal-header h6{
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+input.searchbar-input{
+	padding-inline-start: 40px;
 }

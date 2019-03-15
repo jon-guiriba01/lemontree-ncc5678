@@ -1,3 +1,6 @@
+@import '../mobile_mixin';
+
+
 .main-container{
 	width: 100%;
 	height: 90%;
@@ -8,6 +11,12 @@
   right: 45px;
   bottom: 15px;
   --background: var(--ion-color-secondary);
+
+
+  @include for-size(phone-only) {
+    right: 0px;
+    bottom: 5px;
+  }
 }
 
 .newtask-container{
@@ -68,6 +77,11 @@ ion-tab-bar ion-button{
   color: var(--ion-color-light);
   padding: 0;
   padding-left: 16px;
+
+  @include for-size(phone-only) {
+    padding-left: 8px;
+  }
+
 } 
 
 .task-edit-btn{
@@ -79,19 +93,36 @@ ion-tab-bar ion-button{
   background: var(--ion-color-dark);
   color: var(--ion-color-light);
   padding-top: 12px;
+
+
+  @include for-size(phone-only) {
+    padding-top: 8px;
+    padding: 8px;
+  }
 }
 
 .task-content *{
   color: var(--ion-color-light);
+
+
 }
 
 .task-name{
   --color: var(--ion-color-dark);
   font-size: 18px;
   font-weight: bold;
+
+  @include for-size(phone-only) {
+    font-size: 12px;
+  }
 }
 .task-status{
   --background: var(--ion-color-dark);
+
+
+  @include for-size(phone-only) {
+    padding-top: 10px;
+  }
 }
 
 .task-progress{
@@ -114,6 +145,12 @@ ion-tab-bar ion-button{
   /*margin-right: 15px;*/
   margin-top: 8px;
   cursor: pointer;
+
+
+  @include for-size(phone-only) {
+    width: 10px;
+    height: 11px;
+  }
 }
 
 
@@ -137,6 +174,14 @@ ion-tab-bar ion-button{
   margin: 20px 0;
 }
 
+.status-bar-legend span{
+
+  @include for-size(phone-only) {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+}
+
 .action-group{
   position: absolute;
   display: flex;
@@ -148,6 +193,10 @@ ion-tab-bar ion-button{
   justify-content: space-between;
   max-width: 410px;
   z-index: 99;
+
+  @include for-size(phone-only) {
+    padding: 10px;
+  }
 }
 
 .action-row{
@@ -160,8 +209,27 @@ ion-tab-bar ion-button{
 
 .closed-list{
   height: 45px;
+
+  @include for-size(phone-only) {
+    height: 30px;
+  }
 }
 
 .add-activity-btn button{
   margin-left: 15px;
+}
+
+.filter-btn{
+  @include for-size(phone-only) {
+    font-size: 10px;
+    height: 20px;
+  }
+}
+
+
+.task-content ion-card-subtitle{
+  
+  @include for-size(phone-only) {
+    font-size: 10px;
+  }
 }

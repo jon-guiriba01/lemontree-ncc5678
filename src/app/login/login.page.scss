@@ -1,3 +1,5 @@
+@import '../mobile_mixin';
+
 .wrapper{
 	display: flex;
 	justify-content: center;
@@ -12,6 +14,10 @@
   height: 800px;
 	min-width: 230px;
 	max-width: 900px;
+	
+	@include for-size(phone-only) {
+  	height: 100%;
+	}
 }
 
 .login-inputs{
@@ -23,17 +29,42 @@
 	flex-direction: column;
 	width: 100%;
 	margin-bottom: 50px;
+
+
+	@include for-size(phone-only) {
+		margin-bottom: initial;
+	}
 }
 
 .logo-container{
 	margin-bottom: 50px;
 	display: flex;
 	justify-content: center;
+
+
+	@include for-size(phone-only) {
+		margin-bottom: 10px;
+	}
 }
 
 .logo{
 	max-width: 350px;
 	max-height: 220px;
+
+
+	@include for-size(phone-only) {
+		max-width: 250px;
+		max-height: 175px;
+		margin-bottom: 10px;
+	}
+}
+
+.ncc-logo .logo{
+
+	@include for-size(phone-only) {
+    max-height: 160px;
+		max-width: 140px;
+	}
 }
 
 .ncc-logo{
@@ -92,6 +123,10 @@ input{
 	text-align: center;
 	cursor: pointer;
 	font-size: 25px;
+
+	@include for-size(phone-only) {
+		font-size: 14px;
+	}
 }
 
 .google-login-btn .google-icon{

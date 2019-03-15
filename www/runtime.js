@@ -63,7 +63,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"common":"common","home-home-module":"home-home-module","login-login-module":"login-login-module","task-task-module":"task-task-module","default~calendar-calendar-module~file-cabinet-file-cabinet-module":"default~calendar-calendar-module~file-cabinet-file-cabinet-module","calendar-calendar-module":"calendar-calendar-module","file-cabinet-file-cabinet-module":"file-cabinet-file-cabinet-module","profile-profile-module":"profile-profile-module","settings-settings-module":"settings-settings-module","signup-signup-module":"signup-signup-module","test-test-module":"test-test-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"common":"common","home-home-module":"home-home-module","default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4":"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4","calendar-calendar-module":"calendar-calendar-module","dashboard-dashboard-module":"dashboard-dashboard-module","file-cabinet-file-cabinet-module":"file-cabinet-file-cabinet-module","profile-profile-module":"profile-profile-module","settings-settings-module":"settings-settings-module","task-task-module":"task-task-module","login-login-module":"login-login-module","pages-test-test-module":"pages-test-test-module","signup-signup-module":"signup-signup-module","team-details-team-details-module":"team-details-team-details-module","test-test-module":"test-test-module"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function

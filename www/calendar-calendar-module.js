@@ -15153,6 +15153,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 /***/ }),
 
+/***/ "./node_modules/shadow-dom-inject-styles/dist/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/shadow-dom-inject-styles/dist/index.js ***!
+  \*************************************************************/
+/*! exports provided: injectStyles */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "injectStyles", function() { return injectStyles; });
+function injectStyles(e,t,n){const o=e.shadowRoot;let r=!1;const c=Array.from(o.querySelectorAll("style"));c.forEach((e,l)=>{if(e.innerHTML===n&&(r=!0),c.length-1===l&&!1===r){const e=document.createElement("style");e.innerHTML=n,o.insertBefore(e,o.querySelector(t))}})}
+
+/***/ }),
+
 /***/ "./src/app/calendar/calendar.module.ts":
 /*!*********************************************!*\
   !*** ./src/app/calendar/calendar.module.ts ***!
@@ -15218,7 +15232,7 @@ var CalendarPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id='calendar'></div>"
+module.exports = "<div id='calendar' padding>\r\n</div>\r\n\r\n<ion-row class='custom-btns-row'>\r\n\t<ion-item  lines='none'>\r\n\t  <ion-label>Month</ion-label>\r\n\t  <ion-checkbox id='month-cb' slot=\"start\" (click)=\"monthView()\" [(ngModel)]='selectedView.month'></ion-checkbox>\r\n\t</ion-item>\r\n\r\n\t<ion-item  lines='none'>\r\n\t  <ion-label>Week</ion-label>\r\n\t  <ion-checkbox id='week-cb' slot=\"start\" (click)=\"weekView()\" [(ngModel)]='selectedView.week'></ion-checkbox>\r\n\t</ion-item>\r\n\r\n\t<ion-item  lines='none'>\r\n\t  <ion-label>Day</ion-label>\r\n\t  <ion-checkbox id='day-cb' slot=\"start\" (click)=\"dayView()\" [(ngModel)]='selectedView.day' [checked]='selectedView.day'></ion-checkbox>\r\n\t</ion-item>\r\n</ion-row>\r\n\r\n<ion-row class='legends-row'>\r\n\t<div class='legend-events'>\r\n\t\tEvents\r\n\t</div>\r\n\t<div class='legend-deadlines'>\r\n\t\tDeadlines\r\n\t</div>\r\n\t<div class='legend-others'>\r\n\t\tOthers\r\n\t</div>\r\n</ion-row>\r\n\r\n  <ion-fab-button size=\"small\" class=\"calendar-fab\" (click)='onClickAddEvent($event)'>\r\n  \t<ion-icon name=\"add\"></ion-icon>\r\n  </ion-fab-button>\r\n\t"
 
 /***/ }),
 
@@ -15229,7 +15243,7 @@ module.exports = "<div id='calendar'></div>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#calendar {\n  width: 100%;\n  height: 100%;\n  padding-top: 40px; }\n\n#calendar * {\n  max-height: 75vh; }\n\n.fc-button-group {\n  display: flex;\n  justify-content: space-between;\n  align-items: center; }\n\n.fc-button-group > * {\n  margin-right: 50px; }\n\nbutton {\n  border: none;\n  background: none; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2FsZW5kYXIvQzpcXFVzZXJzXFxKb25cXFByb2plY3RzXFxETFNVLU5DQy01Njc4LWZyZWVsYW5jZS9zcmNcXGFwcFxcY2FsZW5kYXJcXGNhbGVuZGFyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDLFdBQVc7RUFDWCxZQUFZO0VBQ1osaUJBQWlCLEVBQUE7O0FBR2xCO0VBQ0MsZ0JBQWdCLEVBQUE7O0FBR2pCO0VBQ0MsYUFBYTtFQUNiLDhCQUE4QjtFQUM5QixtQkFBbUIsRUFBQTs7QUFFcEI7RUFDQyxrQkFBa0IsRUFBQTs7QUFHbkI7RUFDQyxZQUFZO0VBQ1osZ0JBQWdCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9jYWxlbmRhci9jYWxlbmRhci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY2FsZW5kYXJ7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0aGVpZ2h0OiAxMDAlO1xyXG5cdHBhZGRpbmctdG9wOiA0MHB4O1xyXG59XHJcblxyXG4jY2FsZW5kYXIgKntcclxuXHRtYXgtaGVpZ2h0OiA3NXZoO1xyXG59XHJcblxyXG4uZmMtYnV0dG9uLWdyb3Vwe1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0anVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuLmZjLWJ1dHRvbi1ncm91cD4qe1xyXG5cdG1hcmdpbi1yaWdodDogNTBweDtcclxufVxyXG5cclxuYnV0dG9ue1xyXG5cdGJvcmRlcjogbm9uZTtcclxuXHRiYWNrZ3JvdW5kOiBub25lO1xyXG59Il19 */"
+module.exports = "#calendar {\n  width: 100%;\n  height: 100%;\n  padding-top: 40px; }\n\n#calendar * {\n  max-height: 75vh; }\n\n.fc-button-group {\n  display: flex;\n  justify-content: space-between;\n  align-items: center; }\n\n.fc-button-group > * {\n  margin-right: 50px; }\n\nbutton {\n  border: none;\n  background: none; }\n\n.custom-btns-row {\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  bottom: 215px;\n  width: 100%; }\n\n@media (max-width: 599px) {\n    .custom-btns-row {\n      bottom: 40px; } }\n\nion-checkbox {\n  --border-radius: 24px;\n  margin-right: 8px;\n  --checkmark-color: var(--ion-color-light);\n  --background-checked: var(--ion-color-dark);\n  --border-color-checked: var(--ion-color-dark); }\n\n.calendar-fab {\n  position: fixed;\n  right: 45px;\n  bottom: 15px;\n  --background: var(--ion-color-secondary); }\n\n@media (max-width: 599px) {\n    .calendar-fab {\n      right: 0px;\n      bottom: 5px; } }\n\n.legends-row {\n  width: 400px;\n  padding: 40px; }\n\n@media (max-width: 599px) {\n    .legends-row {\n      padding: 0 0 10px 10px; } }\n\n.legends-row > div {\n  margin-right: 10px; }\n\n@media (max-width: 599px) {\n    .legends-row > div {\n      padding: 2px;\n      line-height: 1.2;\n      height: 20px;\n      font-size: 12px; } }\n\n.legend-events {\n  border: solid 2px var(--green);\n  padding: 4px;\n  border-radius: 4px; }\n\n.legend-deadlines {\n  border: solid 2px var(--red);\n  padding: 4px;\n  border-radius: 4px; }\n\n.legend-others {\n  border: solid 2px var(--yellow);\n  padding: 4px;\n  border-radius: 6px; }\n\nion-checkbox svg path {\n  display: none !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2FsZW5kYXIvQzpcXFVzZXJzXFxKb25cXFByb2plY3RzXFxETFNVLU5DQy01Njc4LWZyZWVsYW5jZS9zcmNcXGFwcFxcY2FsZW5kYXJcXGNhbGVuZGFyLnBhZ2Uuc2NzcyIsInNyYy9hcHAvY2FsZW5kYXIvQzpcXFVzZXJzXFxKb25cXFByb2plY3RzXFxETFNVLU5DQy01Njc4LWZyZWVsYW5jZS9zcmNcXGFwcFxcbW9iaWxlX21peGluLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDQyxXQUFXO0VBQ1gsWUFBWTtFQUNaLGlCQUFpQixFQUFBOztBQUdsQjtFQUNDLGdCQUFnQixFQUFBOztBQUdqQjtFQUNDLGFBQWE7RUFDYiw4QkFBOEI7RUFDOUIsbUJBQW1CLEVBQUE7O0FBRXBCO0VBQ0Msa0JBQWtCLEVBQUE7O0FBR25CO0VBQ0MsWUFBWTtFQUNaLGdCQUFnQixFQUFBOztBQUdqQjtFQUNDLGFBQWE7RUFDYix1QkFBdUI7RUFDdkIsa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixXQUFXLEVBQUE7O0FDeEJSO0lEbUJKO01BUUUsWUFBWSxFQUFBLEVBRWI7O0FBRUQ7RUFDQyxxQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLHlDQUFrQjtFQUNsQiwyQ0FBcUI7RUFDckIsNkNBQXVCLEVBQUE7O0FBR3hCO0VBQ0UsZUFBZTtFQUNmLFdBQVc7RUFDWCxZQUFZO0VBQ1osd0NBQWEsRUFBQTs7QUMzQ1g7SUR1Q0o7TUFRRyxVQUFVO01BQ1YsV0FBVyxFQUFBLEVBRWI7O0FBRUQ7RUFDQyxZQUFZO0VBQ1osYUFBYSxFQUFBOztBQ3REVjtJRG9ESjtNQUtFLHNCQUFzQixFQUFBLEVBSXZCOztBQUNEO0VBQ0Msa0JBQWtCLEVBQUE7O0FDL0RmO0lEOERKO01BR0UsWUFBWTtNQUNaLGdCQUFnQjtNQUNoQixZQUFZO01BQ1osZUFBZSxFQUFBLEVBRWhCOztBQUVEO0VBQ0MsOEJBQThCO0VBQzlCLFlBQVk7RUFDWixrQkFBa0IsRUFBQTs7QUFJbkI7RUFDQyw0QkFBNEI7RUFDNUIsWUFBWTtFQUNaLGtCQUFrQixFQUFBOztBQUduQjtFQUNDLCtCQUErQjtFQUMvQixZQUFZO0VBQ1osa0JBQWtCLEVBQUE7O0FBR25CO0VBQ0Msd0JBQXdCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9jYWxlbmRhci9jYWxlbmRhci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi9tb2JpbGVfbWl4aW4nO1xyXG5cclxuI2NhbGVuZGFye1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdGhlaWdodDogMTAwJTtcclxuXHRwYWRkaW5nLXRvcDogNDBweDtcclxufVxyXG5cclxuI2NhbGVuZGFyICp7XHJcblx0bWF4LWhlaWdodDogNzV2aDtcclxufVxyXG5cclxuLmZjLWJ1dHRvbi1ncm91cHtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuXHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG59XHJcbi5mYy1idXR0b24tZ3JvdXA+KntcclxuXHRtYXJnaW4tcmlnaHQ6IDUwcHg7XHJcbn1cclxuXHJcbmJ1dHRvbntcclxuXHRib3JkZXI6IG5vbmU7XHJcblx0YmFja2dyb3VuZDogbm9uZTtcclxufVxyXG5cclxuLmN1c3RvbS1idG5zLXJvd3tcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRib3R0b206IDIxNXB4O1xyXG5cdHdpZHRoOiAxMDAlO1xyXG5cdFx0XHJcblx0QGluY2x1ZGUgZm9yLXNpemUocGhvbmUtb25seSkge1xyXG5cdFx0Ym90dG9tOiA0MHB4O1xyXG5cdH1cclxufVxyXG5cclxuaW9uLWNoZWNrYm94e1xyXG5cdC0tYm9yZGVyLXJhZGl1czogMjRweDtcclxuXHRtYXJnaW4tcmlnaHQ6IDhweDtcclxuXHQtLWNoZWNrbWFyay1jb2xvcjogdmFyKC0taW9uLWNvbG9yLWxpZ2h0KTtcclxuXHQtLWJhY2tncm91bmQtY2hlY2tlZDogdmFyKC0taW9uLWNvbG9yLWRhcmspO1xyXG5cdC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHZhcigtLWlvbi1jb2xvci1kYXJrKTtcclxufVxyXG5cclxuLmNhbGVuZGFyLWZhYntcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgcmlnaHQ6IDQ1cHg7XHJcbiAgYm90dG9tOiAxNXB4O1xyXG4gIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLXNlY29uZGFyeSk7XHJcblxyXG5cclxuXHRAaW5jbHVkZSBmb3Itc2l6ZShwaG9uZS1vbmx5KSB7XHJcblx0ICByaWdodDogMHB4O1xyXG5cdCAgYm90dG9tOiA1cHg7XHJcblx0fVxyXG59XHJcblxyXG4ubGVnZW5kcy1yb3d7XHJcblx0d2lkdGg6IDQwMHB4O1xyXG5cdHBhZGRpbmc6IDQwcHg7XHJcblxyXG5cdEBpbmNsdWRlIGZvci1zaXplKHBob25lLW9ubHkpIHtcclxuXHRcdHBhZGRpbmc6IDAgMCAxMHB4IDEwcHg7XHJcblx0fVxyXG5cclxuXHJcbn1cclxuLmxlZ2VuZHMtcm93PmRpdntcclxuXHRtYXJnaW4tcmlnaHQ6IDEwcHg7XHJcblx0QGluY2x1ZGUgZm9yLXNpemUocGhvbmUtb25seSkge1xyXG5cdFx0cGFkZGluZzogMnB4O1xyXG5cdFx0bGluZS1oZWlnaHQ6IDEuMjtcclxuXHRcdGhlaWdodDogMjBweDtcclxuXHRcdGZvbnQtc2l6ZTogMTJweDtcclxuXHR9XHJcbn1cclxuXHJcbi5sZWdlbmQtZXZlbnRze1xyXG5cdGJvcmRlcjogc29saWQgMnB4IHZhcigtLWdyZWVuKTtcclxuXHRwYWRkaW5nOiA0cHg7XHJcblx0Ym9yZGVyLXJhZGl1czogNHB4O1xyXG5cclxufVxyXG5cclxuLmxlZ2VuZC1kZWFkbGluZXN7XHJcblx0Ym9yZGVyOiBzb2xpZCAycHggdmFyKC0tcmVkKTtcclxuXHRwYWRkaW5nOiA0cHg7XHJcblx0Ym9yZGVyLXJhZGl1czogNHB4O1xyXG59XHJcblxyXG4ubGVnZW5kLW90aGVyc3tcclxuXHRib3JkZXI6IHNvbGlkIDJweCB2YXIoLS15ZWxsb3cpO1xyXG5cdHBhZGRpbmc6IDRweDtcclxuXHRib3JkZXItcmFkaXVzOiA2cHg7XHJcbn1cclxuXHJcbmlvbi1jaGVja2JveCBzdmcgcGF0aHtcclxuXHRkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7XHJcbn0iLCJAbWl4aW4gZm9yLXNpemUoJHJhbmdlKSB7XHJcbiAgJHBob25lLXVwcGVyLWJvdW5kYXJ5OiA2MDBweDtcclxuICAkdGFibGV0LXBvcnRyYWl0LXVwcGVyLWJvdW5kYXJ5OiA5MDBweDtcclxuICAkdGFibGV0LWxhbmRzY2FwZS11cHBlci1ib3VuZGFyeTogMTIwMHB4O1xyXG4gICRkZXNrdG9wLXVwcGVyLWJvdW5kYXJ5OiAxODAwcHg7XHJcblxyXG4gIEBpZiAkcmFuZ2UgPT0gcGhvbmUtb25seSB7XHJcbiAgICBAbWVkaWEgKG1heC13aWR0aDogI3skcGhvbmUtdXBwZXItYm91bmRhcnkgLSAxfSkgeyBAY29udGVudDsgfVxyXG4gIH0gQGVsc2UgaWYgJHJhbmdlID09IHRhYmxldC1wb3J0cmFpdC11cCB7XHJcbiAgICBAbWVkaWEgKG1pbi13aWR0aDogJHBob25lLXVwcGVyLWJvdW5kYXJ5KSB7IEBjb250ZW50OyB9XHJcbiAgfSBAZWxzZSBpZiAkcmFuZ2UgPT0gdGFibGV0LWxhbmRzY2FwZS11cCB7XHJcbiAgICBAbWVkaWEgKG1pbi13aWR0aDogJHRhYmxldC1wb3J0cmFpdC11cHBlci1ib3VuZGFyeSkgeyBAY29udGVudDsgfVxyXG4gIH0gQGVsc2UgaWYgJHJhbmdlID09IGRlc2t0b3AtdXAge1xyXG4gICAgQG1lZGlhIChtaW4td2lkdGg6ICR0YWJsZXQtbGFuZHNjYXBlLXVwcGVyLWJvdW5kYXJ5KSB7IEBjb250ZW50OyB9XHJcbiAgfSBAZWxzZSBpZiAkcmFuZ2UgPT0gYmlnLWRlc2t0b3AtdXAge1xyXG4gICAgQG1lZGlhIChtaW4td2lkdGg6ICRkZXNrdG9wLXVwcGVyLWJvdW5kYXJ5KSB7IEBjb250ZW50OyB9XHJcbiAgfVxyXG59Il19 */"
 
 /***/ }),
 
@@ -15249,8 +15263,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var fullcalendar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fullcalendar */ "./node_modules/fullcalendar/dist/fullcalendar.js");
 /* harmony import */ var fullcalendar__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(fullcalendar__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _services_events_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/events.service */ "./src/app/services/events.service.ts");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _modals_add_event_add_event_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modals/add-event/add-event.page */ "./src/app/modals/add-event/add-event.page.ts");
+/* harmony import */ var _services_task_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/task.service */ "./src/app/services/task.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _modals_add_event_add_event_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modals/add-event/add-event.page */ "./src/app/modals/add-event/add-event.page.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var shadow_dom_inject_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! shadow-dom-inject-styles */ "./node_modules/shadow-dom-inject-styles/dist/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -15303,12 +15321,18 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
+
+
+
 var CalendarPage = /** @class */ (function () {
-    function CalendarPage(eventsService, modalController, events) {
+    function CalendarPage(eventsService, taskService, modalController, events, platform) {
         var _this = this;
         this.eventsService = eventsService;
+        this.taskService = taskService;
         this.modalController = modalController;
         this.events = events;
+        this.platform = platform;
         this.calendarEvents = [];
         this.calendar = {
             mode: 'month',
@@ -15317,24 +15341,31 @@ var CalendarPage = /** @class */ (function () {
         this.eventSource = null;
         this.startTime = null;
         this.endTime = null;
+        this.selectedView = {
+            day: false,
+            week: false,
+            month: true
+        };
         this.events.subscribe('event:addSuccess', function () {
-            setTimeout(function () {
-                jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('addEventSource', _this.eventsService.events);
-            }, 1000);
+            console.log('refetchEventSources');
+            jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('removeEvents');
+            jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('addEventSource', {
+                events: _this.taskService.tasks,
+                color: '#fc2231'
+            });
+            jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('addEventSource', {
+                events: _this.eventsService.events,
+                color: '#39b54a'
+            });
         });
     }
     CalendarPage.prototype.ngOnInit = function () {
         var _this = this;
-        setTimeout(function () {
-            console.log('[ngOnInit]', _this.eventsService.events);
-            jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('addEventSource', _this.eventsService.events);
-        }, 1000);
         var self = this;
+        var heightAdjustment = 450;
+        if (this.platform.width() < 599)
+            heightAdjustment = 240;
         jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar({
-            footer: {
-                center: 'month,agendaWeek,agendaDay',
-            },
-            events: self.eventsService.events,
             dayClick: function (date, jsEvent, view) {
                 return __awaiter(this, void 0, void 0, function () {
                     var dom, modal;
@@ -15342,9 +15373,10 @@ var CalendarPage = /** @class */ (function () {
                         switch (_a.label) {
                             case 0:
                                 dom = jquery__WEBPACK_IMPORTED_MODULE_1__(this);
+                                console.log('-test', date.format('ll'));
                                 return [4 /*yield*/, self.modalController.create({
-                                        component: _modals_add_event_add_event_page__WEBPACK_IMPORTED_MODULE_5__["AddEventPage"],
-                                        componentProps: { date: date }
+                                        component: _modals_add_event_add_event_page__WEBPACK_IMPORTED_MODULE_6__["AddEventPage"],
+                                        componentProps: { date: date.format('ll') }
                                     })];
                             case 1:
                                 modal = _a.sent();
@@ -15354,34 +15386,37 @@ var CalendarPage = /** @class */ (function () {
                     });
                 });
             },
-            customButtons: {
-                filter: {
-                    text: 'Filters',
-                    click: function () {
-                    }
-                },
-                otherBtn: {
-                    text: 'Others',
-                    click: function () {
-                    }
-                },
-                eventsBtn: {
-                    text: 'Events',
-                    click: function () {
-                    }
-                },
-                deadlinesBtn: {
-                    text: 'Deadlines',
-                    click: function () {
-                    }
-                },
-            },
             header: {
-                center: 'filter, otherBtn, eventsBtn, deadlinesBtn ',
+                center: 'prev, title, next',
+                left: '',
+                right: ''
             },
-            handleWindowResize: false
+            handleWindowResize: true,
+            height: this.platform.height() - heightAdjustment
             // defaultView: 'basicWeek'
         });
+        setTimeout(function () {
+            jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('addEventSource', {
+                events: _this.taskService.tasks,
+                color: '#fc2231'
+            });
+        }, 1500);
+        setTimeout(function () {
+            jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('addEventSource', {
+                events: _this.eventsService.events,
+                color: '#39b54a'
+            });
+        }, 1500);
+        setTimeout(function () {
+            console.log('calendar events');
+            var monthCB = document.querySelector('#month-cb');
+            console.log('-monthCB', monthCB);
+            Object(shadow_dom_inject_styles__WEBPACK_IMPORTED_MODULE_8__["injectStyles"])(monthCB, 'ion-checkbox', "\n      path {\n        display: none !important;\n      }\n      ");
+            var weekCB = document.querySelector('#week-cb');
+            Object(shadow_dom_inject_styles__WEBPACK_IMPORTED_MODULE_8__["injectStyles"])(weekCB, 'ion-checkbox', "\n      path {\n        display: none !important;\n      }\n      ");
+            var dayCB = document.querySelector('#day-cb');
+            Object(shadow_dom_inject_styles__WEBPACK_IMPORTED_MODULE_8__["injectStyles"])(dayCB, 'ion-checkbox', "\n      path {\n        display: none !important;\n      }\n      ");
+        }, 2000);
     };
     CalendarPage.prototype.onCurrentDateChanged = function (event) {
     };
@@ -15393,6 +15428,50 @@ var CalendarPage = /** @class */ (function () {
     };
     CalendarPage.prototype.reloadSource = function (startTime, endTime) {
     };
+    CalendarPage.prototype.onClickAddEvent = function (evt) {
+        return __awaiter(this, void 0, void 0, function () {
+            var modal;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.modalController.create({
+                            component: _modals_add_event_add_event_page__WEBPACK_IMPORTED_MODULE_6__["AddEventPage"],
+                            componentProps: { date: moment__WEBPACK_IMPORTED_MODULE_7__().format('ll') }
+                        })];
+                    case 1:
+                        modal = _a.sent();
+                        return [4 /*yield*/, modal.present()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    CalendarPage.prototype.monthView = function () {
+        if (this.selectedView.month) {
+            this.selectedView.month = false;
+            return;
+        }
+        jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('changeView', 'month');
+        this.selectedView.day = false;
+        this.selectedView.week = false;
+    };
+    CalendarPage.prototype.weekView = function () {
+        if (this.selectedView.week) {
+            this.selectedView.week = false;
+            return;
+        }
+        jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('changeView', 'agendaWeek');
+        this.selectedView.day = false;
+        this.selectedView.month = false;
+    };
+    CalendarPage.prototype.dayView = function () {
+        if (this.selectedView.day) {
+            this.selectedView.day = false;
+            return;
+        }
+        jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('changeView', 'agendaDay');
+        this.selectedView.week = false;
+        this.selectedView.month = false;
+    };
     CalendarPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-calendar',
@@ -15400,8 +15479,10 @@ var CalendarPage = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./calendar.page.scss */ "./src/app/calendar/calendar.page.scss")]
         }),
         __metadata("design:paramtypes", [_services_events_service__WEBPACK_IMPORTED_MODULE_3__["EventsService"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Events"]])
+            _services_task_service__WEBPACK_IMPORTED_MODULE_4__["TaskService"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ModalController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["Events"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["Platform"]])
     ], CalendarPage);
     return CalendarPage;
 }());

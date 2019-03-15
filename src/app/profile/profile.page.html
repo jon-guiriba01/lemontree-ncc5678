@@ -11,34 +11,37 @@
 		<form [formGroup]="settingsForm">
 			<div class='head-container'>
 				<ion-grid>
-  			  <ion-row>
-  			    <ion-col class='avatar-col'>
-  			    	<div class='avatar-container'>
-  			    		<img class='avatar' [(src)]='authService.user.profileImageUrl'/>
-  			    		<h5 class='edit-avatar-btn' (click)='changeAvatar()'>EDIT</h5>
-  			    	</div>
-  			    </ion-col>
-  			    <ion-col size='8'>
-						<h5 class='myprofile-text'>My Profile</h5>
+  			  <ion-row >
+  			  	<div class='avatar-team-wrapper'>
+	  			    <ion-col class='avatar-col'>
+	  			    	<div class='avatar-container'>
+	  			    		<img class='avatar' [(src)]='authService.user.profileImageUrl'/>
+	  			    		<h5 class='edit-avatar-btn' (click)='changeAvatar()'>EDIT</h5>
+	  			    	</div>
+	  			    </ion-col>
+	  			    <ion-col size='8'>
+							<h5 class='myprofile-text'>My Profile</h5>
 
-			      <ion-item lines='none'>
-			        <ion-label position='floating'>Team</ion-label>
-			        <!-- <ion-input class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()' [(readonly)]='isReadOnly'></ion-input> -->
-			        <ion-select  class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()' >
-			        	<ion-select-option value="admin">Admin</ion-select-option>
-			        	<ion-select-option value="operations">Operations</ion-select-option>
-			        	<ion-select-option value="marketing">Marketing</ion-select-option>
-			        	<ion-select-option value="camps">Camps</ion-select-option>
-			        </ion-select >
-		      	</ion-item>
-		        <div class="error-list" >
-		        	<div *ngFor="let validation of validationMessages.team" >
-			        	<h5 class="error-msg" *ngIf="settingsForm.get('team').hasError(validation.type) && (settingsForm.get('team').dirty || settingsForm.get('team').touched)" >
-			        		{{validation.message}}
-			        	</h5>
-		        	</div>
-		        </div>
-  			    </ion-col>
+				      <ion-item lines='none'>
+				        <ion-label position='floating'>Team</ion-label>
+				        <!-- <ion-input class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()' [(readonly)]='isReadOnly'></ion-input> -->
+				        <ion-select  class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()' >
+				        	<ion-select-option value="admin">Admin</ion-select-option>
+				        	<ion-select-option value="operations">Operations</ion-select-option>
+				        	<ion-select-option value="marketing">Marketing</ion-select-option>
+				        	<ion-select-option value="camps">Camps</ion-select-option>
+				        </ion-select >
+			      	</ion-item>
+			        <div class="error-list" >
+			        	<div *ngFor="let validation of validationMessages.team" >
+				        	<h5 class="error-msg" *ngIf="settingsForm.get('team').hasError(validation.type) && (settingsForm.get('team').dirty || settingsForm.get('team').touched)" >
+				        		{{validation.message}}
+				        	</h5>
+			        	</div>
+			        </div>
+	  			    </ion-col>
+  			  		
+  			  	</div>
   			  </ion-row>
 
 					<div>
@@ -52,7 +55,7 @@
   			  <ion-row>
 
   			    <ion-col>
-  			      <ion-item lines='none'>
+  			      <ion-item lines='none' class='profile-item'> 
   			        <ion-label position='floating'>First Name</ion-label>
   			        <ion-input type='text' formControlName='firstName' [(ngModel)]='authService.user.first_name' (ionChange)='updateFirstName()' [(readonly)]='isReadOnly'></ion-input>
   			      </ion-item>
@@ -70,7 +73,7 @@
   			  <ion-row>
 
   			    <ion-col>
-  			      <ion-item lines='none'>
+  			      <ion-item lines='none' class='profile-item'>
   			        <ion-label position='floating'>Last Name</ion-label>
   			        <ion-input type='text' formControlName='lastName' [(ngModel)]='authService.user.last_name' (ionChange)='updateLastName()' [(readonly)]='isReadOnly'></ion-input>
   			      </ion-item>
@@ -89,7 +92,7 @@
 
   			    <ion-col>
 
-  			      <ion-item lines='none'>
+  			      <ion-item lines='none' class='profile-item'>
   			        <ion-label position='floating'>Email</ion-label>
   			        <ion-input type='text' formControlName='email' [(ngModel)]='authService.user.email' readonly='true'></ion-input>
   			      </ion-item>
@@ -109,7 +112,7 @@
 
   			    <ion-col>
 
-  			      <ion-item lines='none'>
+  			      <ion-item lines='none' class='profile-item'>
   			        <ion-label position='floating'>Contact Number</ion-label>
   			        <ion-input type='text' formControlName='contactNumber'  [(ngModel)]='authService.user.contact_number' (ionChange)='updateContactNumber()' [(readonly)]='isReadOnly'></ion-input>
   			      </ion-item>
@@ -129,7 +132,7 @@
 
   			    <ion-col>
 
-  			      <ion-item lines='none'>
+  			      <ion-item lines='none' class='profile-item'>
   			        <ion-label position='floating'>Birthday</ion-label>
   			        <ion-datetime class='datetime-input' display-format="MMM DD, YYYY" formControlName='birthdate' [(ngModel)]='authService.user.birthdate' (ionChange)='updateBirthdate()' [(readonly)]='isReadOnly'></ion-datetime>
   			      </ion-item>
@@ -163,7 +166,7 @@
 </ion-content>
 
 
-<ion-toolbar color="primary">
+<ion-toolbar class='extra-toolbar' color="primary">
 </ion-toolbar>
 
 <input type="file" name="" style='display: none;' class='hidden-input'/>

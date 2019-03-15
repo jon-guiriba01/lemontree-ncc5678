@@ -1,3 +1,5 @@
+@import '../mobile_mixin';
+
 .card-icon{
 	max-width: 180px;
 	max-height: 180px;
@@ -8,34 +10,34 @@
 .option-card{
 	min-width: 150px;
 	min-height: 150px;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100px;
+
+	@include for-size(phone-only) {
+		min-width: 80px;
+		min-height: 80px;
+		background-size: 50px;
+
+	}
+
 }
 
 .option-card.newtask{
 	background-image: url('../../assets/imgs/new_task_icon.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100px;
 }
 
 .option-card.newfile{
 	background-image: url('../../assets/imgs/new_file_icon.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100px;
 }
 
 .option-card.profile{
 	background-image: url('../../assets/imgs/profile_icon.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100px;
 }
 
 .option-card.settings{
 	background-image: url('../../assets/imgs/gear_icon.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100px;
 }
 
 .main-container{
@@ -44,6 +46,11 @@
 
 .dashboard-card{
 	height: 100%;
+	
+	@include for-size(phone-only) {
+		height: 455px;
+	}
+
 }
 
 .dashboard-row{
@@ -63,6 +70,12 @@ h6{
 	font-size: 24px;
 	font-weight: bold;
 	color: var(--ion-color-dark-tint);
+
+
+	
+	@include for-size(phone-only) {
+		font-size: 14px;
+	}
 }
 
 .dashboard-title{
@@ -70,6 +83,12 @@ h6{
 	font-size: 26px;
 	font-weight: bold;
 	margin-bottom: 16px;
+
+
+	@include for-size(phone-only) {
+		font-size: 18px;
+		margin-bottom: 8px;
+	}
 }
 
 .event-item{
@@ -81,6 +100,11 @@ h6{
 	flex-basis: 50%;
 	text-align: left;
 	font-size: 24px;
+
+
+	@include for-size(phone-only) {
+		font-size: 13px;
+	}
 }
 
 .option-card{

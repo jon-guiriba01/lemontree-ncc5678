@@ -85,24 +85,70 @@ var _sPassive,GestureController=function(){function t(t){this.doc=t,this.gesture
 
 /***/ }),
 
-/***/ "./src/app/services/auth.service.ts":
-/*!******************************************!*\
-  !*** ./src/app/services/auth.service.ts ***!
-  \******************************************/
-/*! exports provided: AuthService */
+/***/ "./src/app/services/search.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/services/search.service.ts ***!
+  \********************************************/
+/*! exports provided: SearchService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchService", function() { return SearchService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/google-plus/ngx */ "./node_modules/@ionic-native/google-plus/ngx/index.js");
-/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SearchService = /** @class */ (function () {
+    function SearchService() {
+        this.searchInput = '';
+    }
+    SearchService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], SearchService);
+    return SearchService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/storage.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/storage.service.ts ***!
+  \*********************************************/
+/*! exports provided: StorageService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StorageService", function() { return StorageService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_fire_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/storage */ "./node_modules/@angular/fire/storage/index.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -153,180 +199,106 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
-
-var AuthService = /** @class */ (function () {
-    function AuthService(router, loadingController, googlePlus, sotrage, afAuth, platform) {
-        this.router = router;
-        this.loadingController = loadingController;
-        this.googlePlus = googlePlus;
-        this.sotrage = sotrage;
-        this.afAuth = afAuth;
-        this.platform = platform;
-    }
-    AuthService.prototype.googleLogin = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var err_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 5, , 6]);
-                        if (!this.platform.is('android')) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.mobileGoogleLogin()];
-                    case 1: return [2 /*return*/, _a.sent()];
-                    case 2:
-                        if (!this.platform.is('desktop')) return [3 /*break*/, 4];
-                        return [4 /*yield*/, this.webGoogleLogin()];
-                    case 3: return [2 /*return*/, _a.sent()];
-                    case 4: return [3 /*break*/, 6];
-                    case 5:
-                        err_1 = _a.sent();
-                        console.log(err_1);
-                        return [3 /*break*/, 6];
-                    case 6: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    AuthService.prototype.mobileGoogleLogin = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var loading;
-            var _this = this;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.loadingController.create({
-                            message: 'Please wait...'
-                        })];
-                    case 1:
-                        loading = _a.sent();
-                        this.presentLoading(loading);
-                        this.googlePlus.login({
-                            'scopes': 'https://www.googleapis.com/auth/drive',
-                            // 'webClientId': '694548309780-p7pvh160hh62p2dpma7822pv83hsd1js.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
-                            'webClientId': '549453225877-oh2jll0jb8vspp5r9fungtdnaic4eoop.apps.googleusercontent.com',
-                            'offline': true // Optional, but requires the webClientId - 
-                            // if set to true the plugin will also return a serverAuthCode, 
-                            // which can be used to grant offline access to a non-Google server
-                        })
-                            .then(function (user) {
-                            console.log("user", user);
-                            loading.dismiss();
-                            _this.user = user;
-                            _this.sotrage.set('google_user', {
-                                name: user.displayName,
-                                email: user.email,
-                                picture: user.imageUrl
-                            })
-                                .then(function () {
-                                _this.router.navigate(["/home"]);
-                            }, function (error) {
-                                console.log(error);
-                            });
-                            loading.dismiss();
-                        }, function (err) {
-                            console.log(err);
-                            loading.dismiss();
-                        });
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    AuthService.prototype.webGoogleLogin = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var provider, credential, err_2;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        provider = new firebase_app__WEBPACK_IMPORTED_MODULE_5__["auth"].GoogleAuthProvider();
-                        provider.addScope('https://www.googleapis.com/auth/drive');
-                        return [4 /*yield*/, this.afAuth.auth.signInWithPopup(provider)];
-                    case 1:
-                        credential = _a.sent();
-                        this.user = credential;
-                        console.log("credential", credential);
-                        this.router.navigate(["/home"]);
-                        return [3 /*break*/, 3];
-                    case 2:
-                        err_2 = _a.sent();
-                        console.log(err_2);
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    AuthService.prototype.presentLoading = function (loading) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, loading.present()];
-                    case 1: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    AuthService.prototype.googleLogout = function () {
+var StorageService = /** @class */ (function () {
+    function StorageService(afStorage, afs, alertController, loadingController) {
         var _this = this;
-        this.googlePlus.logout()
-            .then(function (res) {
-            //user logged out so we will remove him from the NativeStorage
-            _this.sotrage.set('google_user', null);
-            _this.router.navigate(["/login"]);
-        }, function (err) {
-            console.log(err);
+        this.afStorage = afStorage;
+        this.afs = afs;
+        this.alertController = alertController;
+        this.loadingController = loadingController;
+        this.files = [];
+        this.filesCollection = this.afs.collection('files');
+        this.filesCollection.snapshotChanges().subscribe(function (dataSet) {
+            var files = [];
+            for (var _i = 0, dataSet_1 = dataSet; _i < dataSet_1.length; _i++) {
+                var data = dataSet_1[_i];
+                var task = __assign({}, data.payload.doc.data());
+                task.id = data.payload.doc.id;
+                files.push(task);
+            }
+            _this.files = files;
+            console.log("this.files", _this.files);
+        });
+    }
+    StorageService.prototype.uploadFile = function (file, group, path) {
+        if (path === void 0) { path = 'filecabinet'; }
+        return __awaiter(this, void 0, void 0, function () {
+            var fullPath, fileRef, _a, uploadTask, afUploadTask;
+            var _this = this;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        console.log('[uploadFile]', file);
+                        console.log('-path', path);
+                        fullPath = path + "/" + file.name;
+                        fileRef = this.afStorage.ref(fullPath);
+                        _a = this;
+                        return [4 /*yield*/, this.loadingController.create({
+                                message: 'Please wait...',
+                                spinner: 'crescent'
+                            })];
+                    case 1:
+                        _a.loading = _b.sent();
+                        this.loading.present();
+                        uploadTask = this.afStorage.upload(fullPath, file);
+                        afUploadTask = uploadTask.percentageChanges();
+                        return [2 /*return*/, new Promise(function (resolve, reject) {
+                                uploadTask.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["finalize"])(function () { return __awaiter(_this, void 0, void 0, function () {
+                                    var _this = this;
+                                    return __generator(this, function (_a) {
+                                        console.log('-finalize', path);
+                                        fileRef.getDownloadURL().subscribe(function (downloadURL) {
+                                            _this.filesCollection.add({
+                                                name: file.name,
+                                                path: fullPath,
+                                                downloadURL: downloadURL,
+                                                group: group
+                                            }).then(function (uploadAddToFirestoreFinished) {
+                                                _this.loading.dismiss();
+                                            }).catch(function (err) {
+                                                reject();
+                                                console.log("err", err);
+                                            });
+                                            resolve(downloadURL);
+                                        });
+                                        return [2 /*return*/];
+                                    });
+                                }); }))
+                                    .subscribe(function (res) {
+                                    console.log('afUploadTask', res);
+                                });
+                            })];
+                }
+            });
         });
     };
-    AuthService = __decorate([
+    StorageService.prototype.downloadFile = function (file) {
+        console.log('[downloadFile]', file);
+        var tempLink = document.createElement('a');
+        tempLink.href = file.downloadURL;
+        tempLink.setAttribute('download', name);
+        tempLink.click();
+    };
+    StorageService.prototype.deleteFile = function (file) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                console.log('[deleteFile]', file);
+                this.filesCollection.doc(file.id).delete();
+                this.afStorage.ref(file.path).delete();
+                return [2 /*return*/];
+            });
+        });
+    };
+    StorageService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"],
-            _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_3__["GooglePlus"],
-            _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"],
-            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__["AngularFireAuth"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"]])
-    ], AuthService);
-    return AuthService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/search.service.ts":
-/*!********************************************!*\
-  !*** ./src/app/services/search.service.ts ***!
-  \********************************************/
-/*! exports provided: SearchService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchService", function() { return SearchService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var SearchService = /** @class */ (function () {
-    function SearchService() {
-        this.searchInput = '';
-    }
-    SearchService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
-            providedIn: 'root'
-        }),
-        __metadata("design:paramtypes", [])
-    ], SearchService);
-    return SearchService;
+        __metadata("design:paramtypes", [_angular_fire_storage__WEBPACK_IMPORTED_MODULE_1__["AngularFireStorage"],
+            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["LoadingController"]])
+    ], StorageService);
+    return StorageService;
 }());
 
 

@@ -1,4 +1,6 @@
 // http://ionicframework.com/docs/theming/
+@import './app/mobile_mixin';
+
 @import '~@ionic/angular/css/core.css';
 @import '~@ionic/angular/css/normalize.css';
 @import '~@ionic/angular/css/structure.css';
@@ -67,6 +69,9 @@ body {
   height: 800px;
   max-width: 900px;
 
+  @include for-size(phone-only) {
+    height: initial;
+  }
   margin: 0 auto;
 }
 
@@ -182,4 +187,15 @@ body {
   overflow: hidden;
   color: transparent !important;
   margin: 0 auto;
+}
+
+.mobiletest-div{
+  display: none !important;
+}
+
+.fc-basic-view .fc-body .fc-row{
+    
+  @include for-size(phone-only) {
+    min-height: 3em;
+  }
 }

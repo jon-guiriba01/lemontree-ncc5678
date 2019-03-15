@@ -1,3 +1,5 @@
+@import '../mobile_mixin';
+
 .signup-card{
 	background: var(--dark-bg);
 	position: relative;
@@ -42,7 +44,11 @@ ion-content{
 .main-container{
 	justify-content: center;
 	align-items: center;
-	height: 700px;
+	height: 90%;
+
+	@include for-size(phone-only) {
+		height: 75%;
+	}
 }
 h6{
 	font-size: 30px;
@@ -86,4 +92,17 @@ ion-button{
 	height: 0;
 	max-height: 0;
 	padding: 0;
+}
+
+
+.extra-toolbar{
+	height: 15px;
+}
+
+
+ion-toolbar{
+
+  @include for-size(phone-only) {
+    /*height: 35px;*/
+  }
 }

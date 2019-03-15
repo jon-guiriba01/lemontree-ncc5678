@@ -1,7 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
+    <ion-title class='title-wrapper'>
     	<div class="modal-header">
+
+    		<h6 class='close-btn' (click)='dismiss($event)' >
+    			<ion-icon name='arrow-back'></ion-icon>
+    		</h6>
+
     		<ion-input type='text' [(ngModel)]='task.name' (ionChange)='onInputTaskName()'></ion-input>
     		<ion-button *ngIf="!isCreateNew" (click)='onClickDelete($event)' fill='clear'>
     			<ion-icon name='trash'></ion-icon>
@@ -47,6 +52,12 @@
 
 		</ion-list>
 
+		<div class='action-row' *ngIf="isCreateNew" >
+			<ion-button class='save-btn' (click)='onClickSaveBtn($event)'>
+				Save
+			</ion-button>
+		</div>
+
 		<div class='action-row'>
 			<ion-button *ngIf="isCreateNew" class='save-btn' (click)='onClickSaveBtn($event)'>
 				Save
@@ -54,7 +65,7 @@
 		</div>
 
 		<div class='avatar-row'>
-			<<ion-avatar class='involved-avatar' *ngFor='let user of task.involvedUsers'>
+			<ion-avatar class='involved-avatar' *ngFor='let user of task.involvedUsers'>
 				<img src="{{user.profileImageUrl}}">
 			</ion-avatar>
 		</div>

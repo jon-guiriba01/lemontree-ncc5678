@@ -1,9 +1,15 @@
+@import '../mobile_mixin';
+
 .upload-fab{
   position: fixed;
   right: 45px;
   bottom: 15px;
   --background: var(--ion-color-secondary);
 
+  @include for-size(phone-only) {
+    right: 0px;
+    bottom: 5px;
+  }
 }
 
 .download-btn{
@@ -27,6 +33,13 @@
 	color: var(--ion-color-light);
 	margin-left: 16px;
 	min-width: 140px;
+
+
+  @include for-size(phone-only) {
+		height: 25px;
+		font-size: 12px;
+		padding: 4px 4px 4px 8px;
+	  }
 }
 
 .filter-icon{

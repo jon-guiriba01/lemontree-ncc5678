@@ -102,5 +102,8 @@ export class TaskModalPage implements OnInit {
     this.taskService.updateTask(this.task,this.authService.user)
   }
 
+  dismiss(evt){
+    this.modalController.dismiss()
+  }
 
 }

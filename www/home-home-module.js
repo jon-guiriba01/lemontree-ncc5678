@@ -51,7 +51,7 @@ var ComponentsModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"app-toolbar\">\n\t<ion-button (click)='btnMenuClickEvent()'>\n\t  <ion-icon name=\"menu\"></ion-icon>\n\t</ion-button>\n\t<ion-searchbar\n\t animated \n\t (ionChange)='onChangeSearch($event)'></ion-searchbar>\n</div>\n"
+module.exports = "<div class=\"app-toolbar\">\n\t<!-- <ion-button (click)='btnMenuClickEvent()'>\n\t  <ion-icon name=\"menu\"></ion-icon>\n\t</ion-button> -->\n\t<ion-searchbar\n\t animated \n\t (ionChange)='onChangeSearch($event)'></ion-searchbar>\n</div>\n"
 
 /***/ }),
 
@@ -62,7 +62,7 @@ module.exports = "<div class=\"app-toolbar\">\n\t<ion-button (click)='btnMenuCli
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".app-toolbar {\n  display: flex;\n  justify-content: center; }\n\n.app-toolbar > ion-button {\n  flex-basis: 10%;\n  min-width: 50px; }\n\n.app-toolbar > ion-searchbar {\n  flex-basis: 80%; }\n\nion-button {\n  --background: var(--ion-color-light);\n  --color: var(--ion-color-dark); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy90b29sYmFyL0M6XFxVc2Vyc1xcSm9uXFxQcm9qZWN0c1xcRExTVS1OQ0MtNTY3OC1mcmVlbGFuY2Uvc3JjXFxhcHBcXGNvbXBvbmVudHNcXHRvb2xiYXJcXHRvb2xiYXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDQyxhQUFhO0VBQ2IsdUJBQXVCLEVBQUE7O0FBR3hCO0VBQ0MsZUFBZTtFQUNmLGVBQWUsRUFBQTs7QUFHaEI7RUFDQyxlQUFlLEVBQUE7O0FBSWhCO0VBQ0Msb0NBQWE7RUFDYiw4QkFBUSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy90b29sYmFyL3Rvb2xiYXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYXBwLXRvb2xiYXJ7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG5cclxuLmFwcC10b29sYmFyPmlvbi1idXR0b257XHJcblx0ZmxleC1iYXNpczogMTAlO1xyXG5cdG1pbi13aWR0aDogNTBweDtcclxufVxyXG5cclxuLmFwcC10b29sYmFyPmlvbi1zZWFyY2hiYXJ7XHJcblx0ZmxleC1iYXNpczogODAlO1xyXG59XHJcblxyXG5cclxuaW9uLWJ1dHRvbntcclxuXHQtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XHJcblx0LS1jb2xvcjogdmFyKC0taW9uLWNvbG9yLWRhcmspO1xyXG59Il19 */"
+module.exports = ".app-toolbar {\n  display: flex;\n  justify-content: center; }\n\n.app-toolbar > ion-button {\n  flex-basis: 10%;\n  max-width: 50px; }\n\n.app-toolbar > ion-searchbar {\n  flex-basis: 80%; }\n\n@media (max-width: 599px) {\n  ion-searchbar input {\n    font-size: 12px; } }\n\nion-button {\n  --background: var(--ion-color-light);\n  --color: var(--ion-color-dark); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy90b29sYmFyL0M6XFxVc2Vyc1xcSm9uXFxQcm9qZWN0c1xcRExTVS1OQ0MtNTY3OC1mcmVlbGFuY2Uvc3JjXFxhcHBcXGNvbXBvbmVudHNcXHRvb2xiYXJcXHRvb2xiYXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvdG9vbGJhci9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXERMU1UtTkNDLTU2NzgtZnJlZWxhbmNlL3NyY1xcYXBwXFxtb2JpbGVfbWl4aW4uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNDLGFBQWE7RUFDYix1QkFBdUIsRUFBQTs7QUFHeEI7RUFDQyxlQUFlO0VBQ2YsZUFBZSxFQUFBOztBQUdoQjtFQUNDLGVBQWUsRUFBQTs7QUNOWjtFRFNKO0lBRUUsZUFBZSxFQUFBLEVBRWhCOztBQUdEO0VBQ0Msb0NBQWE7RUFDYiw4QkFBUSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy90b29sYmFyL3Rvb2xiYXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0ICcuLi8uLi9tb2JpbGVfbWl4aW4nO1xyXG5cclxuLmFwcC10b29sYmFye1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi5hcHAtdG9vbGJhcj5pb24tYnV0dG9ue1xyXG5cdGZsZXgtYmFzaXM6IDEwJTtcclxuXHRtYXgtd2lkdGg6IDUwcHg7XHJcbn1cclxuXHJcbi5hcHAtdG9vbGJhcj5pb24tc2VhcmNoYmFye1xyXG5cdGZsZXgtYmFzaXM6IDgwJTtcclxufVxyXG5cclxuaW9uLXNlYXJjaGJhciBpbnB1dHtcclxuXHRAaW5jbHVkZSBmb3Itc2l6ZShwaG9uZS1vbmx5KSB7XHJcblx0XHRmb250LXNpemU6IDEycHg7XHJcblx0fVxyXG59XHJcblxyXG5cclxuaW9uLWJ1dHRvbntcclxuXHQtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XHJcblx0LS1jb2xvcjogdmFyKC0taW9uLWNvbG9yLWRhcmspO1xyXG59IiwiQG1peGluIGZvci1zaXplKCRyYW5nZSkge1xyXG4gICRwaG9uZS11cHBlci1ib3VuZGFyeTogNjAwcHg7XHJcbiAgJHRhYmxldC1wb3J0cmFpdC11cHBlci1ib3VuZGFyeTogOTAwcHg7XHJcbiAgJHRhYmxldC1sYW5kc2NhcGUtdXBwZXItYm91bmRhcnk6IDEyMDBweDtcclxuICAkZGVza3RvcC11cHBlci1ib3VuZGFyeTogMTgwMHB4O1xyXG5cclxuICBAaWYgJHJhbmdlID09IHBob25lLW9ubHkge1xyXG4gICAgQG1lZGlhIChtYXgtd2lkdGg6ICN7JHBob25lLXVwcGVyLWJvdW5kYXJ5IC0gMX0pIHsgQGNvbnRlbnQ7IH1cclxuICB9IEBlbHNlIGlmICRyYW5nZSA9PSB0YWJsZXQtcG9ydHJhaXQtdXAge1xyXG4gICAgQG1lZGlhIChtaW4td2lkdGg6ICRwaG9uZS11cHBlci1ib3VuZGFyeSkgeyBAY29udGVudDsgfVxyXG4gIH0gQGVsc2UgaWYgJHJhbmdlID09IHRhYmxldC1sYW5kc2NhcGUtdXAge1xyXG4gICAgQG1lZGlhIChtaW4td2lkdGg6ICR0YWJsZXQtcG9ydHJhaXQtdXBwZXItYm91bmRhcnkpIHsgQGNvbnRlbnQ7IH1cclxuICB9IEBlbHNlIGlmICRyYW5nZSA9PSBkZXNrdG9wLXVwIHtcclxuICAgIEBtZWRpYSAobWluLXdpZHRoOiAkdGFibGV0LWxhbmRzY2FwZS11cHBlci1ib3VuZGFyeSkgeyBAY29udGVudDsgfVxyXG4gIH0gQGVsc2UgaWYgJHJhbmdlID09IGJpZy1kZXNrdG9wLXVwIHtcclxuICAgIEBtZWRpYSAobWluLXdpZHRoOiAkZGVza3RvcC11cHBlci1ib3VuZGFyeSkgeyBAY29udGVudDsgfVxyXG4gIH1cclxufSJdfQ== */"
 
 /***/ }),
 
@@ -196,7 +196,7 @@ var HomePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<app-toolbar></app-toolbar> \n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding id=\"main\">\n\n\t<ion-tabs>\n\t  <ion-tab-bar slot=\"bottom\">\n\t    <ion-tab-button tab=\"task\">\n\t      <ion-icon name=\"clipboard\"></ion-icon>\n\t      <!-- <ion-label>Tasks</ion-label> -->\n\t    </ion-tab-button>\n\n\t    <ion-tab-button tab=\"file-cabinet\">\n\t      <ion-icon name=\"filing\"></ion-icon>\n\t      <!-- <ion-label>File Cabinet</ion-label> -->\n\t    </ion-tab-button>\n\t    \n\t    <ion-tab-button tab=\"calendar\">\n\t      <ion-icon name=\"calendar\"></ion-icon>\n\t      <!-- <ion-label>Calendar</ion-label> -->\n\t      <!-- <ion-badge>6</ion-badge> -->\n\t    </ion-tab-button>\n\n\t  </ion-tab-bar>\n\t</ion-tabs>\n    \n</ion-content>\n\n<ion-menu side=\"start\" menuId=\"main\" content-id=\"main\">\n  <ion-content>\n  \t<ion-avatar class=\"settings-avatar\">\n\t\t  <img src=\"../assets/hayley.png\"/>\n\t\t</ion-avatar>\n    <ion-list>\n      <ion-item style=\"z-index: 9999;\" (click)=\"navTo('/settings')\">Settings</ion-item>\n      <ion-item style=\"z-index: 9999;\" (click)=\"navTo('/profile')\">Profile</ion-item>\n      <ion-item style=\"z-index: 9999;\" (click)=\"logout()\">Logout</ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<app-toolbar></app-toolbar> \n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding id=\"main\">\n\n\t<ion-tabs>\n\t  <ion-tab-bar slot=\"bottom\">\n\t    <ion-tab-button tab=\"dashboard\">\n\t      <ion-icon name=\"home\"></ion-icon>\n\t    </ion-tab-button>\n\n\t    <ion-tab-button tab=\"task\">\n\t      <ion-icon name=\"clipboard\"></ion-icon>\n\t    </ion-tab-button>\n\n\t    <ion-tab-button tab=\"file-cabinet\">\n\t      <ion-icon name=\"filing\"></ion-icon>\n\t    </ion-tab-button>\n\t    \n\t    <ion-tab-button tab=\"calendar\">\n\t      <ion-icon name=\"calendar\"></ion-icon>\n\t    </ion-tab-button>\n\n\t  </ion-tab-bar>\n\t</ion-tabs>\n    \n</ion-content>\n"
 
 /***/ }),
 
@@ -225,6 +225,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _services_search_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/search.service */ "./src/app/services/search.service.ts");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_4__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -274,6 +276,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
 var HomePage = /** @class */ (function () {
     function HomePage(menu, events, router, searchService) {
         this.menu = menu;
@@ -297,6 +300,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage.prototype.logout = function () {
         console.log("loguot");
+        js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a.set('user', null);
         this.router.navigateByUrl('/login');
     };
     HomePage.prototype.navTo = function (page) {
@@ -371,6 +375,15 @@ var routes = [
                     {
                         path: '',
                         loadChildren: '../task/task.module#TaskPageModule'
+                    }
+                ]
+            },
+            {
+                path: 'dashboard',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: '../dashboard/dashboard.module#DashboardPageModule'
                     }
                 ]
             },

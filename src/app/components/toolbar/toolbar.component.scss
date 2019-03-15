@@ -1,3 +1,5 @@
+@import '../../mobile_mixin';
+
 .app-toolbar{
 	display: flex;
 	justify-content: center;
@@ -10,6 +12,12 @@
 
 .app-toolbar>ion-searchbar{
 	flex-basis: 80%;
+}
+
+ion-searchbar input{
+	@include for-size(phone-only) {
+		font-size: 12px;
+	}
 }
 
 

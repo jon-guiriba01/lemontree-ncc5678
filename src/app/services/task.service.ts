@@ -78,23 +78,24 @@ export class TaskService {
     else if(task.name.length <= 0)
       return
 
-    console.log("[Added Task]", task)
-
-
-
     if(task.involvedUsers){
       
-      let duplicate = task.involvedUsers.filter(e=> e.id == user.id)
+      let duplicate = task.involvedUsers.filter(e=>{
+      console.log('-e' + e.id + ' vs -u ' + user.id)
+        return e.id == user.id
+      } )
 
-      if(!duplicate)
+      if(duplicate.length <= 0)
         task.involvedUsers.push(user)
-    
-    }else{
-      task.involvedUsers = [user]
     }
-    
 
     return new Promise((resolve,reject)=>{
+      task['team'] = user.team
+      task['author'] = `${user.first_name} ${user.last_name}`
+
+    console.log("[Adding Task]", {task:task, user:user})
+
+
       this.tasksCollection.add({...task}).then((res)=>{
         resolve()
       }).catch((err)=>{

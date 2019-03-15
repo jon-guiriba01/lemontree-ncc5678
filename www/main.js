@@ -1126,30 +1126,43 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 var map = {
 	"../calendar/calendar.module": [
 		"./src/app/calendar/calendar.module.ts",
-		"default~calendar-calendar-module~file-cabinet-file-cabinet-module",
+		"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4",
 		"common",
 		"calendar-calendar-module"
 	],
+	"../dashboard/dashboard.module": [
+		"./src/app/dashboard/dashboard.module.ts",
+		"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4",
+		"common",
+		"dashboard-dashboard-module"
+	],
 	"../file-cabinet/file-cabinet.module": [
 		"./src/app/file-cabinet/file-cabinet.module.ts",
-		"default~calendar-calendar-module~file-cabinet-file-cabinet-module",
+		"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4",
 		"common",
 		"file-cabinet-file-cabinet-module"
 	],
 	"../task/task.module": [
 		"./src/app/task/task.module.ts",
+		"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4",
 		"common",
 		"task-task-module"
 	],
 	"./calendar/calendar.module": [
 		"./src/app/calendar/calendar.module.ts",
-		"default~calendar-calendar-module~file-cabinet-file-cabinet-module",
+		"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4",
 		"common",
 		"calendar-calendar-module"
 	],
+	"./dashboard/dashboard.module": [
+		"./src/app/dashboard/dashboard.module.ts",
+		"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4",
+		"common",
+		"dashboard-dashboard-module"
+	],
 	"./file-cabinet/file-cabinet.module": [
 		"./src/app/file-cabinet/file-cabinet.module.ts",
-		"default~calendar-calendar-module~file-cabinet-file-cabinet-module",
+		"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4",
 		"common",
 		"file-cabinet-file-cabinet-module"
 	],
@@ -1160,7 +1173,6 @@ var map = {
 	],
 	"./login/login.module": [
 		"./src/app/login/login.module.ts",
-		"common",
 		"login-login-module"
 	],
 	"./modals/add-event/add-event.module": [
@@ -1169,12 +1181,20 @@ var map = {
 	"./modals/task-modal/task-modal.module": [
 		"./src/app/modals/task-modal/task-modal.module.ts"
 	],
+	"./pages/test/test.module": [
+		"./src/app/pages/test/test.module.ts",
+		"pages-test-test-module"
+	],
 	"./profile/profile.module": [
 		"./src/app/profile/profile.module.ts",
+		"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4",
+		"common",
 		"profile-profile-module"
 	],
 	"./settings/settings.module": [
 		"./src/app/settings/settings.module.ts",
+		"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4",
+		"common",
 		"settings-settings-module"
 	],
 	"./signup/signup.module": [
@@ -1183,8 +1203,13 @@ var map = {
 	],
 	"./task/task.module": [
 		"./src/app/task/task.module.ts",
+		"default~calendar-calendar-module~dashboard-dashboard-module~file-cabinet-file-cabinet-module~profile~c281c6f4",
 		"common",
 		"task-task-module"
+	],
+	"./team-details/team-details.module": [
+		"./src/app/team-details/team-details.module.ts",
+		"team-details-team-details-module"
 	],
 	"./test/test.module": [
 		"./src/app/test/test.module.ts",
@@ -1246,6 +1271,9 @@ var routes = [
     { path: 'task-modal', loadChildren: './modals/task-modal/task-modal.module#TaskModalPageModule' },
     { path: 'add-event', loadChildren: './modals/add-event/add-event.module#AddEventPageModule' },
     { path: 'test', loadChildren: './test/test.module#TestPageModule' },
+    { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' },
+    { path: 'test', loadChildren: './pages/test/test.module#TestPageModule' },
+    { path: 'team-details', loadChildren: './team-details/team-details.module#TeamDetailsPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1506,7 +1534,7 @@ var AddEventPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>ADD EVENT</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\t<ion-item>\n\t\t<ion-label position=\"floating\">\n\t\t\tName\n\t\t</ion-label>\n\t\t<ion-input type='text' [(ngModel)]='name' > \n\t\t</ion-input>\n\t</ion-item>\n\t<ion-item>\n\t\t<ion-label position=\"floating\">\n\t\t\tDescription\n\t\t</ion-label>\n\t\t<ion-textarea  rows=\"6\"  [(ngModel)]='description'>\n\t\t</ion-textarea >\n\t</ion-item>\n\n\t<ion-button (click)='onClickAddEvent($event)'>\n\t\tSubmit\n\t</ion-button>\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<div class='modal-header' style=\"display:flex; justify-content: start; align-items: center;\">\n    \t\t<h6 (click)='dismiss($event)' class=\"close-btn\">\n    \t\t\t<ion-icon name='arrow-back'></ion-icon>\n    \t\t</h6>\n\t    \t<h6>ADD EVENT</h6>\n    \t</div>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\t<ion-item>\n\t\t<ion-label position=\"floating\">\n\t\t\tName\n\t\t</ion-label>\n\t\t<ion-input type='text' [(ngModel)]='name' > \n\t\t</ion-input>\n\t</ion-item>\n\t<ion-item>\n\t\t<ion-label position=\"floating\">\n\t\t\tDescription\n\t\t</ion-label>\n\t\t<ion-textarea  rows=\"6\"  [(ngModel)]='description'>\n\t\t</ion-textarea >\n\t</ion-item>\n\n\t<ion-item>\n\t\t<ion-label position=\"floating\">\n\t\t\tDate\n\t\t</ion-label>\n\t\t  <ion-datetime display-format=\"MMM DD, YYYY\" min=\"2019\" [(ngModel)]='date'></ion-datetime>\n\t</ion-item>\n\n\t<div class='action-row'>\n\t\t<ion-button (click)='onClickAddEvent($event)'>\n\t\t\tSave\n\t\t</ion-button>\n\t</div>\n</ion-content>\n"
 
 /***/ }),
 
@@ -1517,7 +1545,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>ADD EVENT</ion-t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZGFscy9hZGQtZXZlbnQvYWRkLWV2ZW50LnBhZ2Uuc2NzcyJ9 */"
+module.exports = "@media (max-width: 599px) {\n  ion-content * {\n    font-size: 12px; } }\n\nion-toolbar {\n  /*--background: var(--ion-color-medium-tint);*/ }\n\nion-content {\n  --background: var(--ion-color-dark);\n  background: var(--ion-color-dark); }\n\nion-item, ion-list {\n  --background: transparent;\n  background: transparent;\n  --color: var(--ion-color-light);\n  color: var(--ion-color-light); }\n\n.action-row {\n  position: absolute;\n  bottom: 5px;\n  display: flex;\n  justify-content: flex-end;\n  width: 570px; }\n\n@media (max-width: 599px) {\n    .action-row {\n      width: 92%; } }\n\nion-content ion-label {\n  --color: var(--yellow); }\n\nion-title {\n  display: flex;\n  justify-content: space-between;\n  padding-left: 6px; }\n\n.close-btn {\n  font-size: 16px !important;\n  margin-right: 8px;\n  cursor: pointer;\n  margin-top: 6px !important; }\n\nion-input {\n  --padding-end: 2px;\n  --padding-start: 2px;\n  --padding-top: 2px;\n  --padding-bottom: 2px; }\n\n@media (max-width: 599px) {\n    ion-input {\n      font-size: 12px; } }\n\nion-toolbar {\n  --background: var(--yellow);\n  height: 45px; }\n\n.modal-header h6 {\n  font-size: 12px;\n  margin-top: 4px; }\n\ninput.searchbar-input {\n  -webkit-padding-start: 40px;\n          padding-inline-start: 40px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL2FkZC1ldmVudC9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXERMU1UtTkNDLTU2NzgtZnJlZWxhbmNlL3NyY1xcYXBwXFxtb2JpbGVfbWl4aW4uc2NzcyIsInNyYy9hcHAvbW9kYWxzL2FkZC1ldmVudC9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXERMU1UtTkNDLTU2NzgtZnJlZWxhbmNlL3NyY1xcYXBwXFxtb2RhbHNcXGFkZC1ldmVudFxcYWRkLWV2ZW50LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFPSTtFQ0xKO0lBR0UsZUFBZSxFQUFBLEVBR2hCOztBQUNEO0VBQ0MsOENBQUEsRUFBK0M7O0FBR2hEO0VBQ0MsbUNBQWE7RUFDYixpQ0FBaUMsRUFBQTs7QUFHbEM7RUFDQyx5QkFBYTtFQUNiLHVCQUF1QjtFQUN2QiwrQkFBUTtFQUNSLDZCQUE2QixFQUFBOztBQUk5QjtFQUNDLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsYUFBYTtFQUNiLHlCQUF5QjtFQUN4QixZQUFZLEVBQUE7O0FEeEJWO0lDbUJKO01BUUcsVUFBVSxFQUFBLEVBRVo7O0FBRUQ7RUFDQyxzQkFBUSxFQUFBOztBQUdUO0VBQ0MsYUFBYTtFQUNiLDhCQUE4QjtFQUM3QixpQkFBaUIsRUFBQTs7QUFJbkI7RUFDQywwQkFBMEI7RUFDMUIsaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZCwwQkFBMEIsRUFBQTs7QUFHNUI7RUFDQyxrQkFBYztFQUNkLG9CQUFnQjtFQUNoQixrQkFBYztFQUNkLHFCQUFpQixFQUFBOztBRHJEZDtJQ2lESjtNQU9FLGVBQWUsRUFBQSxFQUdoQjs7QUFHRDtFQUNDLDJCQUFhO0VBQ1osWUFBWSxFQUFBOztBQUdkO0VBQ0MsZUFBZTtFQUNmLGVBQWUsRUFBQTs7QUFHaEI7RUFDQywyQkFBMEI7VUFBMUIsMEJBQTBCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9tb2RhbHMvYWRkLWV2ZW50L2FkZC1ldmVudC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAbWl4aW4gZm9yLXNpemUoJHJhbmdlKSB7XHJcbiAgJHBob25lLXVwcGVyLWJvdW5kYXJ5OiA2MDBweDtcclxuICAkdGFibGV0LXBvcnRyYWl0LXVwcGVyLWJvdW5kYXJ5OiA5MDBweDtcclxuICAkdGFibGV0LWxhbmRzY2FwZS11cHBlci1ib3VuZGFyeTogMTIwMHB4O1xyXG4gICRkZXNrdG9wLXVwcGVyLWJvdW5kYXJ5OiAxODAwcHg7XHJcblxyXG4gIEBpZiAkcmFuZ2UgPT0gcGhvbmUtb25seSB7XHJcbiAgICBAbWVkaWEgKG1heC13aWR0aDogI3skcGhvbmUtdXBwZXItYm91bmRhcnkgLSAxfSkgeyBAY29udGVudDsgfVxyXG4gIH0gQGVsc2UgaWYgJHJhbmdlID09IHRhYmxldC1wb3J0cmFpdC11cCB7XHJcbiAgICBAbWVkaWEgKG1pbi13aWR0aDogJHBob25lLXVwcGVyLWJvdW5kYXJ5KSB7IEBjb250ZW50OyB9XHJcbiAgfSBAZWxzZSBpZiAkcmFuZ2UgPT0gdGFibGV0LWxhbmRzY2FwZS11cCB7XHJcbiAgICBAbWVkaWEgKG1pbi13aWR0aDogJHRhYmxldC1wb3J0cmFpdC11cHBlci1ib3VuZGFyeSkgeyBAY29udGVudDsgfVxyXG4gIH0gQGVsc2UgaWYgJHJhbmdlID09IGRlc2t0b3AtdXAge1xyXG4gICAgQG1lZGlhIChtaW4td2lkdGg6ICR0YWJsZXQtbGFuZHNjYXBlLXVwcGVyLWJvdW5kYXJ5KSB7IEBjb250ZW50OyB9XHJcbiAgfSBAZWxzZSBpZiAkcmFuZ2UgPT0gYmlnLWRlc2t0b3AtdXAge1xyXG4gICAgQG1lZGlhIChtaW4td2lkdGg6ICRkZXNrdG9wLXVwcGVyLWJvdW5kYXJ5KSB7IEBjb250ZW50OyB9XHJcbiAgfVxyXG59IiwiQGltcG9ydCAnLi4vLi4vbW9iaWxlX21peGluJztcclxuXHJcbmlvbi1jb250ZW50ICp7XHJcblxyXG5cdEBpbmNsdWRlIGZvci1zaXplKHBob25lLW9ubHkpIHtcclxuXHRcdGZvbnQtc2l6ZTogMTJweDtcclxuXHR9XHJcblxyXG59XHJcbmlvbi10b29sYmFye1xyXG5cdC8qLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItbWVkaXVtLXRpbnQpOyovXHJcbn1cclxuXHJcbmlvbi1jb250ZW50e1xyXG5cdC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLWRhcmspO1xyXG5cdGJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1kYXJrKTtcclxufVxyXG5cclxuaW9uLWl0ZW0sIGlvbi1saXN0e1xyXG5cdC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcblx0YmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcblx0LS1jb2xvcjogdmFyKC0taW9uLWNvbG9yLWxpZ2h0KTtcclxuXHRjb2xvcjogdmFyKC0taW9uLWNvbG9yLWxpZ2h0KTtcclxufVxyXG5cclxuXHJcbi5hY3Rpb24tcm93e1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRib3R0b206IDVweDtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgd2lkdGg6IDU3MHB4O1xyXG5cdFxyXG5cdEBpbmNsdWRlIGZvci1zaXplKHBob25lLW9ubHkpIHtcclxuICBcdHdpZHRoOiA5MiU7XHJcblx0fVxyXG59XHJcblxyXG5pb24tY29udGVudCBpb24tbGFiZWx7XHJcblx0LS1jb2xvcjogdmFyKC0teWVsbG93KTtcclxufVxyXG5cclxuaW9uLXRpdGxle1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0anVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gIHBhZGRpbmctbGVmdDogNnB4O1xyXG59XHJcblxyXG5cclxuLmNsb3NlLWJ0bntcclxuXHRmb250LXNpemU6IDE2cHggIWltcG9ydGFudDtcclxuXHRtYXJnaW4tcmlnaHQ6IDhweDtcclxuXHRjdXJzb3I6IHBvaW50ZXI7XHJcbiAgbWFyZ2luLXRvcDogNnB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmlvbi1pbnB1dHtcclxuXHQtLXBhZGRpbmctZW5kOiAycHg7XHJcblx0LS1wYWRkaW5nLXN0YXJ0OiAycHg7XHJcblx0LS1wYWRkaW5nLXRvcDogMnB4O1xyXG5cdC0tcGFkZGluZy1ib3R0b206IDJweDtcclxuXHJcblx0QGluY2x1ZGUgZm9yLXNpemUocGhvbmUtb25seSkge1xyXG5cdFx0Zm9udC1zaXplOiAxMnB4O1xyXG5cdH1cclxuXHJcbn1cclxuXHJcblxyXG5pb24tdG9vbGJhcntcclxuXHQtLWJhY2tncm91bmQ6IHZhcigtLXllbGxvdyk7XHJcbiAgaGVpZ2h0OiA0NXB4O1xyXG59XHJcblxyXG4ubW9kYWwtaGVhZGVyIGg2e1xyXG5cdGZvbnQtc2l6ZTogMTJweDtcclxuXHRtYXJnaW4tdG9wOiA0cHg7XHJcbn1cclxuXHJcbmlucHV0LnNlYXJjaGJhci1pbnB1dHtcclxuXHRwYWRkaW5nLWlubGluZS1zdGFydDogNDBweDtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -1534,6 +1562,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_events_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/events.service */ "./src/app/services/events.service.ts");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1547,20 +1577,32 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var AddEventPage = /** @class */ (function () {
-    function AddEventPage(eventService, events, modalController) {
+    function AddEventPage(eventService, events, modalController, navParams) {
         this.eventService = eventService;
         this.events = events;
         this.modalController = modalController;
+        this.navParams = navParams;
     }
     AddEventPage.prototype.ngOnInit = function () {
+        // this.date = moment().format('YYYY-MM-DD')
+        console.log('dxxate', this.date);
+        this.date = moment__WEBPACK_IMPORTED_MODULE_3__(this.date).format('YYYY-MM-DD');
+        // if(this.date)
+        //   this.date = this.date.format()
+        // console.log('date', this.date)
     };
     AddEventPage.prototype.onClickAddEvent = function (evt) {
         var _this = this;
-        this.eventService.addEvent(this.name, this.description, this.date.format()).then(function () {
+        this.eventService.addEvent(this.name, this.description, this.date).then(function () {
             _this.events.publish('event:addSuccess');
             _this.modalController.dismiss();
         });
+    };
+    AddEventPage.prototype.dismiss = function (evt) {
+        this.modalController.dismiss();
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -1574,7 +1616,8 @@ var AddEventPage = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_services_events_service__WEBPACK_IMPORTED_MODULE_1__["EventsService"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"]])
     ], AddEventPage);
     return AddEventPage;
 }());
@@ -1645,7 +1688,7 @@ var TaskModalPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<div class=\"modal-header\">\n    \t\t<ion-input type='text' [(ngModel)]='task.name' (ionChange)='onInputTaskName()'></ion-input>\n    \t\t<ion-button *ngIf=\"!isCreateNew\" (click)='onClickDelete($event)' fill='clear'>\n    \t\t\t<ion-icon name='trash'></ion-icon>\n    \t\t</ion-button>\n    \t</div>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding style=\"position: relative;\">\n\t\t<ion-item>\n\t\t\t<ion-label>Deadline:</ion-label> \n\t\t\t<ion-datetime display-format=\"DD-MM-YYYY\" [(ngModel)]=\"task.deadline\" (ionChange)='updateTask()'></ion-datetime>\n\t\t\t\n\t\t</ion-item>\n\n\t\t<ion-list>\n\t\t\t<ion-item  *ngFor='let activity of task.activities' >\n\n\t\t\t\t<ion-icon name='close' class='delete-activity-btn' (click)=\"deleteActivity($event, activity)\" ></ion-icon>\n\t\t\t\t<div class=\"activity-item\" (press)=\"deleteActivity($event, activity)\" >\n\t\t\t\t\t<ion-input type='text' [(ngModel)]='activity.description' (ionChange)='onInputActivityDescription()'></ion-input>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<ion-checkbox color='primary'  [(ngModel)]='activity.status' (ionChange)=\"onClickActivityStatus(activity)\"></ion-checkbox>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\n\t\t\t</ion-item>\n\n\n\t\t\t<ion-item>\n\t\t\t\t<ion-input \n\t\t\t\ttype='text' \n\t\t\t\t[(ngModel)]='newActivityDescription' \n\t\t\t\tplaceholder='Add new activity'\n\t\t\t\t></ion-input>\n\n\t\t\t\t<ion-button (click)='onClickAddActivity($event)' fill='clear'>\n\t\t\t\t\t<ion-icon name='add'></ion-icon>\n\t\t\t\t</ion-button>\n\n\t\t\t</ion-item>\n\n\t\t</ion-list>\n\n\t\t<div class='action-row'>\n\t\t\t<ion-button *ngIf=\"isCreateNew\" class='save-btn' (click)='onClickSaveBtn($event)'>\n\t\t\t\tSave\n\t\t\t</ion-button>\n\t\t</div>\n\t\t\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title class='title-wrapper'>\n    \t<div class=\"modal-header\">\n\n    \t\t<h6 class='close-btn' (click)='dismiss($event)' >\n    \t\t\t<ion-icon name='arrow-back'></ion-icon>\n    \t\t</h6>\n\n    \t\t<ion-input type='text' [(ngModel)]='task.name' (ionChange)='onInputTaskName()'></ion-input>\n    \t\t<ion-button *ngIf=\"!isCreateNew\" (click)='onClickDelete($event)' fill='clear'>\n    \t\t\t<ion-icon name='trash'></ion-icon>\n    \t\t</ion-button>\n    \t</div>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content  style=\"position: relative;\">\n\t\t<ion-item>\n\t\t\t<ion-label>Deadline:</ion-label> \n\t\t\t<ion-datetime display-format=\"DD-MM-YYYY\" [(ngModel)]=\"task.deadline\" (ionChange)='updateTask()'></ion-datetime>\n\t\t\t\n\t\t</ion-item>\n\n\t\t<ion-list>\n\t\t\t<ion-item  *ngFor='let activity of task.activities' >\n\n\t\t\t\t<ion-icon name='close' class='delete-activity-btn' (click)=\"deleteActivity($event, activity)\" ></ion-icon>\n\t\t\t\t<div class=\"activity-item\" (press)=\"deleteActivity($event, activity)\" >\n\t\t\t\t\t<ion-input type='text' [(ngModel)]='activity.description' (ionChange)='onInputActivityDescription()'></ion-input>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<ion-checkbox color='primary'  [(ngModel)]='activity.status' (ionChange)=\"onClickActivityStatus(activity)\"></ion-checkbox>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\n\t\t\t</ion-item>\n\n\n\t\t\t<ion-item>\n\t\t\t\t<ion-input \n\t\t\t\ttype='text' \n\t\t\t\t[(ngModel)]='newActivityDescription' \n\t\t\t\tplaceholder='Add new activity'\n\t\t\t\t></ion-input>\n\n\t\t\t\t<ion-button class='add-activity-btn' (click)='onClickAddActivity($event)' fill='clear'>\n\t\t\t\t\t<ion-icon  name='add'></ion-icon>\n\t\t\t\t</ion-button>\n\n\t\t\t</ion-item>\n\n\t\t</ion-list>\n\n\t\t<div class='action-row' *ngIf=\"isCreateNew\" >\n\t\t\t<ion-button class='save-btn' (click)='onClickSaveBtn($event)'>\n\t\t\t\tSave\n\t\t\t</ion-button>\n\t\t</div>\n\n\t\t<div class='action-row'>\n\t\t\t<ion-button *ngIf=\"isCreateNew\" class='save-btn' (click)='onClickSaveBtn($event)'>\n\t\t\t\tSave\n\t\t\t</ion-button>\n\t\t</div>\n\n\t\t<div class='avatar-row'>\n\t\t\t<ion-avatar class='involved-avatar' *ngFor='let user of task.involvedUsers'>\n\t\t\t\t<img src=\"{{user.profileImageUrl}}\">\n\t\t\t</ion-avatar>\n\t\t</div>\n\t\t\n</ion-content>\n"
 
 /***/ }),
 
@@ -1656,7 +1699,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<div cla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".activity-item {\n  display: flex;\n  justify-content: space-between;\n  width: 100%; }\n\n.modal-header {\n  display: flex;\n  justify-content: space-between; }\n\n.progressbar {\n  position: absolute;\n  bottom: 5px; }\n\n.action-row {\n  position: absolute;\n  bottom: 5px;\n  display: flex;\n  justify-content: flex-end;\n  width: 570px; }\n\n.save-btn {\n  --background: var(--ion-color-light);\n  --color: var(--ion-color-dark); }\n\n.delete-activity-btn {\n  z-index: 9999;\n  cursor: pointer;\n  margin-right: 20px;\n  color: var(--ion-color-secondary); }\n\nion-toolbar {\n  --background: var(--ion-color-medium-tint); }\n\nion-content {\n  --background: var(--ion-color-dark);\n  background: var(--ion-color-dark); }\n\nion-item, ion-list {\n  --background: transparent;\n  background: transparent;\n  --color: var(--ion-color-light);\n  color: var(--ion-color-light); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL3Rhc2stbW9kYWwvQzpcXFVzZXJzXFxKb25cXFByb2plY3RzXFxETFNVLU5DQy01Njc4LWZyZWVsYW5jZS9zcmNcXGFwcFxcbW9kYWxzXFx0YXNrLW1vZGFsXFx0YXNrLW1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDLGFBQWE7RUFDYiw4QkFBOEI7RUFDOUIsV0FBVyxFQUFBOztBQUdaO0VBQ0MsYUFBYTtFQUNiLDhCQUE4QixFQUFBOztBQUcvQjtFQUNDLGtCQUFrQjtFQUNsQixXQUFXLEVBQUE7O0FBR1o7RUFDQyxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGFBQWE7RUFDYix5QkFBeUI7RUFDeEIsWUFBWSxFQUFBOztBQUdkO0VBQ0Msb0NBQWE7RUFDYiw4QkFBUSxFQUFBOztBQUdUO0VBQ0MsYUFBYTtFQUNiLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsaUNBQWlDLEVBQUE7O0FBR2xDO0VBQ0MsMENBQWEsRUFBQTs7QUFHZDtFQUNDLG1DQUFhO0VBQ2IsaUNBQWlDLEVBQUE7O0FBR2xDO0VBQ0MseUJBQWE7RUFDYix1QkFBdUI7RUFDdkIsK0JBQVE7RUFDUiw2QkFBNkIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL21vZGFscy90YXNrLW1vZGFsL3Rhc2stbW9kYWwucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFjdGl2aXR5LWl0ZW17XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcblx0d2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5tb2RhbC1oZWFkZXJ7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbn1cclxuXHJcbi5wcm9ncmVzc2JhcntcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0Ym90dG9tOiA1cHg7XHJcbn1cclxuXHJcbi5hY3Rpb24tcm93e1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRib3R0b206IDVweDtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgd2lkdGg6IDU3MHB4O1xyXG59XHJcblxyXG4uc2F2ZS1idG57XHJcblx0LS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItbGlnaHQpO1xyXG5cdC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1kYXJrKTtcclxufVxyXG5cclxuLmRlbGV0ZS1hY3Rpdml0eS1idG57XHJcblx0ei1pbmRleDogOTk5OTtcclxuXHRjdXJzb3I6IHBvaW50ZXI7XHJcblx0bWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG5cdGNvbG9yOiB2YXIoLS1pb24tY29sb3Itc2Vjb25kYXJ5KTtcclxufVxyXG5cclxuaW9uLXRvb2xiYXJ7XHJcblx0LS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItbWVkaXVtLXRpbnQpO1xyXG59XHJcblxyXG5pb24tY29udGVudHtcclxuXHQtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1kYXJrKTtcclxuXHRiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItZGFyayk7XHJcbn1cclxuXHJcbmlvbi1pdGVtLCBpb24tbGlzdHtcclxuXHQtLWJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG5cdGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG5cdC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XHJcblx0Y29sb3I6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XHJcbn1cclxuXHJcbiJdfQ== */"
+module.exports = "@media (max-width: 599px) {\n  ion-content * {\n    font-size: 12px; } }\n\n.activity-item {\n  display: flex;\n  justify-content: space-between;\n  width: 100%; }\n\n.modal-header {\n  display: flex;\n  justify-content: space-between; }\n\n.progressbar {\n  position: absolute;\n  bottom: 5px; }\n\n.action-row {\n  position: absolute;\n  bottom: 5px;\n  display: flex;\n  justify-content: flex-end;\n  width: 570px; }\n\n@media (max-width: 599px) {\n    .action-row {\n      width: 92%; } }\n\n.save-btn {\n  --background: var(--ion-color-light);\n  --color: var(--ion-color-dark); }\n\n.delete-activity-btn {\n  z-index: 9999;\n  cursor: pointer;\n  margin-right: 20px;\n  color: var(--ion-color-secondary); }\n\nion-toolbar {\n  --background: var(--yellow);\n  height: 45px; }\n\nion-content {\n  --background: var(--ion-color-dark);\n  background: var(--ion-color-dark); }\n\nion-item, ion-list {\n  --background: transparent;\n  background: transparent;\n  --color: var(--ion-color-light);\n  color: var(--ion-color-light); }\n\nion-input {\n  --padding-end: 2px;\n  --padding-start: 2px;\n  --padding-top: 2px;\n  --padding-bottom: 2px; }\n\n@media (max-width: 599px) {\n    ion-input {\n      font-size: 12px; } }\n\nion-title {\n  margin-top: -10px;\n  font-weight: bold;\n  display: flex;\n  justify-content: space-between; }\n\n.avatar-row {\n  padding-left: 8px; }\n\n.involved-avatar {\n  position: absolute;\n  bottom: 20px;\n  width: 35px;\n  height: 35px;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.add-activity-btn {\n  --padding-end: 0; }\n\n.title-wrapper {\n  padding-left: 0; }\n\n.close-btn {\n  margin-right: 8px;\n  cursor: pointer; }\n\n.close-btn {\n  margin-top: 13px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL3Rhc2stbW9kYWwvQzpcXFVzZXJzXFxKb25cXFByb2plY3RzXFxETFNVLU5DQy01Njc4LWZyZWVsYW5jZS9zcmNcXGFwcFxcbW9iaWxlX21peGluLnNjc3MiLCJzcmMvYXBwL21vZGFscy90YXNrLW1vZGFsL0M6XFxVc2Vyc1xcSm9uXFxQcm9qZWN0c1xcRExTVS1OQ0MtNTY3OC1mcmVlbGFuY2Uvc3JjXFxhcHBcXG1vZGFsc1xcdGFzay1tb2RhbFxcdGFzay1tb2RhbC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBT0k7RUNMSjtJQUdFLGVBQWUsRUFBQSxFQUdoQjs7QUFDRDtFQUNDLGFBQWE7RUFDYiw4QkFBOEI7RUFDOUIsV0FBVyxFQUFBOztBQUdaO0VBQ0MsYUFBYTtFQUNiLDhCQUE4QixFQUFBOztBQUcvQjtFQUNDLGtCQUFrQjtFQUNsQixXQUFXLEVBQUE7O0FBR1o7RUFDQyxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLGFBQWE7RUFDYix5QkFBeUI7RUFDeEIsWUFBWSxFQUFBOztBRHZCVjtJQ2tCSjtNQVFHLFVBQVUsRUFBQSxFQUVaOztBQUVEO0VBQ0Msb0NBQWE7RUFDYiw4QkFBUSxFQUFBOztBQUdUO0VBQ0MsYUFBYTtFQUNiLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsaUNBQWlDLEVBQUE7O0FBR2xDO0VBQ0MsMkJBQWE7RUFDWixZQUFZLEVBQUE7O0FBR2Q7RUFDQyxtQ0FBYTtFQUNiLGlDQUFpQyxFQUFBOztBQUdsQztFQUNDLHlCQUFhO0VBQ2IsdUJBQXVCO0VBQ3ZCLCtCQUFRO0VBQ1IsNkJBQTZCLEVBQUE7O0FBRzlCO0VBQ0Msa0JBQWM7RUFDZCxvQkFBZ0I7RUFDaEIsa0JBQWM7RUFDZCxxQkFBaUIsRUFBQTs7QUQvRGQ7SUMyREo7TUFPRSxlQUFlLEVBQUEsRUFHaEI7O0FBRUQ7RUFDQyxpQkFBaUI7RUFDakIsaUJBQWlCO0VBQ2pCLGFBQWE7RUFDYiw4QkFBOEIsRUFBQTs7QUFHL0I7RUFDQyxpQkFBaUIsRUFBQTs7QUFFbEI7RUFDQyxrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBQ1osYUFBYTtFQUNiLHVCQUF1QjtFQUN2QixtQkFBbUIsRUFBQTs7QUFJcEI7RUFDQyxnQkFBYyxFQUFBOztBQUlmO0VBQ0MsZUFBZSxFQUFBOztBQUdoQjtFQUNDLGlCQUFpQjtFQUNqQixlQUFlLEVBQUE7O0FBR2hCO0VBQ0UsZ0JBQWdCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9tb2RhbHMvdGFzay1tb2RhbC90YXNrLW1vZGFsLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBtaXhpbiBmb3Itc2l6ZSgkcmFuZ2UpIHtcclxuICAkcGhvbmUtdXBwZXItYm91bmRhcnk6IDYwMHB4O1xyXG4gICR0YWJsZXQtcG9ydHJhaXQtdXBwZXItYm91bmRhcnk6IDkwMHB4O1xyXG4gICR0YWJsZXQtbGFuZHNjYXBlLXVwcGVyLWJvdW5kYXJ5OiAxMjAwcHg7XHJcbiAgJGRlc2t0b3AtdXBwZXItYm91bmRhcnk6IDE4MDBweDtcclxuXHJcbiAgQGlmICRyYW5nZSA9PSBwaG9uZS1vbmx5IHtcclxuICAgIEBtZWRpYSAobWF4LXdpZHRoOiAjeyRwaG9uZS11cHBlci1ib3VuZGFyeSAtIDF9KSB7IEBjb250ZW50OyB9XHJcbiAgfSBAZWxzZSBpZiAkcmFuZ2UgPT0gdGFibGV0LXBvcnRyYWl0LXVwIHtcclxuICAgIEBtZWRpYSAobWluLXdpZHRoOiAkcGhvbmUtdXBwZXItYm91bmRhcnkpIHsgQGNvbnRlbnQ7IH1cclxuICB9IEBlbHNlIGlmICRyYW5nZSA9PSB0YWJsZXQtbGFuZHNjYXBlLXVwIHtcclxuICAgIEBtZWRpYSAobWluLXdpZHRoOiAkdGFibGV0LXBvcnRyYWl0LXVwcGVyLWJvdW5kYXJ5KSB7IEBjb250ZW50OyB9XHJcbiAgfSBAZWxzZSBpZiAkcmFuZ2UgPT0gZGVza3RvcC11cCB7XHJcbiAgICBAbWVkaWEgKG1pbi13aWR0aDogJHRhYmxldC1sYW5kc2NhcGUtdXBwZXItYm91bmRhcnkpIHsgQGNvbnRlbnQ7IH1cclxuICB9IEBlbHNlIGlmICRyYW5nZSA9PSBiaWctZGVza3RvcC11cCB7XHJcbiAgICBAbWVkaWEgKG1pbi13aWR0aDogJGRlc2t0b3AtdXBwZXItYm91bmRhcnkpIHsgQGNvbnRlbnQ7IH1cclxuICB9XHJcbn0iLCJAaW1wb3J0ICcuLi8uLi9tb2JpbGVfbWl4aW4nO1xyXG5cclxuaW9uLWNvbnRlbnQgKntcclxuXHJcblx0QGluY2x1ZGUgZm9yLXNpemUocGhvbmUtb25seSkge1xyXG5cdFx0Zm9udC1zaXplOiAxMnB4O1xyXG5cdH1cclxuXHJcbn1cclxuLmFjdGl2aXR5LWl0ZW17XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcblx0d2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5tb2RhbC1oZWFkZXJ7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbn1cclxuXHJcbi5wcm9ncmVzc2JhcntcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0Ym90dG9tOiA1cHg7XHJcbn1cclxuXHJcbi5hY3Rpb24tcm93e1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRib3R0b206IDVweDtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgd2lkdGg6IDU3MHB4O1xyXG5cdFxyXG5cdEBpbmNsdWRlIGZvci1zaXplKHBob25lLW9ubHkpIHtcclxuICBcdHdpZHRoOiA5MiU7XHJcblx0fVxyXG59XHJcblxyXG4uc2F2ZS1idG57XHJcblx0LS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItbGlnaHQpO1xyXG5cdC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1kYXJrKTtcclxufVxyXG5cclxuLmRlbGV0ZS1hY3Rpdml0eS1idG57XHJcblx0ei1pbmRleDogOTk5OTtcclxuXHRjdXJzb3I6IHBvaW50ZXI7XHJcblx0bWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG5cdGNvbG9yOiB2YXIoLS1pb24tY29sb3Itc2Vjb25kYXJ5KTtcclxufVxyXG5cclxuaW9uLXRvb2xiYXJ7XHJcblx0LS1iYWNrZ3JvdW5kOiB2YXIoLS15ZWxsb3cpO1xyXG4gIGhlaWdodDogNDVweDtcclxufVxyXG5cclxuaW9uLWNvbnRlbnR7XHJcblx0LS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItZGFyayk7XHJcblx0YmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLWRhcmspO1xyXG59XHJcblxyXG5pb24taXRlbSwgaW9uLWxpc3R7XHJcblx0LS1iYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxuXHRiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcclxuXHQtLWNvbG9yOiB2YXIoLS1pb24tY29sb3ItbGlnaHQpO1xyXG5cdGNvbG9yOiB2YXIoLS1pb24tY29sb3ItbGlnaHQpO1xyXG59XHJcblxyXG5pb24taW5wdXR7XHJcblx0LS1wYWRkaW5nLWVuZDogMnB4O1xyXG5cdC0tcGFkZGluZy1zdGFydDogMnB4O1xyXG5cdC0tcGFkZGluZy10b3A6IDJweDtcclxuXHQtLXBhZGRpbmctYm90dG9tOiAycHg7XHJcblxyXG5cdEBpbmNsdWRlIGZvci1zaXplKHBob25lLW9ubHkpIHtcclxuXHRcdGZvbnQtc2l6ZTogMTJweDtcclxuXHR9XHJcblxyXG59XHJcblxyXG5pb24tdGl0bGV7XHJcblx0bWFyZ2luLXRvcDogLTEwcHg7XHJcblx0Zm9udC13ZWlnaHQ6IGJvbGQ7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbn1cclxuXHJcbi5hdmF0YXItcm93e1xyXG5cdHBhZGRpbmctbGVmdDogOHB4O1xyXG59XHJcbi5pbnZvbHZlZC1hdmF0YXJ7XHJcblx0cG9zaXRpb246IGFic29sdXRlO1xyXG5cdGJvdHRvbTogMjBweDtcclxuXHR3aWR0aDogMzVweDtcclxuXHRoZWlnaHQ6IDM1cHg7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuXHRhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cclxufVxyXG5cclxuLmFkZC1hY3Rpdml0eS1idG57XHJcblx0LS1wYWRkaW5nLWVuZDogMDtcclxufVxyXG5cclxuXHJcbi50aXRsZS13cmFwcGVye1xyXG5cdHBhZGRpbmctbGVmdDogMDtcclxufVxyXG5cclxuLmNsb3NlLWJ0bntcclxuXHRtYXJnaW4tcmlnaHQ6IDhweDtcclxuXHRjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5jbG9zZS1idG57XHJcbiAgbWFyZ2luLXRvcDogMTNweDtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -1673,7 +1716,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _models_app_objects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../models/app-objects */ "./src/models/app-objects.ts");
 /* harmony import */ var _services_task_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/task.service */ "./src/app/services/task.service.ts");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1687,10 +1731,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var TaskModalPage = /** @class */ (function () {
-    function TaskModalPage(taskService, modalController) {
+    function TaskModalPage(taskService, modalController, authService) {
         this.taskService = taskService;
         this.modalController = modalController;
+        this.authService = authService;
         this.progress = 0;
     }
     TaskModalPage.prototype.ngOnInit = function () {
@@ -1698,7 +1744,7 @@ var TaskModalPage = /** @class */ (function () {
     };
     TaskModalPage.prototype.onClickSaveBtn = function () {
         var _this = this;
-        this.taskService.createNewTask(this.task).then(function (res) {
+        this.taskService.createNewTask(this.task, this.authService.user).then(function (res) {
             _this.modalController.dismiss();
         }).catch(function (err) {
             console.log("err", err);
@@ -1708,7 +1754,7 @@ var TaskModalPage = /** @class */ (function () {
         var _this = this;
         if (this.newActivityDescription.trim().length <= 0)
             return;
-        this.taskService.addActivityToTask(this.task, this.newActivityDescription).then(function (res) {
+        this.taskService.addActivityToTask(this.task, this.newActivityDescription, this.authService.user).then(function (res) {
             _this.getProgress();
         });
         this.newActivityDescription = null;
@@ -1721,7 +1767,7 @@ var TaskModalPage = /** @class */ (function () {
             }
         }
         this.getProgress();
-        this.taskService.updateTask(this.task);
+        this.taskService.updateTask(this.task, this.authService.user);
     };
     TaskModalPage.prototype.onInputTaskName = function () {
         var _this = this;
@@ -1729,7 +1775,7 @@ var TaskModalPage = /** @class */ (function () {
             clearTimeout(this.inputWait);
         }
         this.inputWait = setTimeout(function () {
-            _this.taskService.updateTask(_this.task);
+            _this.taskService.updateTask(_this.task, _this.authService.user);
         }, 500);
     };
     TaskModalPage.prototype.onClickDelete = function (evt) {
@@ -1744,23 +1790,24 @@ var TaskModalPage = /** @class */ (function () {
             clearTimeout(this.inputWait);
         }
         this.inputWait = setTimeout(function () {
-            _this.taskService.updateTask(_this.task);
+            _this.taskService.updateTask(_this.task, _this.authService.user);
         }, 500);
     };
     TaskModalPage.prototype.deleteActivity = function (evt, act) {
-        console.log('delete', act);
         this.task.activities = this.task.activities.filter(function (e) {
             if (e.description != act.description)
                 return e;
         });
-        console.log('deletexxxx', this.task);
-        this.taskService.updateTask(this.task);
+        this.taskService.updateTask(this.task, this.authService.user);
     };
     TaskModalPage.prototype.getProgress = function () {
         this.task.progress = this.task.activities.filter(function (e) { return e.status; }).length / this.task.activities.length;
     };
     TaskModalPage.prototype.updateTask = function () {
-        this.taskService.updateTask(this.task);
+        this.taskService.updateTask(this.task, this.authService.user);
+    };
+    TaskModalPage.prototype.dismiss = function (evt) {
+        this.modalController.dismiss();
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -1777,9 +1824,261 @@ var TaskModalPage = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./task-modal.page.scss */ "./src/app/modals/task-modal/task-modal.page.scss")]
         }),
         __metadata("design:paramtypes", [_services_task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"],
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
     ], TaskModalPage);
     return TaskModalPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/auth.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/auth.service.ts ***!
+  \******************************************/
+/*! exports provided: AuthService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/google-plus/ngx */ "./node_modules/@ionic-native/google-plus/ngx/index.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm5/ionic-storage.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+
+var AuthService = /** @class */ (function () {
+    function AuthService(router, loadingController, googlePlus, sotrage, afAuth, platform, afs) {
+        this.router = router;
+        this.loadingController = loadingController;
+        this.googlePlus = googlePlus;
+        this.sotrage = sotrage;
+        this.afAuth = afAuth;
+        this.platform = platform;
+        this.afs = afs;
+        this.user = {
+            id: null,
+            first_name: null,
+            last_name: null,
+            email: null,
+            contact_number: null,
+            birthdate: null,
+            team: null,
+            credential: null
+        };
+        this.user = js_cookie__WEBPACK_IMPORTED_MODULE_7___default.a.getJSON('user');
+        console.log('[AuthService constructor]', this.user);
+    }
+    AuthService.prototype.googleLogin = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var err_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 5, , 6]);
+                        if (!this.platform.is('android')) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.mobileGoogleLogin()];
+                    case 1: return [2 /*return*/, _a.sent()];
+                    case 2:
+                        if (!this.platform.is('desktop')) return [3 /*break*/, 4];
+                        return [4 /*yield*/, this.webGoogleLogin()];
+                    case 3: return [2 /*return*/, _a.sent()];
+                    case 4: return [3 /*break*/, 6];
+                    case 5:
+                        err_1 = _a.sent();
+                        console.log(err_1);
+                        return [3 /*break*/, 6];
+                    case 6: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    AuthService.prototype.mobileGoogleLogin = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var loading;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadingController.create({
+                            message: 'Please wait...'
+                        })];
+                    case 1:
+                        loading = _a.sent();
+                        this.presentLoading(loading);
+                        this.googlePlus.login({
+                            'scopes': 'https://www.googleapis.com/auth/drive',
+                            // 'webClientId': '694548309780-p7pvh160hh62p2dpma7822pv83hsd1js.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+                            'webClientId': '549453225877-oh2jll0jb8vspp5r9fungtdnaic4eoop.apps.googleusercontent.com',
+                            'offline': true // Optional, but requires the webClientId - 
+                            // if set to true the plugin will also return a serverAuthCode, 
+                            // which can be used to grant offline access to a non-Google server
+                        })
+                            .then(function (user) {
+                            console.log("user", user);
+                            loading.dismiss();
+                            _this.user = user;
+                            _this.sotrage.set('google_user', {
+                                name: user.displayName,
+                                email: user.email,
+                                picture: user.imageUrl
+                            })
+                                .then(function () {
+                                _this.router.navigate(["/home"]);
+                            }, function (error) {
+                                console.log(error);
+                            });
+                            loading.dismiss();
+                        }, function (err) {
+                            console.log(err);
+                            loading.dismiss();
+                        });
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    AuthService.prototype.webGoogleLogin = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var provider, credential, err_2;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        provider = new firebase_app__WEBPACK_IMPORTED_MODULE_5__["auth"].GoogleAuthProvider();
+                        provider.addScope('https://www.googleapis.com/auth/drive');
+                        return [4 /*yield*/, this.afAuth.auth.signInWithPopup(provider)];
+                    case 1:
+                        credential = _a.sent();
+                        this.user.credential = credential;
+                        console.log("credential", credential);
+                        // let userCollection = this.afs.collection('users', ref => ref.where('email', '==', this.email))
+                        // userCollection.snapshotChanges().subscribe(
+                        //   (dataSet)=>{
+                        //     if(dataSet){
+                        //       let user = {...dataSet[0].payload.doc.data()}
+                        //       user['id'] = dataSet[0].payload.doc.id
+                        //       Cookies.set('user', user)
+                        //       this.authService.user = user;
+                        //       this.router.navigateByUrl('/home');
+                        //     }
+                        //   }
+                        // )
+                        this.router.navigate(["/home"]);
+                        return [3 /*break*/, 3];
+                    case 2:
+                        err_2 = _a.sent();
+                        console.log(err_2);
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    AuthService.prototype.presentLoading = function (loading) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, loading.present()];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    AuthService.prototype.googleLogout = function () {
+        var _this = this;
+        this.googlePlus.logout()
+            .then(function (res) {
+            //user logged out so we will remove him from the NativeStorage
+            _this.sotrage.set('google_user', null);
+            _this.router.navigate(["/login"]);
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    AuthService.prototype.updateUser = function () {
+        var _this = this;
+        if (this.timeout) {
+            clearTimeout(this.timeout);
+        }
+        this.timeout = setTimeout(function () {
+            var userCollection = _this.afs.collection('users');
+            return userCollection.doc(_this.user.id).update(_this.user);
+        }, 500);
+    };
+    AuthService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"],
+            _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_3__["GooglePlus"],
+            _ionic_storage__WEBPACK_IMPORTED_MODULE_4__["Storage"],
+            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_6__["AngularFireAuth"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"],
+            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_8__["AngularFirestore"]])
+    ], AuthService);
+    return AuthService;
 }());
 
 
@@ -1801,6 +2100,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _models_app_objects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/app-objects */ "./src/models/app-objects.ts");
 /* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/util.service */ "./src/app/services/util.service.ts");
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_5__);
 var __assign = (undefined && undefined.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -1821,6 +2122,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1859,6 +2161,25 @@ var EventsService = /** @class */ (function () {
             console.log("[Added Event]", event);
             _this.eventsCollection.add(__assign({}, event)).then(function (res) {
                 resolve();
+            });
+        });
+    };
+    EventsService.prototype.getUpcomingEvents = function () {
+        var prevMonth = moment__WEBPACK_IMPORTED_MODULE_5__().subtract(30, 'days').format('YYYY-MM-DD');
+        var upcomingEventsCollection = this.afs.collection('events', function (ref) { return ref.where('date', '>', prevMonth); });
+        return new Promise(function (resolve, reject) {
+            upcomingEventsCollection.snapshotChanges().subscribe(function (dataSet) {
+                var events = [];
+                for (var _i = 0, dataSet_2 = dataSet; _i < dataSet_2.length; _i++) {
+                    var data = dataSet_2[_i];
+                    var event_2 = __assign({}, data.payload.doc.data());
+                    event_2.id = data.payload.doc.id;
+                    event_2.start = event_2.date;
+                    event_2.formattedDate = moment__WEBPACK_IMPORTED_MODULE_5__(event_2.date).format('ll');
+                    event_2.title = event_2.name;
+                    events.push(event_2);
+                }
+                resolve(events);
             });
         });
     };
@@ -1936,6 +2257,8 @@ var TaskService = /** @class */ (function () {
                 var data = dataSet_1[_i];
                 var task = __assign({}, data.payload.doc.data());
                 task.id = data.payload.doc.id;
+                task.start = task.deadline;
+                task.title = task.name;
                 // task.progress = task.activities.filter(e=>{return e.status}).length / task.activities.length;
                 // if(task.status == 'todo')
                 //   tasks.todo.push(task)
@@ -1956,14 +2279,24 @@ var TaskService = /** @class */ (function () {
         console.log('[getTasks]', this.tasks);
         return this.tasks;
     };
-    TaskService.prototype.createNewTask = function (task) {
+    TaskService.prototype.createNewTask = function (task, user) {
         var _this = this;
         if (!task.name)
             return;
         else if (task.name.length <= 0)
             return;
-        console.log("[Added Task]", task);
+        if (task.involvedUsers) {
+            var duplicate = task.involvedUsers.filter(function (e) {
+                console.log('-e' + e.id + ' vs -u ' + user.id);
+                return e.id == user.id;
+            });
+            if (duplicate.length <= 0)
+                task.involvedUsers.push(user);
+        }
         return new Promise(function (resolve, reject) {
+            task['team'] = user.team;
+            task['author'] = user.first_name + " " + user.last_name;
+            console.log("[Adding Task]", { task: task, user: user });
             _this.tasksCollection.add(__assign({}, task)).then(function (res) {
                 resolve();
             }).catch(function (err) {
@@ -1972,7 +2305,7 @@ var TaskService = /** @class */ (function () {
             });
         });
     };
-    TaskService.prototype.addActivityToTask = function (task, description) {
+    TaskService.prototype.addActivityToTask = function (task, description, user) {
         var _this = this;
         return new Promise(function (resolve, reject) {
             console.log("[addActivityToTask]", task);
@@ -1985,10 +2318,19 @@ var TaskService = /** @class */ (function () {
                     isDup = true;
                 }
             }
+            if (task.involvedUsers) {
+                var duplicate = task.involvedUsers.filter(function (e) { return e.id == user.id; });
+                if (!duplicate)
+                    task.involvedUsers.push(user);
+            }
+            else {
+                task.involvedUsers = [user];
+            }
             if (!isDup) {
                 task.activities.push(__assign({}, newAct));
                 if (task.id) {
                     _this.tasksCollection.doc(task.id).update(task).then(function (res) {
+                        task.status = _this.getTaskStatus(task);
                         resolve();
                     }).catch(function (err) {
                         console.log('*addActivityToTask', err);
@@ -2005,11 +2347,71 @@ var TaskService = /** @class */ (function () {
         console.log("[deleteTask]", task);
         return this.tasksCollection.doc(task.id).delete();
     };
-    TaskService.prototype.updateTask = function (task) {
+    TaskService.prototype.updateTask = function (task, user) {
         console.log("[updateTask]", task);
         if (!task.id)
             return;
+        task.status = this.getTaskStatus(task);
+        if (task.involvedUsers) {
+            var duplicate = task.involvedUsers.filter(function (e) { return e.id == user.id; });
+            if (!duplicate)
+                task.involvedUsers.push(user);
+        }
+        else {
+            task.involvedUsers = [user];
+        }
+        console.log("[updateTask] --before update", task);
         return this.tasksCollection.doc(task.id).update(task);
+    };
+    TaskService.prototype.getTaskStatus = function (task) {
+        var progress = task.activities.filter(function (e) { return e.status; }).length / task.activities.length;
+        console.log("[updateTask] --progress", task);
+        if (progress <= 0)
+            return "todo";
+        else if (progress > 0 && progress < 1)
+            return "doing";
+        else
+            return "done";
+    };
+    TaskService.prototype.orderTasks = function (order) {
+        switch (order) {
+            case "date_asc":
+                this.tasks.sort(function (a, b) {
+                    if (a.deadline < b.deadline)
+                        return -1;
+                    if (a.deadline > b.deadline)
+                        return 1;
+                    return 0;
+                });
+                break;
+            case "date_desc":
+                this.tasks.sort(function (a, b) {
+                    if (a.deadline > b.deadline)
+                        return -1;
+                    if (a.deadline < b.deadline)
+                        return 1;
+                    return 0;
+                });
+                break;
+            case "alphabet_asc":
+                this.tasks.sort(function (a, b) {
+                    if (a.name < b.name)
+                        return -1;
+                    if (a.name > b.name)
+                        return 1;
+                    return 0;
+                });
+                break;
+            case "alphabet_desc":
+                this.tasks.sort(function (a, b) {
+                    if (a.name > b.name)
+                        return -1;
+                    if (a.name < b.name)
+                        return 1;
+                    return 0;
+                });
+                break;
+        }
     };
     TaskService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -2183,6 +2585,7 @@ var Task = /** @class */ (function () {
         this.status = 'todo';
         this.author = 'anonymus';
         this.progress = 0.0;
+        this.involvedUsers = [];
         this.name = name;
         this.group = group;
         this.deadline = deadline;

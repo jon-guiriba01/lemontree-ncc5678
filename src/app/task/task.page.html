@@ -5,6 +5,7 @@
 
 			<div id='filter-row'  class='action-row closed-list'>
 			  <ion-button *ngFor='let filter of filters'
+			  	class='filter-btn'
 	  			[ngClass]="[statusFilter==filter.value ? 'yellow-bg' : '']"
 	  			(click)="selectStatusFilter(filter.value)"
   			>
@@ -17,6 +18,7 @@
 			<div id='department-row' class='action-row closed-list'>
  
  			  <ion-button *ngFor='let department of departments'
+			  	class='filter-btn'
  	  			[ngClass]="[selectedDepartment==department.value ? 'dark-bg' : '']"
  	  			(click)="selectDepartment(department.value)"
    			>
@@ -29,6 +31,7 @@
 			<div id='order-row' class='action-row closed-list'>
  
  			  <ion-button *ngFor='let order of orders'
+			  	class='filter-btn'
  	  			[ngClass]="[selectedOrder==order.value ? 'dark-bg' : '']"
  	  			(click)="selectOrder(order.value)"
    			>
@@ -40,11 +43,17 @@
 		</div>
 		<div class="tasks-group">
 			<div class="status-bar-legend">
-				Status Bar Legend: <span class='red-bg' >0-50%</span> <span class='yellow-bg'>51-99%</span> <span class='green-bg'>100%</span>
+				Legend: <span class='red-bg' >0-50%</span> <span class='yellow-bg'>51-99%</span> <span class='green-bg'>100%</span>
 			</div>
 			
 			<div *ngFor='let task of taskService.tasks'>
-				<ion-card *ngIf='(task.status == statusFilter || statusFilter == "showall") && (task.group == selectedDepartment || selectedDepartment == "showall")'>
+				<ion-card *ngIf='
+				( 
+					task.name.toLowerCase().includes(searchService.searchInput.toLowerCase()
+					) || searchService.searchInput == "" 
+				) 
+				&& (task.status == statusFilter || statusFilter == "showall") 
+				&& (task.group == selectedDepartment || selectedDepartment == "showall")'>
 				  <ion-card-header class='task-header'>
 				    <ion-card-title class='task-name'>
 				    	{{task.name}}
@@ -58,7 +67,7 @@
 				  <ion-card-content class='task-content'>
 				    <ion-card-subtitle><b>DEADLINE:</b> {{task.deadline}}</ion-card-subtitle>
 				    <ion-card-subtitle><b>ADDED BY:</b> {{task.author}}</ion-card-subtitle>
-				    <ion-card-subtitle><b>IN-CHARGE:</b> {{task.group}}</ion-card-subtitle>
+				    <ion-card-subtitle><b>IN-CHARGE:</b> {{task.team}}</ion-card-subtitle>
 				  	<div class='task-status'>
 				  		<h4>STATUS</h4>
 				  		<div class="progress-bar-row">
