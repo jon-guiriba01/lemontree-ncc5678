@@ -33,7 +33,6 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    
   }
 
   signup(){
@@ -67,8 +66,7 @@ export class LoginPage implements OnInit {
   }
 
   googleLogin(){
-    this.authService.googleLogin().then((res)=>{
-    });
+    this.authService.googleLogin()
   }
 
 

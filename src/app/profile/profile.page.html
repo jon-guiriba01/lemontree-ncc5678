@@ -27,9 +27,10 @@
 					        <!-- <ion-input class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()' [(readonly)]='isReadOnly'></ion-input> -->
 					        <ion-select  class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()' >
 					        	<ion-select-option value="admin">Admin</ion-select-option>
+										<ion-select-option value="registration">Registration</ion-select-option>
 					        	<ion-select-option value="operations">Operations</ion-select-option>
 					        	<ion-select-option value="marketing">Marketing</ion-select-option>
-					        	<ion-select-option value="camps">Camps</ion-select-option>
+					        	<ion-select-option value="camps">Camps & Competitions</ion-select-option>
 					        </ion-select >
 				      	</ion-item>
 				        <div class="error-list" >

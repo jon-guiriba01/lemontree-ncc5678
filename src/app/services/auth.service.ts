@@ -17,16 +17,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class AuthService {
   
 
-	user:any = {
-    id: null
-    ,first_name: null
-    ,last_name: null
-    ,email: null
-    ,contact_number: null
-    ,birthdate: null
-    ,team: null
-    ,credential: null
-  }
+	user:any
 
   constructor(
   	private router: Router
@@ -40,6 +31,20 @@ export class AuthService {
     this.user = Cookies.getJSON('user')
     console.log('[AuthService constructor]', this.user)
 
+    if(this.user)
+      this.router.navigate(["/home"]);
+     else{
+       this.user = {
+        id: null
+        ,first_name: null
+        ,last_name: null
+        ,email: null
+        ,contact_number: null
+        ,birthdate: null
+        ,team: null
+        ,credential: null
+       }
+     }
 
   }
 
@@ -101,22 +106,41 @@ export class AuthService {
       console.log("credential", credential)
 
 
-      // let userCollection = this.afs.collection('users', ref => ref.where('email', '==', this.email))
+      let userCollection = this.afs.collection(
+        'users',
+         ref => ref.where(
+          'email', '==', credential.user.email
+         )
+       )
 
-      // userCollection.snapshotChanges().subscribe(
-      //   (dataSet)=>{
-      //     if(dataSet){
-      //       let user = {...dataSet[0].payload.doc.data()}
-      //       user['id'] = dataSet[0].payload.doc.id
-      //       Cookies.set('user', user)
-      //       this.authService.user = user;
-      //       this.router.navigateByUrl('/home');
-      //     }
-      //   }
-      // )
+      userCollection.snapshotChanges().subscribe(
+        (dataSet)=>{
+          if(dataSet[0]){
+            let user = {...dataSet[0].payload.doc.data()}
+            user['id'] = dataSet[0].payload.doc.id
+            Cookies.set('user', user)
+            this.user = user;
+            console.log('webGoogleLogin this.user', this.user)
+          }else{
+            this.user = {
+              first_name: credential.additionalUserInfo.profile['given_name']
+              , last_name: credential.additionalUserInfo.profile['family_name']
+              , profileImageUrl: credential.additionalUserInfo.profile['picture']
+              , email:credential.user['email']
+              , phoneNumber:credential.user['phoneNumber']
+            }
+
+            userCollection.add({...this.user}).then((res)=>{
+            }).catch((err)=>{
+              console.log("err", err)
+            })
+          }
+          this.router.navigateByUrl('/home');
+        }
+      )
       
 
-      this.router.navigate(["/home"]);
+      // this.router.navigate(["/home"]);
 
     } catch(err) {
       console.log(err)
@@ -146,6 +170,7 @@ export class AuthService {
 
     this.timeout = setTimeout(()=>{
       let userCollection = this.afs.collection('users')
+      console.log('updateUser ', this.user)
       return userCollection.doc(this.user.id).update(this.user)
     }, 500)
   }

@@ -34,6 +34,13 @@ ion-label{
 		max-height: 18px;
 	}
 }
+ion-label{
+	
+	z-index: 99;
+	padding-left: 10px;
+  width: 0 !important;
+  overflow: visible !important;
+}
 
 ion-input, ion-datetime, ion-select{
 	color: var(--ion-color-light);
