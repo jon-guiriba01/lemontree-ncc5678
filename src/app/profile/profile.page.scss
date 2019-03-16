@@ -10,6 +10,13 @@
 	border: 2px solid var(--yellow);
 	margin-left: 18px;
 	position: relative;
+
+  @include for-size(phone-only) {
+		max-width: 90px;
+		min-width: 90px;
+		min-width: 90px;
+		min-height: 90px;
+  }
 }
 
 .myprofile-text{
@@ -53,7 +60,7 @@ ion-button{
   display: flex;
   justify-content: flex-end;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 19px;
 }
 
 .edit-avatar-btn{
@@ -72,6 +79,10 @@ ion-button{
 	display: flex;
 	justify-content: center;
 	padding: 8px;
+
+	@include for-size(phone-only) {
+		width: 10px;
+	}
 }
 
 .edit-btn{
@@ -103,14 +114,9 @@ ion-grid{
 }
 
 ion-col{
-	padding: 0;
-}
-
-.avatar-container{
-	max-width: 90px;
-	min-width: 90px;
-	min-width: 90px;
-	min-height: 90px;
+  @include for-size(phone-only) {
+		padding: 0;
+	}
 }
 
 .head-container{
@@ -127,4 +133,13 @@ ion-toolbar{
   @include for-size(phone-only) {
     /*height: 35px;*/
   }
+}
+
+.team-header{
+
+	@include for-size(phone-only) {
+		max-width: 178px;
+		padding-left: 13px;
+	}
+
 }

@@ -1,9 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>team-details</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons >
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+	<h6 class='title'>Team Details</h6>
+	<div class='main-container'>
 
+		<div class=''>
+		  <ion-item lines='none' class='profile-item'>
+		    <ion-label position='floating'>TEAM</ion-label>
+		    <ion-input type='text'  [(ngModel)]='team' readonly='true'></ion-input>
+		  </ion-item>
+		  <ion-item lines='none' class='profile-item'>
+		    <ion-label position='floating'>DESCRIPTION</ion-label>
+			<ion-textarea  class='' rows="6"  [(ngModel)]='description' readonly='true'>
+			</ion-textarea >
+		  </ion-item>
+		</div>
+	</div>
 </ion-content>

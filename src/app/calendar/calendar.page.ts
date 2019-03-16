@@ -79,7 +79,10 @@ export class CalendarPage implements OnInit {
         console.log('-test', date.format('ll'))
           const modal = await self.modalController.create({
             component: AddEventPage,
-            componentProps: { date: date.format('ll') }
+            componentProps: { 
+              date: date.format('ll')
+              , isCreateNew: false
+            }
           });
           return await modal.present();
       },
@@ -165,7 +168,10 @@ export class CalendarPage implements OnInit {
   async onClickAddEvent(evt){
     const modal = await this.modalController.create({
       component: AddEventPage,
-      componentProps: { date: moment().format('ll') }
+      componentProps: { 
+        date: moment().format('ll') 
+        , isCreateNew: true
+      }
     });
     return await modal.present();
   }

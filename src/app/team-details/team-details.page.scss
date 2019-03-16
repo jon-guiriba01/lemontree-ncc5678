@@ -1,0 +1,79 @@
+@import '../mobile_mixin';
+
+ion-label{
+	color: var(--red) !important;
+	font-weight: bold;
+	font-size: 26px;
+
+
+			
+	@include for-size(phone-only) {
+		max-height: 18px;
+	}
+}
+
+ion-input, ion-datetime, ion-select{
+	color: var(--ion-color-light);
+	background: var(--yellow);
+	--padding-start: 8px !important;
+
+		
+	@include for-size(phone-only) {
+  	max-height: 22px;
+  	font-size: 13px;
+  	--padding-top: 0px;
+  	--padding-bottom: 0px;
+	}
+
+}
+ion-textarea{
+	color: var(--ion-color-light);
+	background: var(--yellow);
+	--padding-start: 8px !important;
+
+		
+	@include for-size(phone-only) {
+  	max-height: 125px;
+  	font-size: 13px;
+  	--padding-top: 0px;
+  	--padding-bottom: 0px;
+	}
+
+
+}
+ion-button{
+	color: var(--ion-color-light) !important;
+	background: var(--red) !important;
+	--background: var(--red) !important;
+}
+
+
+ion-grid{
+	padding: 0;
+}
+
+ion-col{
+	padding: 0;
+}
+
+ion-toolbar{
+
+  @include for-size(phone-only) {
+    /*height: 35px;*/
+  }
+}
+
+.main-container{
+	justify-content: center;
+}
+
+.title{
+	text-align: center;
+	color: var(--yellow);
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.main-container{
+	height: initial;
+}

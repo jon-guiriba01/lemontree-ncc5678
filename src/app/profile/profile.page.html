@@ -12,36 +12,36 @@
 			<div class='head-container'>
 				<ion-grid>
   			  <ion-row >
-  			  	<div class='avatar-team-wrapper'>
+  			  	<!-- <div class='avatar-team-wrapper' *ngIf='platform.width <= 600'> -->
 	  			    <ion-col class='avatar-col'>
 	  			    	<div class='avatar-container'>
 	  			    		<img class='avatar' [(src)]='authService.user.profileImageUrl'/>
 	  			    		<h5 class='edit-avatar-btn' (click)='changeAvatar()'>EDIT</h5>
 	  			    	</div>
 	  			    </ion-col>
-	  			    <ion-col size='8'>
-							<h5 class='myprofile-text'>My Profile</h5>
+	  			    <ion-col size='8' class='team-header'>
+								<h5 class='myprofile-text'>My Profile</h5>
 
-				      <ion-item lines='none'>
-				        <ion-label position='floating'>Team</ion-label>
-				        <!-- <ion-input class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()' [(readonly)]='isReadOnly'></ion-input> -->
-				        <ion-select  class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()' >
-				        	<ion-select-option value="admin">Admin</ion-select-option>
-				        	<ion-select-option value="operations">Operations</ion-select-option>
-				        	<ion-select-option value="marketing">Marketing</ion-select-option>
-				        	<ion-select-option value="camps">Camps</ion-select-option>
-				        </ion-select >
-			      	</ion-item>
-			        <div class="error-list" >
-			        	<div *ngFor="let validation of validationMessages.team" >
-				        	<h5 class="error-msg" *ngIf="settingsForm.get('team').hasError(validation.type) && (settingsForm.get('team').dirty || settingsForm.get('team').touched)" >
-				        		{{validation.message}}
-				        	</h5>
-			        	</div>
-			        </div>
+					      <ion-item lines='none'>
+					        <ion-label position='floating'>Team</ion-label>
+					        <!-- <ion-input class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()' [(readonly)]='isReadOnly'></ion-input> -->
+					        <ion-select  class='team-input' type='text' formControlName='team' [(ngModel)]='authService.user.team' (ionChange)='updateTeam()' >
+					        	<ion-select-option value="admin">Admin</ion-select-option>
+					        	<ion-select-option value="operations">Operations</ion-select-option>
+					        	<ion-select-option value="marketing">Marketing</ion-select-option>
+					        	<ion-select-option value="camps">Camps</ion-select-option>
+					        </ion-select >
+				      	</ion-item>
+				        <div class="error-list" >
+				        	<div *ngFor="let validation of validationMessages.team" >
+					        	<h5 class="error-msg" *ngIf="settingsForm.get('team').hasError(validation.type) && (settingsForm.get('team').dirty || settingsForm.get('team').touched)" >
+					        		{{validation.message}}
+					        	</h5>
+				        	</div>
+				        </div>
 	  			    </ion-col>
   			  		
-  			  	</div>
+  			  	<!-- </div> -->
   			  </ion-row>
 
 					<div>

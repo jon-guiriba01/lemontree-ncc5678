@@ -84,4 +84,41 @@ export class EventsService {
 
   }
 
+  getEvents(date){
+    let eventsQuery = this.afs.collection('events', ref=>ref.where('date', '==', date))
+    
+    return new Promise((resolve,reject)=>{
+
+      eventsQuery.snapshotChanges().subscribe(
+        (dataSet)=>{
+          let events = []
+          for(let data of dataSet){
+            let event:any = {...data.payload.doc.data()}
+            event.id = data.payload.doc.id
+            event.start = event.date
+            event.formattedDate = moment(event.date).format('ll')
+            event.title = event.name
+            events.push(event)
+          }
+
+          resolve(events)
+        }
+      )
+    })
+  }
+
+  updateEvent(event){
+    console.log("[updateEvent]", event)
+
+    if(!event.id) return;
+
+    return this.eventsCollection.doc(event.id).update(event)
+  }
+
+
+  deleteEvent(task){
+    console.log("[deleteEvent]", task)
+    return this.eventsCollection.doc(task.id).delete();
+  }
+
 }

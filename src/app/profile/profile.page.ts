@@ -5,6 +5,7 @@ import Cookies from 'js-cookie'
 import { Router } from '@angular/router';
 import * as $ from 'jquery'
 import { StorageService } from '../services/storage.service';
+import {Platform} from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -53,6 +54,7 @@ export class ProfilePage implements OnInit {
     , public authService: AuthService
     , public router: Router
     , public storageService: StorageService
+    , public platform: Platform
 	) {
   	
   	console.log('[settings constructor]', this.authService.user)
@@ -149,7 +151,7 @@ export class ProfilePage implements OnInit {
   }
 
   teamDetails(evt){
-
+    this.router.navigateByUrl('/team-details')
   }
 
 }

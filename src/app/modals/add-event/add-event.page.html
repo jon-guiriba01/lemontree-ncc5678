@@ -5,36 +5,78 @@
     		<h6 (click)='dismiss($event)' class="close-btn">
     			<ion-icon name='arrow-back'></ion-icon>
     		</h6>
-	    	<h6>ADD EVENT</h6>
+	    	<h6 *ngIf='isCreateNew'>ADD EVENT</h6>
+	    	<h6 *ngIf='!isCreateNew'>EVENTS</h6>
     	</div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-	<ion-item>
-		<ion-label position="floating">
-			Name
-		</ion-label>
-		<ion-input type='text' [(ngModel)]='name' > 
-		</ion-input>
-	</ion-item>
-	<ion-item>
-		<ion-label position="floating">
-			Description
-		</ion-label>
-		<ion-textarea  rows="6"  [(ngModel)]='description'>
-		</ion-textarea >
-	</ion-item>
+	<div *ngIf='isCreateNew'>
+		<ion-item>
+			<ion-label position="floating">
+				Name
+			</ion-label>
+			<ion-input type='text' [(ngModel)]='name' > 
+			</ion-input>
+		</ion-item>
 
-	<ion-item>
-		<ion-label position="floating">
-			Date
-		</ion-label>
-		  <ion-datetime display-format="MMM DD, YYYY" min="2019" [(ngModel)]='date'></ion-datetime>
-	</ion-item>
+		<ion-item>
+			<ion-label position="floating">
+				Description
+			</ion-label>
+			<ion-textarea  rows="6"  [(ngModel)]='description'>
+			</ion-textarea >
+		</ion-item>
 
-	<div class='action-row'>
+		<ion-item>
+			<ion-label position="floating">
+				Date
+			</ion-label>
+			  <ion-datetime display-format="MMM DD, YYYY" min="2019" [(ngModel)]='date'></ion-datetime>
+		</ion-item>
+		
+	</div>
+
+	<div *ngIf='!isCreateNew'>
+		<div *ngFor='let event of events' class='event-item'>
+			<ion-card>
+				<ion-item>
+					<div class='event-name' >
+						<ion-label position="floating">
+							Name
+						</ion-label>
+		    		<h6 class='event-delete-btn' (click)='deleteEvent(event)' >
+		    			<ion-icon name='trash'></ion-icon>
+		    		</h6>
+					</div>
+
+					<ion-input type='text' [(ngModel)]='event.name' (ionChange)='updateEvent(event)'> 
+					</ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-label position="floating">
+						Description
+					</ion-label>
+					<ion-textarea  rows="6"  [(ngModel)]='event.description' (ionChange)='updateEvent(event)'>
+					</ion-textarea >
+				</ion-item>
+
+				<ion-item>
+					<ion-label position="floating">
+						Date
+					</ion-label>
+					  <ion-datetime display-format="MMM DD, YYYY" min="2019" [(ngModel)]='event.date' (ionChange)='updateEvent(event)'></ion-datetime>
+				</ion-item>
+			</ion-card>
+			
+		</div>
+		
+	</div>
+
+	<div class='action-row' *ngIf='isCreateNew'>
 		<ion-button (click)='onClickAddEvent($event)'>
 			Save
 		</ion-button>

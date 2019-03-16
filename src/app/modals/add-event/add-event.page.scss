@@ -80,3 +80,35 @@ ion-toolbar{
 input.searchbar-input{
 	padding-inline-start: 40px;
 }
+
+.event-item{
+	padding:  10px 0;
+
+	/*border-bottom: 1px solid var(--yellow);*/
+}
+.event-item ion-card{
+	background: var(--ion-color-dark-tint);
+}
+
+.event-name{
+	width: 100%;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.event-name ion-label{
+	margin-top: 11px;
+}
+
+.event-delete-btn{
+
+	margin-top: 10px;
+	cursor: pointer;
+	margin-right: 0;
+}
+
+ion-datetime{
+
+	font-size: 14px;
+}
