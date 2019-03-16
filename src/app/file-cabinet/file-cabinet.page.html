@@ -6,7 +6,7 @@
 			<label>Filter</label>
 
 			<ion-select class='filter-select' [(ngModel)]="selectedDepartment" (ionChange)='filterDownloadListByGroup()'>
-			  <ion-select-option *ngFor='let group of groups' value="{{group.value}}">{{group.name | uppercase}}</ion-select-option>
+			  <ion-select-option *ngFor='let team of teams' value="{{team.value}}">{{team.name | uppercase}}</ion-select-option>
 			</ion-select>
 		</ion-item>
 	</ion-row>
@@ -18,7 +18,7 @@
 				) || searchService.searchInput == "" 
 			) 
 			&& (
-			selectedDepartment == "showall" || selectedDepartment == file.group) '>
+			selectedDepartment == "showall" || selectedDepartment == file.team) '>
 			
 			  <ion-label>{{file.name}}</ion-label>
 			  <ion-button (click)='onClickDownload(file, $event)' class='download-btn'>

@@ -36,7 +36,7 @@ export class StorageService {
   }
 
   loading
-  async uploadFile(file, group, path = 'filecabinet'){
+  async uploadFile(file, user, path = 'filecabinet'){
     console.log('[uploadFile]', file)
     console.log('-path', path)
     let fullPath = `${path}/${file.name}`;
@@ -65,7 +65,7 @@ export class StorageService {
             name:file.name
             , path: fullPath
             , downloadURL: downloadURL
-            , group: group
+            , team: user.team
             }).then((uploadAddToFirestoreFinished)=>{
               this.loading.dismiss()
             }).catch((err)=>{

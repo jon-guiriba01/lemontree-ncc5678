@@ -17,7 +17,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class FileCabinetPage implements OnInit {
 
-  groups = [
+  teams = [
     {name: 'admin',value:'admin'}
     , {name: 'operations', value:'operations'}
     , {name: 'marketing', value:'marketing'}
@@ -55,7 +55,7 @@ export class FileCabinetPage implements OnInit {
         e.stopImmediatePropagation();
         var file = e.target.files[0];
         console.log('The file "' + file.name +  '" has been selected.');
-        this.storageService.uploadFile(file, this.selectedDepartment)
+        this.storageService.uploadFile(file, this.authService.user)
     });
 
   }
