@@ -100,7 +100,7 @@ export class FileCabinetPage implements OnInit {
 
     const alert = await this.alertController.create({
       header: 'File Delete',
-      message: 'Are you sure <strong>delete</strong>!!!',
+      message: 'Are you sure you want to <strong>delete</strong>?',
       buttons: [
         {
           text: 'No',

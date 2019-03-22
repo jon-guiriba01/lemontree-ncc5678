@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ProfilePage } from './profile.page';
 import { ReactiveFormsModule} from '@angular/forms';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
+    ImageCropperModule,
     RouterModule.forChild(routes)
   ],
   declarations: [ProfilePage]

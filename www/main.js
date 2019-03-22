@@ -1534,7 +1534,7 @@ var AddEventPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<div class='modal-header' style=\"display:flex; justify-content: start; align-items: center;\">\n    \t\t<h6 (click)='dismiss($event)' class=\"close-btn\">\n    \t\t\t<ion-icon name='arrow-back'></ion-icon>\n    \t\t</h6>\n\t    \t<h6>ADD EVENT</h6>\n    \t</div>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\t<ion-item>\n\t\t<ion-label position=\"floating\">\n\t\t\tName\n\t\t</ion-label>\n\t\t<ion-input type='text' [(ngModel)]='name' > \n\t\t</ion-input>\n\t</ion-item>\n\t<ion-item>\n\t\t<ion-label position=\"floating\">\n\t\t\tDescription\n\t\t</ion-label>\n\t\t<ion-textarea  rows=\"6\"  [(ngModel)]='description'>\n\t\t</ion-textarea >\n\t</ion-item>\n\n\t<ion-item>\n\t\t<ion-label position=\"floating\">\n\t\t\tDate\n\t\t</ion-label>\n\t\t  <ion-datetime display-format=\"MMM DD, YYYY\" min=\"2019\" [(ngModel)]='date'></ion-datetime>\n\t</ion-item>\n\n\t<div class='action-row'>\n\t\t<ion-button (click)='onClickAddEvent($event)'>\n\t\t\tSave\n\t\t</ion-button>\n\t</div>\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<div class='modal-header' style=\"display:flex; justify-content: start; align-items: center;\">\n    \t\t<h6 (click)='dismiss($event)' class=\"close-btn\">\n    \t\t\t<ion-icon name='arrow-back'></ion-icon>\n    \t\t</h6>\n\t    \t<h6 *ngIf='isCreateNew'>ADD EVENT</h6>\n\t    \t<h6 *ngIf='!isCreateNew'>EVENTS</h6>\n    \t</div>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n\t<div *ngIf='isCreateNew'>\n\t\t<ion-item>\n\t\t\t<ion-label position=\"floating\">\n\t\t\t\tName\n\t\t\t</ion-label>\n\t\t\t<ion-input type='text' [(ngModel)]='name' > \n\t\t\t</ion-input>\n\t\t</ion-item>\n\n\t\t<ion-item>\n\t\t\t<ion-label position=\"floating\">\n\t\t\t\tDescription\n\t\t\t</ion-label>\n\t\t\t<ion-textarea  rows=\"6\"  [(ngModel)]='description'>\n\t\t\t</ion-textarea >\n\t\t</ion-item>\n\n\t\t<ion-item>\n\t\t\t<ion-label position=\"floating\">\n\t\t\t\tDate\n\t\t\t</ion-label>\n\t\t\t  <ion-datetime display-format=\"MMM DD, YYYY\" min=\"2019\" [(ngModel)]='date'></ion-datetime>\n\t\t</ion-item>\n\t\t\n\t</div>\n\n\t<div *ngIf='!isCreateNew'>\n\t\t<div *ngFor='let event of events' class='event-item'>\n\t\t\t<ion-card>\n\t\t\t\t<ion-item>\n\t\t\t\t\t<div class='event-name' >\n\t\t\t\t\t\t<ion-label position=\"floating\">\n\t\t\t\t\t\t\tName\n\t\t\t\t\t\t</ion-label>\n\t\t    \t\t<h6 class='event-delete-btn' (click)='deleteEvent(event)' >\n\t\t    \t\t\t<ion-icon name='trash'></ion-icon>\n\t\t    \t\t</h6>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<ion-input type='text' [(ngModel)]='event.name' (ionChange)='updateEvent(event)'> \n\t\t\t\t\t</ion-input>\n\t\t\t\t</ion-item>\n\n\t\t\t\t<ion-item>\n\t\t\t\t\t<ion-label position=\"floating\">\n\t\t\t\t\t\tDescription\n\t\t\t\t\t</ion-label>\n\t\t\t\t\t<ion-textarea  rows=\"6\"  [(ngModel)]='event.description' (ionChange)='updateEvent(event)'>\n\t\t\t\t\t</ion-textarea >\n\t\t\t\t</ion-item>\n\n\t\t\t\t<ion-item>\n\t\t\t\t\t<ion-label position=\"floating\">\n\t\t\t\t\t\tDate\n\t\t\t\t\t</ion-label>\n\t\t\t\t\t  <ion-datetime display-format=\"MMM DD, YYYY\" min=\"2019\" [(ngModel)]='event.date' (ionChange)='updateEvent(event)'></ion-datetime>\n\t\t\t\t</ion-item>\n\t\t\t</ion-card>\n\t\t\t\n\t\t</div>\n\t\t\n\t</div>\n\n\t<div class='action-row' *ngIf='isCreateNew'>\n\t\t<ion-button (click)='onClickAddEvent($event)'>\n\t\t\tSave\n\t\t</ion-button>\n\t</div>\n</ion-content>\n"
 
 /***/ }),
 
@@ -1545,7 +1545,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n    \t<div cla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@media (max-width: 599px) {\n  ion-content * {\n    font-size: 12px; } }\n\nion-toolbar {\n  /*--background: var(--ion-color-medium-tint);*/ }\n\nion-content {\n  --background: var(--ion-color-dark);\n  background: var(--ion-color-dark); }\n\nion-item, ion-list {\n  --background: transparent;\n  background: transparent;\n  --color: var(--ion-color-light);\n  color: var(--ion-color-light); }\n\n.action-row {\n  position: absolute;\n  bottom: 5px;\n  display: flex;\n  justify-content: flex-end;\n  width: 570px; }\n\n@media (max-width: 599px) {\n    .action-row {\n      width: 92%; } }\n\nion-content ion-label {\n  --color: var(--yellow); }\n\nion-title {\n  display: flex;\n  justify-content: space-between;\n  padding-left: 6px; }\n\n.close-btn {\n  font-size: 16px !important;\n  margin-right: 8px;\n  cursor: pointer;\n  margin-top: 6px !important; }\n\nion-input {\n  --padding-end: 2px;\n  --padding-start: 2px;\n  --padding-top: 2px;\n  --padding-bottom: 2px; }\n\n@media (max-width: 599px) {\n    ion-input {\n      font-size: 12px; } }\n\nion-toolbar {\n  --background: var(--yellow);\n  height: 45px; }\n\n.modal-header h6 {\n  font-size: 12px;\n  margin-top: 4px; }\n\ninput.searchbar-input {\n  -webkit-padding-start: 40px;\n          padding-inline-start: 40px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL2FkZC1ldmVudC9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXERMU1UtTkNDLTU2NzgtZnJlZWxhbmNlL3NyY1xcYXBwXFxtb2JpbGVfbWl4aW4uc2NzcyIsInNyYy9hcHAvbW9kYWxzL2FkZC1ldmVudC9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXERMU1UtTkNDLTU2NzgtZnJlZWxhbmNlL3NyY1xcYXBwXFxtb2RhbHNcXGFkZC1ldmVudFxcYWRkLWV2ZW50LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFPSTtFQ0xKO0lBR0UsZUFBZSxFQUFBLEVBR2hCOztBQUNEO0VBQ0MsOENBQUEsRUFBK0M7O0FBR2hEO0VBQ0MsbUNBQWE7RUFDYixpQ0FBaUMsRUFBQTs7QUFHbEM7RUFDQyx5QkFBYTtFQUNiLHVCQUF1QjtFQUN2QiwrQkFBUTtFQUNSLDZCQUE2QixFQUFBOztBQUk5QjtFQUNDLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsYUFBYTtFQUNiLHlCQUF5QjtFQUN4QixZQUFZLEVBQUE7O0FEeEJWO0lDbUJKO01BUUcsVUFBVSxFQUFBLEVBRVo7O0FBRUQ7RUFDQyxzQkFBUSxFQUFBOztBQUdUO0VBQ0MsYUFBYTtFQUNiLDhCQUE4QjtFQUM3QixpQkFBaUIsRUFBQTs7QUFJbkI7RUFDQywwQkFBMEI7RUFDMUIsaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZCwwQkFBMEIsRUFBQTs7QUFHNUI7RUFDQyxrQkFBYztFQUNkLG9CQUFnQjtFQUNoQixrQkFBYztFQUNkLHFCQUFpQixFQUFBOztBRHJEZDtJQ2lESjtNQU9FLGVBQWUsRUFBQSxFQUdoQjs7QUFHRDtFQUNDLDJCQUFhO0VBQ1osWUFBWSxFQUFBOztBQUdkO0VBQ0MsZUFBZTtFQUNmLGVBQWUsRUFBQTs7QUFHaEI7RUFDQywyQkFBMEI7VUFBMUIsMEJBQTBCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9tb2RhbHMvYWRkLWV2ZW50L2FkZC1ldmVudC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAbWl4aW4gZm9yLXNpemUoJHJhbmdlKSB7XHJcbiAgJHBob25lLXVwcGVyLWJvdW5kYXJ5OiA2MDBweDtcclxuICAkdGFibGV0LXBvcnRyYWl0LXVwcGVyLWJvdW5kYXJ5OiA5MDBweDtcclxuICAkdGFibGV0LWxhbmRzY2FwZS11cHBlci1ib3VuZGFyeTogMTIwMHB4O1xyXG4gICRkZXNrdG9wLXVwcGVyLWJvdW5kYXJ5OiAxODAwcHg7XHJcblxyXG4gIEBpZiAkcmFuZ2UgPT0gcGhvbmUtb25seSB7XHJcbiAgICBAbWVkaWEgKG1heC13aWR0aDogI3skcGhvbmUtdXBwZXItYm91bmRhcnkgLSAxfSkgeyBAY29udGVudDsgfVxyXG4gIH0gQGVsc2UgaWYgJHJhbmdlID09IHRhYmxldC1wb3J0cmFpdC11cCB7XHJcbiAgICBAbWVkaWEgKG1pbi13aWR0aDogJHBob25lLXVwcGVyLWJvdW5kYXJ5KSB7IEBjb250ZW50OyB9XHJcbiAgfSBAZWxzZSBpZiAkcmFuZ2UgPT0gdGFibGV0LWxhbmRzY2FwZS11cCB7XHJcbiAgICBAbWVkaWEgKG1pbi13aWR0aDogJHRhYmxldC1wb3J0cmFpdC11cHBlci1ib3VuZGFyeSkgeyBAY29udGVudDsgfVxyXG4gIH0gQGVsc2UgaWYgJHJhbmdlID09IGRlc2t0b3AtdXAge1xyXG4gICAgQG1lZGlhIChtaW4td2lkdGg6ICR0YWJsZXQtbGFuZHNjYXBlLXVwcGVyLWJvdW5kYXJ5KSB7IEBjb250ZW50OyB9XHJcbiAgfSBAZWxzZSBpZiAkcmFuZ2UgPT0gYmlnLWRlc2t0b3AtdXAge1xyXG4gICAgQG1lZGlhIChtaW4td2lkdGg6ICRkZXNrdG9wLXVwcGVyLWJvdW5kYXJ5KSB7IEBjb250ZW50OyB9XHJcbiAgfVxyXG59IiwiQGltcG9ydCAnLi4vLi4vbW9iaWxlX21peGluJztcclxuXHJcbmlvbi1jb250ZW50ICp7XHJcblxyXG5cdEBpbmNsdWRlIGZvci1zaXplKHBob25lLW9ubHkpIHtcclxuXHRcdGZvbnQtc2l6ZTogMTJweDtcclxuXHR9XHJcblxyXG59XHJcbmlvbi10b29sYmFye1xyXG5cdC8qLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItbWVkaXVtLXRpbnQpOyovXHJcbn1cclxuXHJcbmlvbi1jb250ZW50e1xyXG5cdC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLWRhcmspO1xyXG5cdGJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1kYXJrKTtcclxufVxyXG5cclxuaW9uLWl0ZW0sIGlvbi1saXN0e1xyXG5cdC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcblx0YmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XHJcblx0LS1jb2xvcjogdmFyKC0taW9uLWNvbG9yLWxpZ2h0KTtcclxuXHRjb2xvcjogdmFyKC0taW9uLWNvbG9yLWxpZ2h0KTtcclxufVxyXG5cclxuXHJcbi5hY3Rpb24tcm93e1xyXG5cdHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuXHRib3R0b206IDVweDtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgd2lkdGg6IDU3MHB4O1xyXG5cdFxyXG5cdEBpbmNsdWRlIGZvci1zaXplKHBob25lLW9ubHkpIHtcclxuICBcdHdpZHRoOiA5MiU7XHJcblx0fVxyXG59XHJcblxyXG5pb24tY29udGVudCBpb24tbGFiZWx7XHJcblx0LS1jb2xvcjogdmFyKC0teWVsbG93KTtcclxufVxyXG5cclxuaW9uLXRpdGxle1xyXG5cdGRpc3BsYXk6IGZsZXg7XHJcblx0anVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gIHBhZGRpbmctbGVmdDogNnB4O1xyXG59XHJcblxyXG5cclxuLmNsb3NlLWJ0bntcclxuXHRmb250LXNpemU6IDE2cHggIWltcG9ydGFudDtcclxuXHRtYXJnaW4tcmlnaHQ6IDhweDtcclxuXHRjdXJzb3I6IHBvaW50ZXI7XHJcbiAgbWFyZ2luLXRvcDogNnB4ICFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbmlvbi1pbnB1dHtcclxuXHQtLXBhZGRpbmctZW5kOiAycHg7XHJcblx0LS1wYWRkaW5nLXN0YXJ0OiAycHg7XHJcblx0LS1wYWRkaW5nLXRvcDogMnB4O1xyXG5cdC0tcGFkZGluZy1ib3R0b206IDJweDtcclxuXHJcblx0QGluY2x1ZGUgZm9yLXNpemUocGhvbmUtb25seSkge1xyXG5cdFx0Zm9udC1zaXplOiAxMnB4O1xyXG5cdH1cclxuXHJcbn1cclxuXHJcblxyXG5pb24tdG9vbGJhcntcclxuXHQtLWJhY2tncm91bmQ6IHZhcigtLXllbGxvdyk7XHJcbiAgaGVpZ2h0OiA0NXB4O1xyXG59XHJcblxyXG4ubW9kYWwtaGVhZGVyIGg2e1xyXG5cdGZvbnQtc2l6ZTogMTJweDtcclxuXHRtYXJnaW4tdG9wOiA0cHg7XHJcbn1cclxuXHJcbmlucHV0LnNlYXJjaGJhci1pbnB1dHtcclxuXHRwYWRkaW5nLWlubGluZS1zdGFydDogNDBweDtcclxufSJdfQ== */"
+module.exports = "@media (max-width: 599px) {\n  ion-content * {\n    font-size: 12px; } }\n\nion-toolbar {\n  /*--background: var(--ion-color-medium-tint);*/ }\n\nion-content {\n  --background: var(--ion-color-dark);\n  background: var(--ion-color-dark); }\n\nion-item, ion-list {\n  --background: transparent;\n  background: transparent;\n  --color: var(--ion-color-light);\n  color: var(--ion-color-light); }\n\n.action-row {\n  position: absolute;\n  bottom: 5px;\n  display: flex;\n  justify-content: flex-end;\n  width: 570px; }\n\n@media (max-width: 599px) {\n    .action-row {\n      width: 92%; } }\n\nion-content ion-label {\n  --color: var(--yellow); }\n\nion-title {\n  display: flex;\n  justify-content: space-between;\n  padding-left: 6px; }\n\n.close-btn {\n  font-size: 16px !important;\n  margin-right: 8px;\n  cursor: pointer;\n  margin-top: 6px !important; }\n\nion-input {\n  --padding-end: 2px;\n  --padding-start: 2px;\n  --padding-top: 2px;\n  --padding-bottom: 2px; }\n\n@media (max-width: 599px) {\n    ion-input {\n      font-size: 12px; } }\n\nion-toolbar {\n  --background: var(--yellow);\n  height: 45px; }\n\n.modal-header h6 {\n  font-size: 12px;\n  margin-top: 4px; }\n\ninput.searchbar-input {\n  -webkit-padding-start: 40px;\n          padding-inline-start: 40px; }\n\n.event-item {\n  padding: 10px 0;\n  /*border-bottom: 1px solid var(--yellow);*/ }\n\n.event-item ion-card {\n  background: var(--ion-color-dark-tint); }\n\n.event-name {\n  width: 100%;\n  align-items: center;\n  display: flex;\n  justify-content: space-between; }\n\n.event-name ion-label {\n  margin-top: 11px; }\n\n.event-delete-btn {\n  margin-top: 10px;\n  cursor: pointer;\n  margin-right: 0; }\n\nion-datetime {\n  font-size: 14px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL2FkZC1ldmVudC9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXERMU1UtTkNDLTU2NzgtZnJlZWxhbmNlL3NyY1xcYXBwXFxtb2JpbGVfbWl4aW4uc2NzcyIsInNyYy9hcHAvbW9kYWxzL2FkZC1ldmVudC9DOlxcVXNlcnNcXEpvblxcUHJvamVjdHNcXERMU1UtTkNDLTU2NzgtZnJlZWxhbmNlL3NyY1xcYXBwXFxtb2RhbHNcXGFkZC1ldmVudFxcYWRkLWV2ZW50LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFPSTtFQ0xKO0lBR0UsZUFBZSxFQUFBLEVBR2hCOztBQUNEO0VBQ0MsOENBQUEsRUFBK0M7O0FBR2hEO0VBQ0MsbUNBQWE7RUFDYixpQ0FBaUMsRUFBQTs7QUFHbEM7RUFDQyx5QkFBYTtFQUNiLHVCQUF1QjtFQUN2QiwrQkFBUTtFQUNSLDZCQUE2QixFQUFBOztBQUk5QjtFQUNDLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsYUFBYTtFQUNiLHlCQUF5QjtFQUN4QixZQUFZLEVBQUE7O0FEeEJWO0lDbUJKO01BUUcsVUFBVSxFQUFBLEVBRVo7O0FBRUQ7RUFDQyxzQkFBUSxFQUFBOztBQUdUO0VBQ0MsYUFBYTtFQUNiLDhCQUE4QjtFQUM3QixpQkFBaUIsRUFBQTs7QUFJbkI7RUFDQywwQkFBMEI7RUFDMUIsaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZCwwQkFBMEIsRUFBQTs7QUFHNUI7RUFDQyxrQkFBYztFQUNkLG9CQUFnQjtFQUNoQixrQkFBYztFQUNkLHFCQUFpQixFQUFBOztBRHJEZDtJQ2lESjtNQU9FLGVBQWUsRUFBQSxFQUdoQjs7QUFHRDtFQUNDLDJCQUFhO0VBQ1osWUFBWSxFQUFBOztBQUdkO0VBQ0MsZUFBZTtFQUNmLGVBQWUsRUFBQTs7QUFHaEI7RUFDQywyQkFBMEI7VUFBMUIsMEJBQTBCLEVBQUE7O0FBRzNCO0VBQ0MsZUFBZ0I7RUFFaEIsMENBQUEsRUFBMkM7O0FBRTVDO0VBQ0Msc0NBQXNDLEVBQUE7O0FBR3ZDO0VBQ0MsV0FBVztFQUNYLG1CQUFtQjtFQUNuQixhQUFhO0VBQ2IsOEJBQThCLEVBQUE7O0FBRy9CO0VBQ0MsZ0JBQWdCLEVBQUE7O0FBR2pCO0VBRUMsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixlQUFlLEVBQUE7O0FBR2hCO0VBRUMsZUFBZSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvbW9kYWxzL2FkZC1ldmVudC9hZGQtZXZlbnQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQG1peGluIGZvci1zaXplKCRyYW5nZSkge1xyXG4gICRwaG9uZS11cHBlci1ib3VuZGFyeTogNjAwcHg7XHJcbiAgJHRhYmxldC1wb3J0cmFpdC11cHBlci1ib3VuZGFyeTogOTAwcHg7XHJcbiAgJHRhYmxldC1sYW5kc2NhcGUtdXBwZXItYm91bmRhcnk6IDEyMDBweDtcclxuICAkZGVza3RvcC11cHBlci1ib3VuZGFyeTogMTgwMHB4O1xyXG5cclxuICBAaWYgJHJhbmdlID09IHBob25lLW9ubHkge1xyXG4gICAgQG1lZGlhIChtYXgtd2lkdGg6ICN7JHBob25lLXVwcGVyLWJvdW5kYXJ5IC0gMX0pIHsgQGNvbnRlbnQ7IH1cclxuICB9IEBlbHNlIGlmICRyYW5nZSA9PSB0YWJsZXQtcG9ydHJhaXQtdXAge1xyXG4gICAgQG1lZGlhIChtaW4td2lkdGg6ICRwaG9uZS11cHBlci1ib3VuZGFyeSkgeyBAY29udGVudDsgfVxyXG4gIH0gQGVsc2UgaWYgJHJhbmdlID09IHRhYmxldC1sYW5kc2NhcGUtdXAge1xyXG4gICAgQG1lZGlhIChtaW4td2lkdGg6ICR0YWJsZXQtcG9ydHJhaXQtdXBwZXItYm91bmRhcnkpIHsgQGNvbnRlbnQ7IH1cclxuICB9IEBlbHNlIGlmICRyYW5nZSA9PSBkZXNrdG9wLXVwIHtcclxuICAgIEBtZWRpYSAobWluLXdpZHRoOiAkdGFibGV0LWxhbmRzY2FwZS11cHBlci1ib3VuZGFyeSkgeyBAY29udGVudDsgfVxyXG4gIH0gQGVsc2UgaWYgJHJhbmdlID09IGJpZy1kZXNrdG9wLXVwIHtcclxuICAgIEBtZWRpYSAobWluLXdpZHRoOiAkZGVza3RvcC11cHBlci1ib3VuZGFyeSkgeyBAY29udGVudDsgfVxyXG4gIH1cclxufSIsIkBpbXBvcnQgJy4uLy4uL21vYmlsZV9taXhpbic7XHJcblxyXG5pb24tY29udGVudCAqe1xyXG5cclxuXHRAaW5jbHVkZSBmb3Itc2l6ZShwaG9uZS1vbmx5KSB7XHJcblx0XHRmb250LXNpemU6IDEycHg7XHJcblx0fVxyXG5cclxufVxyXG5pb24tdG9vbGJhcntcclxuXHQvKi0tYmFja2dyb3VuZDogdmFyKC0taW9uLWNvbG9yLW1lZGl1bS10aW50KTsqL1xyXG59XHJcblxyXG5pb24tY29udGVudHtcclxuXHQtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1jb2xvci1kYXJrKTtcclxuXHRiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItZGFyayk7XHJcbn1cclxuXHJcbmlvbi1pdGVtLCBpb24tbGlzdHtcclxuXHQtLWJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG5cdGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xyXG5cdC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XHJcblx0Y29sb3I6IHZhcigtLWlvbi1jb2xvci1saWdodCk7XHJcbn1cclxuXHJcblxyXG4uYWN0aW9uLXJvd3tcclxuXHRwb3NpdGlvbjogYWJzb2x1dGU7XHJcblx0Ym90dG9tOiA1cHg7XHJcblx0ZGlzcGxheTogZmxleDtcclxuXHRqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xyXG4gIHdpZHRoOiA1NzBweDtcclxuXHRcclxuXHRAaW5jbHVkZSBmb3Itc2l6ZShwaG9uZS1vbmx5KSB7XHJcbiAgXHR3aWR0aDogOTIlO1xyXG5cdH1cclxufVxyXG5cclxuaW9uLWNvbnRlbnQgaW9uLWxhYmVse1xyXG5cdC0tY29sb3I6IHZhcigtLXllbGxvdyk7XHJcbn1cclxuXHJcbmlvbi10aXRsZXtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICBwYWRkaW5nLWxlZnQ6IDZweDtcclxufVxyXG5cclxuXHJcbi5jbG9zZS1idG57XHJcblx0Zm9udC1zaXplOiAxNnB4ICFpbXBvcnRhbnQ7XHJcblx0bWFyZ2luLXJpZ2h0OiA4cHg7XHJcblx0Y3Vyc29yOiBwb2ludGVyO1xyXG4gIG1hcmdpbi10b3A6IDZweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG5pb24taW5wdXR7XHJcblx0LS1wYWRkaW5nLWVuZDogMnB4O1xyXG5cdC0tcGFkZGluZy1zdGFydDogMnB4O1xyXG5cdC0tcGFkZGluZy10b3A6IDJweDtcclxuXHQtLXBhZGRpbmctYm90dG9tOiAycHg7XHJcblxyXG5cdEBpbmNsdWRlIGZvci1zaXplKHBob25lLW9ubHkpIHtcclxuXHRcdGZvbnQtc2l6ZTogMTJweDtcclxuXHR9XHJcblxyXG59XHJcblxyXG5cclxuaW9uLXRvb2xiYXJ7XHJcblx0LS1iYWNrZ3JvdW5kOiB2YXIoLS15ZWxsb3cpO1xyXG4gIGhlaWdodDogNDVweDtcclxufVxyXG5cclxuLm1vZGFsLWhlYWRlciBoNntcclxuXHRmb250LXNpemU6IDEycHg7XHJcblx0bWFyZ2luLXRvcDogNHB4O1xyXG59XHJcblxyXG5pbnB1dC5zZWFyY2hiYXItaW5wdXR7XHJcblx0cGFkZGluZy1pbmxpbmUtc3RhcnQ6IDQwcHg7XHJcbn1cclxuXHJcbi5ldmVudC1pdGVte1xyXG5cdHBhZGRpbmc6ICAxMHB4IDA7XHJcblxyXG5cdC8qYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHZhcigtLXllbGxvdyk7Ki9cclxufVxyXG4uZXZlbnQtaXRlbSBpb24tY2FyZHtcclxuXHRiYWNrZ3JvdW5kOiB2YXIoLS1pb24tY29sb3ItZGFyay10aW50KTtcclxufVxyXG5cclxuLmV2ZW50LW5hbWV7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0YWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHRkaXNwbGF5OiBmbGV4O1xyXG5cdGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxufVxyXG5cclxuLmV2ZW50LW5hbWUgaW9uLWxhYmVse1xyXG5cdG1hcmdpbi10b3A6IDExcHg7XHJcbn1cclxuXHJcbi5ldmVudC1kZWxldGUtYnRue1xyXG5cclxuXHRtYXJnaW4tdG9wOiAxMHB4O1xyXG5cdGN1cnNvcjogcG9pbnRlcjtcclxuXHRtYXJnaW4tcmlnaHQ6IDA7XHJcbn1cclxuXHJcbmlvbi1kYXRldGltZXtcclxuXHJcblx0Zm9udC1zaXplOiAxNHB4O1xyXG59Il19 */"
 
 /***/ }),
 
@@ -1580,16 +1580,24 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var AddEventPage = /** @class */ (function () {
-    function AddEventPage(eventService, events, modalController, navParams) {
+    function AddEventPage(eventService, ionEvents, modalController, navParams) {
         this.eventService = eventService;
-        this.events = events;
+        this.ionEvents = ionEvents;
         this.modalController = modalController;
         this.navParams = navParams;
+        this.events = [];
     }
     AddEventPage.prototype.ngOnInit = function () {
+        var _this = this;
         // this.date = moment().format('YYYY-MM-DD')
-        console.log('dxxate', this.date);
+        console.log('add event modal date', this.date);
         this.date = moment__WEBPACK_IMPORTED_MODULE_3__(this.date).format('YYYY-MM-DD');
+        if (!this.isCreateNew) {
+            this.eventService.getEvents(this.date).then(function (res) {
+                console.log('-events', _this.events);
+                _this.events = res;
+            });
+        }
         // if(this.date)
         //   this.date = this.date.format()
         // console.log('date', this.date)
@@ -1597,17 +1605,40 @@ var AddEventPage = /** @class */ (function () {
     AddEventPage.prototype.onClickAddEvent = function (evt) {
         var _this = this;
         this.eventService.addEvent(this.name, this.description, this.date).then(function () {
-            _this.events.publish('event:addSuccess');
+            _this.ionEvents.publish('event:addSuccess');
             _this.modalController.dismiss();
         });
     };
     AddEventPage.prototype.dismiss = function (evt) {
         this.modalController.dismiss();
     };
+    AddEventPage.prototype.updateEvent = function (event) {
+        var _this = this;
+        if (this.inputWait) {
+            clearTimeout(this.inputWait);
+        }
+        this.inputWait = setTimeout(function () {
+            _this.eventService.updateEvent(event).then(function () {
+            });
+        }, 500);
+    };
+    AddEventPage.prototype.deleteEvent = function (event) {
+        var _this = this;
+        this.eventService.deleteEvent(event).then(function () {
+            _this.eventService.getEvents(_this.date).then(function (res) {
+                console.log('-events', _this.events);
+                _this.events = res;
+            });
+        });
+    };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", Object)
     ], AddEventPage.prototype, "date", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], AddEventPage.prototype, "isCreateNew", void 0);
     AddEventPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-add-event',
@@ -1855,6 +1886,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1917,18 +1959,22 @@ var AuthService = /** @class */ (function () {
         this.afAuth = afAuth;
         this.platform = platform;
         this.afs = afs;
-        this.user = {
-            id: null,
-            first_name: null,
-            last_name: null,
-            email: null,
-            contact_number: null,
-            birthdate: null,
-            team: null,
-            credential: null
-        };
         this.user = js_cookie__WEBPACK_IMPORTED_MODULE_7___default.a.getJSON('user');
         console.log('[AuthService constructor]', this.user);
+        if (this.user)
+            this.router.navigate(["/home"]);
+        else {
+            this.user = {
+                id: null,
+                first_name: null,
+                last_name: null,
+                email: null,
+                contact_number: null,
+                birthdate: null,
+                team: null,
+                credential: null
+            };
+        }
     }
     AuthService.prototype.googleLogin = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -2000,7 +2046,8 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.webGoogleLogin = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var provider, credential, err_2;
+            var provider, credential_1, userCollection_1, err_2;
+            var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -2009,22 +2056,33 @@ var AuthService = /** @class */ (function () {
                         provider.addScope('https://www.googleapis.com/auth/drive');
                         return [4 /*yield*/, this.afAuth.auth.signInWithPopup(provider)];
                     case 1:
-                        credential = _a.sent();
-                        this.user.credential = credential;
-                        console.log("credential", credential);
-                        // let userCollection = this.afs.collection('users', ref => ref.where('email', '==', this.email))
-                        // userCollection.snapshotChanges().subscribe(
-                        //   (dataSet)=>{
-                        //     if(dataSet){
-                        //       let user = {...dataSet[0].payload.doc.data()}
-                        //       user['id'] = dataSet[0].payload.doc.id
-                        //       Cookies.set('user', user)
-                        //       this.authService.user = user;
-                        //       this.router.navigateByUrl('/home');
-                        //     }
-                        //   }
-                        // )
-                        this.router.navigate(["/home"]);
+                        credential_1 = _a.sent();
+                        this.user.credential = credential_1;
+                        console.log("credential", credential_1);
+                        userCollection_1 = this.afs.collection('users', function (ref) { return ref.where('email', '==', credential_1.user.email); });
+                        userCollection_1.snapshotChanges().subscribe(function (dataSet) {
+                            if (dataSet[0]) {
+                                var user = __assign({}, dataSet[0].payload.doc.data());
+                                user['id'] = dataSet[0].payload.doc.id;
+                                js_cookie__WEBPACK_IMPORTED_MODULE_7___default.a.set('user', user);
+                                _this.user = user;
+                                console.log('webGoogleLogin this.user', _this.user);
+                            }
+                            else {
+                                _this.user = {
+                                    first_name: credential_1.additionalUserInfo.profile['given_name'],
+                                    last_name: credential_1.additionalUserInfo.profile['family_name'],
+                                    profileImageUrl: credential_1.additionalUserInfo.profile['picture'],
+                                    email: credential_1.user['email'],
+                                    phoneNumber: credential_1.user['phoneNumber']
+                                };
+                                userCollection_1.add(__assign({}, _this.user)).then(function (res) {
+                                }).catch(function (err) {
+                                    console.log("err", err);
+                                });
+                            }
+                            _this.router.navigateByUrl('/home');
+                        });
                         return [3 /*break*/, 3];
                     case 2:
                         err_2 = _a.sent();
@@ -2063,7 +2121,13 @@ var AuthService = /** @class */ (function () {
         }
         this.timeout = setTimeout(function () {
             var userCollection = _this.afs.collection('users');
-            return userCollection.doc(_this.user.id).update(_this.user);
+            console.log('updateUser ', _this.user);
+            var updatePromise = userCollection.doc(_this.user.id).update(_this.user);
+            updatePromise.then(function (res) {
+                js_cookie__WEBPACK_IMPORTED_MODULE_7___default.a.set('user', _this.user);
+            }).catch(function (err) {
+                console.log("err", err);
+            });
         }, 500);
     };
     AuthService = __decorate([
@@ -2182,6 +2246,34 @@ var EventsService = /** @class */ (function () {
                 resolve(events);
             });
         });
+    };
+    EventsService.prototype.getEvents = function (date) {
+        var eventsQuery = this.afs.collection('events', function (ref) { return ref.where('date', '==', date); });
+        return new Promise(function (resolve, reject) {
+            eventsQuery.snapshotChanges().subscribe(function (dataSet) {
+                var events = [];
+                for (var _i = 0, dataSet_3 = dataSet; _i < dataSet_3.length; _i++) {
+                    var data = dataSet_3[_i];
+                    var event_3 = __assign({}, data.payload.doc.data());
+                    event_3.id = data.payload.doc.id;
+                    event_3.start = event_3.date;
+                    event_3.formattedDate = moment__WEBPACK_IMPORTED_MODULE_5__(event_3.date).format('ll');
+                    event_3.title = event_3.name;
+                    events.push(event_3);
+                }
+                resolve(events);
+            });
+        });
+    };
+    EventsService.prototype.updateEvent = function (event) {
+        console.log("[updateEvent]", event);
+        if (!event.id)
+            return;
+        return this.eventsCollection.doc(event.id).update(event);
+    };
+    EventsService.prototype.deleteEvent = function (task) {
+        console.log("[deleteEvent]", task);
+        return this.eventsCollection.doc(task.id).delete();
     };
     EventsService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

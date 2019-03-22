@@ -171,7 +171,13 @@ export class AuthService {
     this.timeout = setTimeout(()=>{
       let userCollection = this.afs.collection('users')
       console.log('updateUser ', this.user)
-      return userCollection.doc(this.user.id).update(this.user)
+      let updatePromise = userCollection.doc(this.user.id).update(this.user)
+      updatePromise.then((res)=>{
+        Cookies.set('user', this.user)
+      
+      }).catch((err)=>{
+        console.log("err", err)
+      })
     }, 500)
   }
 }

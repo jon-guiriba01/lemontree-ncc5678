@@ -150,3 +150,41 @@ ion-toolbar{
 	}
 
 }
+
+.cropper-container{
+  display: flex;
+  padding: 16px;
+  position: absolute;
+  z-index: 999;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.cropper-container>div{
+	max-width: 800px;
+	height: 100%;
+	width: 100%;
+}
+.hidden{
+	display: none !important;
+}
+
+.save-image-btn{
+
+	width: 100%;
+	margin-top: 20px;
+}
+
+.cancel-image-btn{
+	background: var(--ion-color-medium) !important;
+	color: var(--ion-color-light) !important;
+	--background: var(--ion-color-medium) !important;
+	width: 100%;
+	margin-top: 20px;
+}

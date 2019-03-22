@@ -36,7 +36,7 @@ export class StorageService {
   }
 
   loading
-  async uploadFile(file, user, path = 'filecabinet'){
+  async uploadFile(file, user, path = 'filecabinet', createDocument=true){
     console.log('[uploadFile]', file)
     console.log('-path', path)
     let fullPath = `${path}/${file.name}`;
@@ -61,19 +61,26 @@ export class StorageService {
 
           fileRef.getDownloadURL().subscribe((downloadURL)=>{
 
-            this.filesCollection.add({
-            name:file.name
-            , path: fullPath
-            , downloadURL: downloadURL
-            , team: user.team
-            }).then((uploadAddToFirestoreFinished)=>{
+            if(createDocument){
+              this.filesCollection.add({
+              name:file.name
+              , path: fullPath
+              , downloadURL: downloadURL
+              , team: user.team
+              }).then((uploadAddToFirestoreFinished)=>{
+                this.loading.dismiss()
+                resolve(downloadURL)
+              }).catch((err)=>{
+                this.loading.dismiss()
+                reject()
+                console.log("err", err)
+              })
+            }else{
               this.loading.dismiss()
-            }).catch((err)=>{
-              reject()
-              console.log("err", err)
-            })
+              resolve(downloadURL)
+            
+            }
 
-            resolve(downloadURL)
             
           })
         

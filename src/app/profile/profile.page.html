@@ -5,7 +5,28 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<div class='cropper-container hidden'>
+	<div>
+		<image-cropper
+		    [imageChangedEvent]="imageChangedEvent"
+		    [maintainAspectRatio]="true"
+		    [aspectRatio]="4 / 3"
+		    [resizeToWidth]="150"
+		    onlyScaleDown="true"
+		    format="jpeg"
+		    (imageCropped)="imageCropped($event)"
+		    (imageLoaded)="imageLoaded()"
+		    (loadImageFailed)="loadImageFailed()"
+		></image-cropper>
+		<ion-button class='save-image-btn' (click)='saveCroppedImage()' fill='clear'>
+			OK
+		</ion-button>
+		<ion-button class='cancel-image-btn' (click)='cancelSaveImage()' fill='clear'>
+			CANCEL
+		</ion-button>
+		
+	</div>
+</div>
 <ion-content padding>
 	<div class='main-container'>
 		<form [formGroup]="settingsForm">
@@ -170,4 +191,4 @@
 <ion-toolbar class='extra-toolbar' color="primary">
 </ion-toolbar>
 
-<input type="file" name="" style='display: none;' class='hidden-input'/>
+<input type="file" name="" style='display: none;' class='hidden-input' (change)="fileChangeEvent($event)"/>

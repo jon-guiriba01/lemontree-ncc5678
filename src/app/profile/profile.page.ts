@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import * as $ from 'jquery'
 import { StorageService } from '../services/storage.service';
 import {Platform} from '@ionic/angular';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @Component({
   selector: 'app-profile',
@@ -40,8 +41,9 @@ export class ProfilePage implements OnInit {
         { type: 'required', message: 'contact number is required.' },
       ],
   }
-
-
+  imageChangedEvent: any = '';
+  croppedImage: any = '';
+  imageName
   // A letter, a number, an uppercase, min of 8
   passwordRegex='^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+$'
   
@@ -58,6 +60,7 @@ export class ProfilePage implements OnInit {
 	) {
   	
   	console.log('[settings constructor]', this.authService.user)
+    console.log('[settings constructor]', this.authService.user.profileImageUrl)
     this.settingsForm = this.formBuilder.group({
       firstName: new FormControl('', Validators.compose([
         Validators.maxLength(30),
@@ -132,28 +135,64 @@ export class ProfilePage implements OnInit {
   }
 
   changeAvatar(){
+    console.log('-changeAvatar')
     $('.hidden-input').click()
-
     $('.hidden-input').change(async (e:any)=>{
-        e.stopImmediatePropagation();
+      $('.cropper-container').removeClass('hidden')
+    //     e.stopImmediatePropagation();
         var file = e.target.files[0];
-        console.log('The file "' + file.name +  '" has been selected.');
+        this.imageName = file.name
+        // console.log('The file "' + file.name +  '" has been selected.');
 
-        let imageUrl = await this.storageService.uploadFile(
-          file
-          , this.authService.user.team
-          , this.authService.user.team+"/"+this.authService.user.last_name+"_"+this.authService.user.id
-         )
+    //     let imageUrl = await this.storageService.uploadFile(
+    //       file
+    //       , this.authService.user.team
+    //       , this.authService.user.team+"/"+this.authService.user.last_name+"_"+this.authService.user.id
+    //      )
         
-        this.authService.user.profileImageUrl = imageUrl
-        this.authService.updateUser()
+    //     this.authService.user.profileImageUrl = imageUrl
+    //     this.authService.updateUser()
     });
   }
 
+
+  async saveCroppedImage(){
+    let imageUrl = await this.storageService.uploadFile(
+      this.croppedImage.file
+      , this.authService.user
+      , this.authService.user.team+"/"+this.authService.user.last_name+"_"+this.authService.user.id
+      , false
+     )
+    
+    this.authService.user.profileImageUrl = imageUrl
+      $('.cropper-container').addClass('hidden')
+    this.authService.updateUser()
+   
+  }
+  cancelSaveImage(){
+    $('.cropper-container').addClass('hidden')
+
+  }
+  
   teamDetails(evt){
     this.router.navigateByUrl('/team-details')
   }
 
+  fileChangeEvent(event: any): void {
+    console.log('-fileChangeEvent', event)
+    this.imageChangedEvent = event;
+  }
+  imageCropped(image: string) {
+    this.croppedImage = image;
+    this.croppedImage.file['name'] = this.imageName;
+    console.log('-saveCroppedImage', this.croppedImage)
+  }
+  imageLoaded() {
+      // show cropper
+  }
+  loadImageFailed() {
+      // show message
+  }
 }
 
 

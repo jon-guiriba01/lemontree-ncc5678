@@ -15346,6 +15346,7 @@ var CalendarPage = /** @class */ (function () {
             week: false,
             month: true
         };
+        this.hasLoadedEvents = false;
         this.events.subscribe('event:addSuccess', function () {
             console.log('refetchEventSources');
             jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('removeEvents');
@@ -15364,7 +15365,7 @@ var CalendarPage = /** @class */ (function () {
         var self = this;
         var heightAdjustment = 450;
         if (this.platform.width() < 599)
-            heightAdjustment = 240;
+            heightAdjustment = this.platform.height() * 0.42;
         jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar({
             dayClick: function (date, jsEvent, view) {
                 return __awaiter(this, void 0, void 0, function () {
@@ -15376,7 +15377,10 @@ var CalendarPage = /** @class */ (function () {
                                 console.log('-test', date.format('ll'));
                                 return [4 /*yield*/, self.modalController.create({
                                         component: _modals_add_event_add_event_page__WEBPACK_IMPORTED_MODULE_6__["AddEventPage"],
-                                        componentProps: { date: date.format('ll') }
+                                        componentProps: {
+                                            date: date.format('ll'),
+                                            isCreateNew: false
+                                        }
                                     })];
                             case 1:
                                 modal = _a.sent();
@@ -15395,18 +15399,21 @@ var CalendarPage = /** @class */ (function () {
             height: this.platform.height() - heightAdjustment
             // defaultView: 'basicWeek'
         });
+        var waitTime = 1500;
+        if (this.platform.is('mobile')) {
+            waitTime = waitTime * 4;
+        }
         setTimeout(function () {
+            // this.hasLoadedEvents = true
             jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('addEventSource', {
                 events: _this.taskService.tasks,
                 color: '#fc2231'
             });
-        }, 1500);
-        setTimeout(function () {
             jquery__WEBPACK_IMPORTED_MODULE_1__('#calendar').fullCalendar('addEventSource', {
                 events: _this.eventsService.events,
                 color: '#39b54a'
             });
-        }, 1500);
+        }, waitTime);
         setTimeout(function () {
             console.log('calendar events');
             var monthCB = document.querySelector('#month-cb');
@@ -15435,7 +15442,10 @@ var CalendarPage = /** @class */ (function () {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.modalController.create({
                             component: _modals_add_event_add_event_page__WEBPACK_IMPORTED_MODULE_6__["AddEventPage"],
-                            componentProps: { date: moment__WEBPACK_IMPORTED_MODULE_7__().format('ll') }
+                            componentProps: {
+                                date: moment__WEBPACK_IMPORTED_MODULE_7__().format('ll'),
+                                isCreateNew: true
+                            }
                         })];
                     case 1:
                         modal = _a.sent();

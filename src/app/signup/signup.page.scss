@@ -1,3 +1,5 @@
+@import '../mobile_mixin';
+
 ion-toolbar{
 	--background: var(--ion-color-primary);
 }
@@ -69,6 +71,12 @@ ion-input{
 	z-index: 999;
   top: 0;
   left: 0;
+
+  
+  @include for-size(phone-only) {
+	  width: 27px;
+	  height: 24px;
+  }
 }
 
 .error-msg{
@@ -100,4 +108,10 @@ ion-item{
 	--color: var(--ion-color-light) !important;
   color: var(--ion-color-light) !important;
 
+}
+
+.main-container *{
+	@include for-size(phone-only) {
+		font-size: 12px !important;
+	}
 }

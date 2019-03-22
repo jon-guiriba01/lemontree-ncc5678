@@ -220,8 +220,9 @@ var StorageService = /** @class */ (function () {
             console.log("this.files", _this.files);
         });
     }
-    StorageService.prototype.uploadFile = function (file, group, path) {
+    StorageService.prototype.uploadFile = function (file, user, path, createDocument) {
         if (path === void 0) { path = 'filecabinet'; }
+        if (createDocument === void 0) { createDocument = true; }
         return __awaiter(this, void 0, void 0, function () {
             var fullPath, fileRef, _a, uploadTask, afUploadTask;
             var _this = this;
@@ -248,18 +249,25 @@ var StorageService = /** @class */ (function () {
                                     return __generator(this, function (_a) {
                                         console.log('-finalize', path);
                                         fileRef.getDownloadURL().subscribe(function (downloadURL) {
-                                            _this.filesCollection.add({
-                                                name: file.name,
-                                                path: fullPath,
-                                                downloadURL: downloadURL,
-                                                group: group
-                                            }).then(function (uploadAddToFirestoreFinished) {
+                                            if (createDocument) {
+                                                _this.filesCollection.add({
+                                                    name: file.name,
+                                                    path: fullPath,
+                                                    downloadURL: downloadURL,
+                                                    team: user.team
+                                                }).then(function (uploadAddToFirestoreFinished) {
+                                                    _this.loading.dismiss();
+                                                    resolve(downloadURL);
+                                                }).catch(function (err) {
+                                                    _this.loading.dismiss();
+                                                    reject();
+                                                    console.log("err", err);
+                                                });
+                                            }
+                                            else {
                                                 _this.loading.dismiss();
-                                            }).catch(function (err) {
-                                                reject();
-                                                console.log("err", err);
-                                            });
-                                            resolve(downloadURL);
+                                                resolve(downloadURL);
+                                            }
                                         });
                                         return [2 /*return*/];
                                     });

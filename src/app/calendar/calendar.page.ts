@@ -64,6 +64,7 @@ export class CalendarPage implements OnInit {
     })
   }
 
+  hasLoadedEvents = false;
   ngOnInit() {
 
     let self = this
@@ -71,10 +72,11 @@ export class CalendarPage implements OnInit {
     let heightAdjustment = 450
 
     if(this.platform.width() < 599)
-      heightAdjustment = 240
+      heightAdjustment = this.platform.height() * 0.42
 
     $('#calendar').fullCalendar({
       dayClick: async function(date, jsEvent, view) {
+
         let dom =  $(this)
         console.log('-test', date.format('ll'))
           const modal = await self.modalController.create({
@@ -91,26 +93,30 @@ export class CalendarPage implements OnInit {
         ,left: ''
         ,right: ''
       }
-      ,handleWindowResize: true
+      , handleWindowResize: true
       , height: this.platform.height() - heightAdjustment
+
+
+
       // defaultView: 'basicWeek'
     });
-
     
+    let waitTime = 1500;
+    if(this.platform.is('mobile')){
+      waitTime = waitTime * 4
+    }
+
     setTimeout(()=>{
+      // this.hasLoadedEvents = true
       $('#calendar').fullCalendar('addEventSource', {
         events:this.taskService.tasks
         , color:'#fc2231'
        })
-    } , 1500)
-    setTimeout(()=>{
       $('#calendar').fullCalendar('addEventSource', {
         events:this.eventsService.events
         , color:'#39b54a'
        })
-    } , 1500)
-    
-
+    } , waitTime)
 
 
 
