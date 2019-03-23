@@ -1075,3 +1075,6 @@ Apache-2.0
 
 firebase
 Apache-2.0
+
+ngx-image-cropper
+MIT

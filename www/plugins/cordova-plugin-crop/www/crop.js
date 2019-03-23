@@ -1,5 +1,4 @@
-cordova.define("cordova-plugin-crop.CropPlugin", function(require, exports, module) {
-/* global cordova */
+cordova.define("cordova-plugin-crop.CropPlugin", function(require, exports, module) { /* global cordova */
 var crop = module.exports = function cropImage (success, fail, image, options) {
   options = options || {}
   options.quality = options.quality || 100
